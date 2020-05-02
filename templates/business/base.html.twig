@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bellybutton | {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <header class="header__base">
+            <nav class="header__base__nav">
+                <div class="header__logo">
+                <a href="{{ path('home') }}"><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton">
+                </a>
+                </div>
+                <div class="header__base__link">
+                    <a href="">À propos de nous</a>
+                    <a href="">Tarifs</a>
+                    <a href="">Blog</a>
+                    <a href="{{ path('influencer') }}">Vous êtes influenceurs ?</a>
+                </div>
+                <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
+                <a class="btn btn--header" href="">Créer un <br>compte</a>
+            </nav>
+        </header>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
