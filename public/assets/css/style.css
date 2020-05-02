@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "NeueHaasDisplay-Roman";
+    src: url("assets/fonts/NeueHaasDisplay-Roman.ttf");
+  }
+@font-face {
+    font-family: "NeueHaasDisplay-Medium";
+    src: url("assets/fonts/NeueHaasDisplay-Medium.ttf");
+  }
+@font-face {
+    font-family: "NeueHaasDisplay-Light";
+    src: url("assets/fonts/NeueHaasDisplay-Light.ttf");
+  }
+  @font-face {
+    font-family: "Pistilli Roman";
+    src: url("assets/fonts/Pistilli-Roman.otf");
+  }
+*{
+    font-family: 'NeueHaasDisplay-Light', sans-serif;
+    color: #292a2b;
+}
+h1{
+    font-family: 'NeueHaasDisplay-Medium', sans-serif;
+    font-size: 3em;
+}
+img{
+    max-width: 100%;
+}
+p{
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 1rem;
+}
+
+/* HOME */
+
+.home__header{
+    position: absolute;
+    width: 100%;
+}
+.home__header__nav{
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    justify-content: space-between;
+}
+.home__header__nav__div{
+    display: flex;
+    align-self: center;
+}
+.home__language{
+    align-self: center;
+    margin-right: 1.5rem;
+    text-transform: uppercase;
+}
+.home{
+    display: flex;
+    height: 100vh;
+}
+.influencer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.influencer__h1, .society__h1{
+    color: #312e5c;
+}
+.influencer__p, .society__p{
+    color: #312e5c;
+}
+.influencer__h1__span{
+    color: #fdc8b5;
+}
+.society__h1__span{
+    color: #FFF;
+}
+.society{
+    width: 50%;
+    background: rgb(178,196,227);
+    background: linear-gradient(180deg, rgba(178,196,227,1) 0%, rgba(239,221,230,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    color: #FFF;
+    border: none;
+    box-shadow: 0 0 5px 0 hsla(0,0%,47.1%,.3);
+    border-radius:28px;
+    padding:15px 56px;
+    font-size: 1.3em;
+    transition-duration: .3s;
+}
+.btn--login{
+    background-color: #312e5c;
+}
+.btn--influencer{
+    background-color: #9f7fc8;
+    margin-top: 2rem;
+}
+.btn--society{
+    background-color: #FFF;
+    color: #312e5c;
+    margin-top: 2rem;
+}
+.btn:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px 0 hsla(0,0%,47.1%,.3);
+}
