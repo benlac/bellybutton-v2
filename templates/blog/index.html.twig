@@ -1,0 +1,13 @@
+{% extends 'blog/base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+   
+    <div class="article">   
+        <h1>Success stories : Découvrez la faubleuse histoire d'Hismile</h1>
+        <p class="article__author"><span>Tim pruski</span> <span>@timpruski</span> / 29 avril 2020 / 2:00 </p>
+        <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
+        <p class="article__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda numquam cum debitis. Tenetur dolorum, natus voluptas ducimus id possimus suscipit dolor adipisci, esse tempora consectetur autem, officia rem doloribus mollitia. <a href="">Lire l'article...</a> </p>
+    </div> 
+{% endblock %}

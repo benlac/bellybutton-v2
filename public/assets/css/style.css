@@ -205,3 +205,50 @@ strong{
     text-align: center;
     font-size: 1em;
 }
+/* BLOG */
+
+.btn--login--blog{
+    background-color: #312e5c;
+    font-size: 1.9em;
+
+}
+.container__blog{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.main{
+    width: 60%;
+}
+.aside{
+    width: 35%;
+    margin-top: 2rem;
+}
+.aside__article{
+    display: flex;
+    margin-top: 1.5rem;
+}
+.aside__article img{
+    width: 10%;
+}
+.aside__article__content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+.aside__article__tag{
+    text-align: start;
+    color: #e5e5e5;
+}
+.aside__article__p{
+    text-align: start;
+
+}
+.article__author{
+    text-align: start;
+    margin: 1.5rem 0;
+}
+.article__content{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}

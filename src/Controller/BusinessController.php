@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BusinessController extends AbstractController
 {
     /**
-     * @Route("/business", name="business")
+     * @Route("/business", name="business", methods={"GET"})
      */
     public function business()
     {

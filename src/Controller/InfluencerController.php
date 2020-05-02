@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class InfluencerController extends AbstractController
 {
     /**
-     * @Route("/influencer", name="influencer")
+     * @Route("/influencer", name="influencer", methods={"GET"})
      */
     public function influencer()
     {
