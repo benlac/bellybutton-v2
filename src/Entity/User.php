@@ -94,6 +94,8 @@ class User implements UserInterface
     {
         $this->userRoles = new ArrayCollection();
         $this->articles = new ArrayCollection();
+        $this->status = 1;
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int

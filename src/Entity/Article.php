@@ -78,6 +78,8 @@ class Article
         $this->tags = new ArrayCollection();
         $this->commentaries = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->status = 1;
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
