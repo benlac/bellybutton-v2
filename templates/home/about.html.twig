@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+<a href="{{ path('home') }}">Notre offre</a>
+    </div>
+    <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% endblock %}
+{% block title %}À propos{% endblock %}
+
+{% block body %}
+    <div class="about">
+        <div class="about__content">
+            <h1 class="about__h1">À propos de nous</h1>
+            <p class="about__p">Bellybutton aide les agences à <br>pénétrer dans le monde du marketing d'influence<br> afin d'atteindre un public plus large grâce à de <br> puissants outils de prédiction, des performances et <br> à une équipe d'experts en marketing d'influence</p>
+        </div>
+        <img class="about__img" src="{{ asset('assets/images/illus/about.png') }}" alt="Illustration représentant les médias sociaux">
+    </div>
+{% endblock %}

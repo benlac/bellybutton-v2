@@ -157,12 +157,12 @@ p, input, label{
 }
 /* INFLUENCER */
 
-.section1{
+.section1, .about{
     display: flex;
     margin-top: 4rem;
     justify-content: space-between;
 }
-.section1__content{
+.section1__content, .about__content{
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -173,14 +173,14 @@ p, input, label{
     text-align: center;
     margin-top: 3rem;
 }
-.section1__p{
+.section1__p, .about__p{
     text-align: left;
     color: #312e5c;
     font-size: 2em;
     line-height: 1.2em;
     margin-top: 3rem;
 }
-.section1__h1{
+.section1__h1, .about__h1{
     text-align: left;
     color: #312e5c;
     font-size: 4em;

@@ -1,5 +1,13 @@
-{% extends 'influencer/base.html.twig' %}
-
+{% extends 'base.html.twig' %}
+{% block header %}
+    <a href="{{ path('business') }}">Vous êtes une entreprise ?</a>
+    </div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% endblock %}
 {% block title %}Influenceur{% endblock %}
 
 {% block body %}
