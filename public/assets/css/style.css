@@ -157,12 +157,12 @@ p, input, label{
 }
 /* INFLUENCER */
 
-.section1, .about{
+.section1, .about, .about__second{
     display: flex;
     margin-top: 4rem;
     justify-content: space-between;
 }
-.section1__content, .about__content{
+.section1__content, .about__content, .about__second__content{
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -173,20 +173,29 @@ p, input, label{
     text-align: center;
     margin-top: 3rem;
 }
-.section1__p, .about__p{
+.section1__p, .about__p, .about__second__p{
     text-align: left;
     color: #312e5c;
     font-size: 2em;
     line-height: 1.2em;
     margin-top: 3rem;
 }
-.section1__h1, .about__h1{
+.section1__h1, .about__h1, .about__second__h1{
     text-align: left;
     color: #312e5c;
     font-size: 4em;
 }
 .section1__img{
     width: 53%;
+}
+
+.about__second__content{
+    margin-right: 8rem;
+}
+.about{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
 }
 .btn--audit{
     background-color: #FFF;
@@ -252,7 +261,9 @@ strong{
     text-align: center;
     margin-bottom: 1.5rem;
 }
-
+.section1--influencer{
+    margin-left: 6rem;
+}
 /* LOGIN */
 
 .container__login{
@@ -323,4 +334,42 @@ strong{
 .logo__login{
     align-self: center;
     margin-right: 1.2rem;
+}
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    background-color: #f7f7f7;
+}
+footer h2{
+    font-size: 1.5em;
+    margin-bottom: 1.1rem;
+    font-weight: 100;
+}
+.footer__logo{
+    width: 10%;
+}
+.footer__contact{
+    width: 30%;
+}
+.footer__contact__nav{
+    display: flex;
+    flex-direction: column;
+    padding: .6rem;
+}
+.footer__contact__nav a{
+    margin-top: .7rem;
+    color: #bbbcc7;
+}
+.footer__resource{
+    width: 30%;
+}
+.footer__certification{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }

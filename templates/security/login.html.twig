@@ -1,55 +1,65 @@
-{% extends 'security/base.html.twig' %}
-
+{% extends 'base.html.twig' %}
+{% block header %}
+<a href="{{ path('home') }}">Notre offre</a>
+    </div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% endblock %}
 {% block title %}Se connecter{% endblock %}
 
 {% block body %}
-<div class="form__login">
-    <form class="form__login__form" method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
+<div class="container__form">
+    <div class="form__login">
+        <form class="form__login__form" method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
 
-        {# {% if app.user %}
-            <div class="mb-3">
-                Vous êtes connecter en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+            {# {% if app.user %}
+                <div class="mb-3">
+                    Vous êtes connecter en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                </div>
+            {% endif %} #}
+
+            
+
+            <h1 class="form__login__title">Me connecter</h1>
+
+            <a class="btn btn--google" href="">connexion avec GMAIL</a>
+            <p>ou</p>
+            <label class="login__label" for="inputEmail">Email</label>
+            <input class="login__input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+            <label class="login__label" for="inputPassword">Password</label>
+            <input class="login__input" type="password" name="password" id="inputPassword" class="form-control" required>
+
+            <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+            >
+
+            {#
+                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+            #}
+            <a class="form__login__register" href="">Vous n'avez pas de compte ?</a>
+            <div class="form__login__btn">
+                <button class="btn btn--login btn--form" type="submit">
+                    Connexion
+                </button>
+                <a href="">Mot de passe oublié ?</a>
             </div>
-        {% endif %} #}
-
-        
-
-        <h1 class="form__login__title">Me connecter</h1>
-
-        <a class="btn btn--google" href="">connexion avec GMAIL</a>
-        <p>ou</p>
-        <label class="login__label" for="inputEmail">Email</label>
-        <input class="login__input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-        <label class="login__label" for="inputPassword">Password</label>
-        <input class="login__input" type="password" name="password" id="inputPassword" class="form-control" required>
-
-        <input type="hidden" name="_csrf_token"
-            value="{{ csrf_token('authenticate') }}"
-        >
-
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
-            </div>
-        #}
-        <a class="form__login__register" href="">Vous n'avez pas de compte ?</a>
-        <div class="form__login__btn">
-            <button class="btn btn--login btn--form" type="submit">
-                Connexion
-            </button>
-            <a href="">Mot de passe oublié ?</a>
-        </div>
-    </form>
-</div>
-<div class="form__aside">
-    <img src=" {{ asset('assets/images/illus/rocket.png') }} " alt="Illustration d'une fusée qui décolle">
+        </form>
+    </div>
+    <div class="form__aside">
+        <img src=" {{ asset('assets/images/illus/rocket.png') }} " alt="Illustration d'une fusée qui décolle">
+    </div>
 </div>
 {% endblock %}
