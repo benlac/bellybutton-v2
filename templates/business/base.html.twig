@@ -5,6 +5,7 @@
         <title>Bellybutton | {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -21,7 +22,11 @@
                     <a href="{{ path('influencer') }}">Vous êtes influenceurs ?</a>
                 </div>
                 <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
-                <a class="btn btn--header" href="">Créer un <br>compte</a>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+                {% else %}
+                    <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+                {% endif %}
             </nav>
         </header>
         <div class="container">
