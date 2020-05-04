@@ -28,37 +28,8 @@
         </div>
 
         {% endfor %}
-        </div>
-        
+    </div>
+
+    {{ include('blog/_aside.html.twig') }}
 {% endblock %}
 
-{% block blog %}
-        <div class="aside">
-            <h2>Les articles les plus consultés</h2>
-            
-            <div class="aside__article">
-                <img src=" {{ asset('assets/blog/images/miniature.jpeg') }}" alt="">
-                <div class="aside__article__content">
-                    <h3 class="aside__article__tag">TOP 10</h3>
-                    <p class="aside__article__p">10 façons de mieux gérer son temps quand on est influenceur</p>
-                </div>
-            </div>
-            <div class="aside__article">
-                <img src=" {{ asset('assets/blog/images/miniature.jpeg') }}" alt="">
-                <div class="aside__article__content">
-                    <h3 class="aside__article__tag">CONSEILS</h3>
-                    <p class="aside__article__p">10 façons de mieux gérer son temps quand on est influenceur</p>
-                </div>
-            </div>
-            <div class="aside__article">
-                <img src=" {{ asset('assets/blog/images/miniature.jpeg') }}" alt="">
-                <div class="aside__article__content">
-                    <h3 class="aside__article__tag">STRORYTIME</h3>
-                    <p class="aside__article__p">10 façons de mieux gérer son temps quand on est influenceur</p>
-                </div>
-            </div>
-                        
-        </div>
-    </div>
-</div>
-{% endblock %}
