@@ -264,6 +264,26 @@ strong{
 .section1--influencer{
     margin-left: 6rem;
 }
+.last__article{
+    position: relative;
+}
+.last__article__title{
+    position: absolute;
+    bottom: 0;
+}
+.last__article__tag{
+    position: absolute;
+    bottom: 0;
+}
+.articles__all{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.articles{
+    width: 48%;
+}
+
 /* LOGIN */
 
 .container__login{

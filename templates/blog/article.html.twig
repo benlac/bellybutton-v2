@@ -13,28 +13,23 @@
 <div class="container">
     <div class="container__blog">
         <div class="main">
-            <div class="last__article">
-                <a href="">
-                    <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
-                    <span class="last__article__tag">Story time</span>
-                    <h1 class="last__article__title">toto</h1>
-                </a>
-            </div>
-            <h2>Les derniers articles</h2>
-            <div class="articles__all">
-            {% for article in articles %}
-                <div class="articles">
-                    <a href="{{ path('blog_show', {id: article.id}) }}">
-                        <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
-                            <span class="articles__tag"></span>
-                        <h1 class="articles__title"> {{article.title}} </h1>
-                        <p class="articles__text"> {{article.body}} </p>
-                    </a>
-                </div>
-            {% endfor %}
+            <div class="article">   
+                <h1> {{article.title}} </h1>
+                <p class="article__author"><span>Tim pruski</span> <span>@timpruski</span> publié le {{article.createdAt |date("m/d/Y")}}</p>
+                <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
+                <p class="article__content"> {{article.body}} </p>
+            </div> 
+            <h3>Commentaires</h3>
+        {% for comment in article.commentaries %}
+        <div class="comment">
+            <img src="" alt="">
+            <h4> {{comment.username}} </h4>
+            <p> {{comment.body}} </p>
         </div>
+
+        {% endfor %}
         </div>
-        {% dump(articles) %}
+        
 {% endblock %}
 
 {% block blog %}
