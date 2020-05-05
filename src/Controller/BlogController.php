@@ -27,6 +27,9 @@ class BlogController extends AbstractController
         $lastArticle = $articleRepository->findOneBy([],[
             'createdAt' => 'DESC'
         ]);
+        $recentArticle = $articleRepository->findBy([], [
+            'createdAt' => 'DESC'
+        ], 3);
         $tags = $tagRepository->findAll();
 
         $pagination = $paginator->paginate(
@@ -39,7 +42,8 @@ class BlogController extends AbstractController
             'articles' => $pagination,
             'lastArticle' => $lastArticle,
             'tags' => $tags,
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'recentArticle' => $recentArticle,
         ]);
     }
     /**
