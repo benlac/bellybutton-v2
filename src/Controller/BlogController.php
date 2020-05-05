@@ -22,16 +22,20 @@ class BlogController extends AbstractController
         $articles = $articleRepository->findBy([], [
             'createdAt' => 'DESC',
         ]);
+        $lastArticle = $articleRepository->findOneBy([],[
+            'createdAt' => 'DESC'
+        ]);
         $tags = $tagRepository->findAll();
         return $this->render('blog/index.html.twig', [
             'articles' => $articles,
+            'lastArticle' => $lastArticle,
             'tags' => $tags,
         ]);
     }
     /**
      * @Route("/blog/{id}", name="blog_show", methods={"GET", "POST"})
      */
-    public function show(Article $article, $id, TagRepository $tagRepository, Request $request, EntityManagerInterface $em)
+    public function show(Article $article, TagRepository $tagRepository, Request $request, EntityManagerInterface $em)
     {
         $tags = $tagRepository->findAll();
         $commentary = new Commentary();
@@ -43,7 +47,7 @@ class BlogController extends AbstractController
             $em->persist($commentary);
             $em->flush();
 
-            return $this->redirectToRoute('blog_show', ['id' => $id] );
+            return $this->redirectToRoute('blog_show', ['id' => $article->getId()] );
         }
 
         return $this->render('blog/article.html.twig', [

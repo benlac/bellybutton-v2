@@ -1,0 +1,13 @@
+<h2>Les derniers articles</h2>
+            <div class="articles__all">
+                {% for article in articles %}
+                    <div class="articles">
+                        <a href="{{ path('blog_show', {id: article.id}) }}">
+                            <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
+                                <span class="articles__tag"></span>
+                            <h1 class="articles__title"> {{article.title}} </h1>
+                            <p class="articles__text"> {{article.body}} </p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>

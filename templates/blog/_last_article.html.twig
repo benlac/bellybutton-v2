@@ -1,0 +1,9 @@
+<div class="last__article">
+    <a href="{{ path('blog_show', {id: lastArticle.id}) }}">
+        <img src="{{ absolute_url(lastArticle.image) }}" alt="">
+        {% for tag in lastArticle.tags %}
+            <span class="last__article__tag"> {{ tag.name }} </span>
+        {% endfor %}
+        <h1 class="last__article__title"> {{lastArticle.title}} </h1>
+    </a>
+</div>

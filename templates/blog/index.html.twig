@@ -13,28 +13,9 @@
 <div class="container">
     <div class="container__blog">
         <div class="main">
-            <div class="last__article">
-                <a href="">
-                    <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
-                    <span class="last__article__tag">Story time</span>
-                    <h1 class="last__article__title">toto</h1>
-                </a>
-            </div>
-            <h2>Les derniers articles</h2>
-            <div class="articles__all">
-            {% for article in articles %}
-                <div class="articles">
-                    <a href="{{ path('blog_show', {id: article.id}) }}">
-                        <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
-                            <span class="articles__tag"></span>
-                        <h1 class="articles__title"> {{article.title}} </h1>
-                        <p class="articles__text"> {{article.body}} </p>
-                    </a>
-                </div>
-            {% endfor %}
+            {{ include('blog/_last_article.html.twig') }}
+            {{ include('blog/_articles.html.twig') }}
         </div>
-        </div>
-        {% dump(articles) %}
         {{ include('blog/_aside.html.twig') }}
 {% endblock %}
 
