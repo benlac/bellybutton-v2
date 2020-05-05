@@ -2,7 +2,7 @@
                 {% for article in articles %}
                     <div class="articles">
                         <a href="{{ path('blog_show', {id: article.id}) }}">
-                            <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
+                            <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('average')}}" alt="">
                             {% for tag in article.tags %}
                             <span class="articles__tag"> {{ tag.name }} </span>
                             {% endfor %}
