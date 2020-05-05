@@ -1,0 +1,24 @@
+        <div class="aside">
+            <h2>Les articles les plus consultés</h2>
+            {% for article in recentArticle %}
+                <div class="aside__article">
+                    <img src=" {{ asset('assets/blog/images/miniature.jpeg') }}" alt="">
+                    <div class="aside__article__content">
+                        {% for tag in article.tags %}
+                            <h3 class="aside__article__tag"> {{ tag.name }} </h3>
+                        {% endfor %}
+                        <p class="aside__article__p"> {{ article.title }} </p>
+                    </div>
+                </div>
+            {% endfor %}
+            <h2>Thèmes</h2>
+            <div class="tag">
+             {% for tag in tags %}
+                <a href="{{ path('blog_show_tag', {id: tag.id}) }}"> <i class="fas fa-tags"></i> {{ tag.name }} </a>
+             {% endfor %}    
+            </div>      
+        </div>
+    </div>
+</div>
+
+

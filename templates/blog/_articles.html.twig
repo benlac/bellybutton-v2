@@ -1,0 +1,14 @@
+            <div class="articles__all">
+                {% for article in articles %}
+                    <div class="articles">
+                        <a href="{{ path('blog_show', {id: article.id}) }}">
+                            <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
+                            {% for tag in article.tags %}
+                            <span class="articles__tag"> {{ tag.name }} </span>
+                            {% endfor %}
+                            <h1 class="articles__title"> {{article.title}} </h1>
+                            <p class="articles__text"> {{ article.body | slice(0,200)}}... </p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
