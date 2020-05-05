@@ -21,13 +21,13 @@ class BlogController extends AbstractController
      */
     public function index(ArticleRepository $articleRepository, TagRepository $tagRepository, PaginatorInterface $paginator, Request $request)
     {
-        $articles = $articleRepository->findBy([], [
+        $articles = $articleRepository->findBy([ 'status' => true ], [
             'createdAt' => 'DESC',
         ]);
-        $lastArticle = $articleRepository->findOneBy([],[
+        $lastArticle = $articleRepository->findOneBy([ 'status' => true ],[
             'createdAt' => 'DESC'
         ]);
-        $recentArticle = $articleRepository->findBy([], [
+        $recentArticle = $articleRepository->findBy([ 'status' => true ], [
             'createdAt' => 'DESC'
         ], 3);
         $tags = $tagRepository->findAll();
@@ -37,7 +37,7 @@ class BlogController extends AbstractController
             $request->query->getInt('page', 1), 
             10 
         );
-
+    dump($articles);
         return $this->render('blog/index.html.twig', [
             'articles' => $pagination,
             'lastArticle' => $lastArticle,

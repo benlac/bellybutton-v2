@@ -40,6 +40,10 @@ class Role
     {
         $this->createdAt = new \DateTime();
     }
+    public function __toString()
+    {
+        return $this->label;
+    }
 
     public function getId(): ?int
     {
