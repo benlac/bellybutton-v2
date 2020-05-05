@@ -25,7 +25,7 @@
             <h2>Thèmes</h2>
             <div class="tag">
              {% for tag in tags %}
-                <a href=""> {{ tag.name }} </a>
+                <a href="{{ path('blog_show_tag', {id: tag.id}) }}"> {{ tag.name }} </a>
              {% endfor %}    
             </div>      
         </div>

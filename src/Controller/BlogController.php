@@ -2,15 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Tag;
 use App\Entity\Article;
 use App\Entity\Commentary;
 use App\Form\CommentaryType;
 use App\Repository\TagRepository;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class BlogController extends AbstractController
 {
@@ -54,6 +55,18 @@ class BlogController extends AbstractController
             'article' => $article,
             'tags' => $tags,
             'form' => $form->createView(),
+        ]);
+    }
+    /**
+     * @Route("/blog/tag/{id}", name="blog_show_tag", methods={"GET"})
+     */
+    public function showByTag(ArticleRepository $articleRepository, Tag $tag, TagRepository $tagRepository)
+    {
+        $articles = $articleRepository->findByTag($tag);
+        $tags = $tagRepository->findAll();
+        return $this->render('blog/list_tag.html.twig', [
+            'articles' => $articles,
+            'tags' => $tags,
         ]);
     }
 }
