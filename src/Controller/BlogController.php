@@ -9,6 +9,7 @@ use App\Form\CommentaryType;
 use App\Repository\TagRepository;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,7 +19,7 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog", name="blog", methods={"GET"})
      */
-    public function index(ArticleRepository $articleRepository, TagRepository $tagRepository)
+    public function index(ArticleRepository $articleRepository, TagRepository $tagRepository, PaginatorInterface $paginator, Request $request)
     {
         $articles = $articleRepository->findBy([], [
             'createdAt' => 'DESC',
@@ -27,10 +28,18 @@ class BlogController extends AbstractController
             'createdAt' => 'DESC'
         ]);
         $tags = $tagRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $articles, 
+            $request->query->getInt('page', 1), 
+            10 
+        );
+
         return $this->render('blog/index.html.twig', [
-            'articles' => $articles,
+            'articles' => $pagination,
             'lastArticle' => $lastArticle,
             'tags' => $tags,
+            'pagination' => $pagination
         ]);
     }
     /**
@@ -60,13 +69,21 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog/tag/{id}", name="blog_show_tag", methods={"GET"})
      */
-    public function showByTag(ArticleRepository $articleRepository, Tag $tag, TagRepository $tagRepository)
+    public function showByTag(ArticleRepository $articleRepository, Tag $tag, TagRepository $tagRepository, PaginatorInterface $paginator, Request $request)
     {
         $articles = $articleRepository->findByTag($tag);
         $tags = $tagRepository->findAll();
+
+        $pagination = $paginator->paginate(
+            $articles, 
+            $request->query->getInt('page', 1), 
+            10
+        );
+
         return $this->render('blog/list_tag.html.twig', [
-            'articles' => $articles,
+            'articles' => $pagination,
             'tags' => $tags,
+            'pagination' => $pagination
         ]);
     }
 }

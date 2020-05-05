@@ -16,5 +16,8 @@
             {{ include('blog/_articles.html.twig') }}
         </div>
         {{ include('blog/_aside.html.twig') }}
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
 {% endblock %}
 
