@@ -1,0 +1,46 @@
+easy_admin:
+   site_name: 'Bellybutton' 
+   entities:
+    Article:
+      class: App\Entity\Article
+      form:
+        fields:
+          - {property: 'title'}
+          - {property: 'subtitle'}
+          - {property: 'body'}
+          - {property: 'image'}
+          - {property: 'status'}
+          - {property: 'tags'}
+    Commentary:
+      class: App\Entity\Commentary
+      form:
+        fields:
+          - {property: 'username'}
+          - {property: 'body'}
+          - {property: 'article'}
+    Tag:
+      class: App\Entity\Tag
+      form:
+        fields:
+          - {property: 'name'}
+          - {property: 'articles'}
+    User:
+      class: App\Entity\User
+      form:
+        fields:
+          - {property: 'email'}
+          - {property: 'lastname'}
+          - {property: 'status'}
+          - {property: 'idInstagram'}
+          - {property: 'idFacebook'}
+          - {property: 'idYoutube'}
+          - {property: 'idSnapchat'}
+          - {property: 'idTiktok'}
+          - {property: 'userRoles'}
+    Role:
+      class: App\Entity\Role
+      form:
+        fields:
+          - {property: 'name'}
+          - {property: 'label'}
+

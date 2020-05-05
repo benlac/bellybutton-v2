@@ -81,6 +81,10 @@ class Article
         $this->status = 1;
         $this->createdAt = new \DateTime();
     }
+    public function __toString()
+    {
+        return $this->title;
+    }
 
     public function getId(): ?int
     {
