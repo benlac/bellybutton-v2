@@ -283,7 +283,13 @@ strong{
 .articles{
     width: 48%;
 }
-
+.tag{
+    display: flex;
+    flex-direction: column;
+}
+.btn--comment{
+    color: #292a2b;
+}
 /* LOGIN */
 
 .container__login{

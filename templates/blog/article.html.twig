@@ -19,17 +19,10 @@
                 <img src="{{ asset('assets/blog/images/blog-1.jpeg') }}" alt="">
                 <p class="article__content"> {{article.body}} </p>
             </div> 
-            <h3>Commentaires</h3>
-        {% for comment in article.commentaries %}
-        <div class="comment">
-            <img src="" alt="">
-            <h4> {{comment.username}} </h4>
-            <p> {{comment.body}} </p>
+
+            {{ include('blog/_comment.html.twig') }}
         </div>
+            {{ include('blog/_aside.html.twig') }}
 
-        {% endfor %}
-    </div>
-
-    {{ include('blog/_aside.html.twig') }}
 {% endblock %}
 

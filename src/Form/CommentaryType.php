@@ -13,12 +13,8 @@ class CommentaryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', TextType::class, [
-                'empty_data' => ''
-            ])
-            ->add('body', TextType::class, [
-                'empty_data' => ''
-            ])
+            ->add('username', TextType::class)
+            ->add('body', TextType::class)
         ;
     }
 
