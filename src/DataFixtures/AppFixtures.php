@@ -118,11 +118,11 @@ class AppFixtures extends Fixture
         }
         //Articles
         $articlesList = [];
-        for($i = 0; $i < 20; $i++){
+        for($i = 1; $i < 31; $i++){
             $article = new Article();
-            $article->setTitle($faker->unique()->realText($maxNbChars = 15));
-            $article->setSubtitle($faker->unique()->realText($maxNbChars = 10));
-            $article->setImage($faker->imageUrl($width = 640, $height = 480));
+            $article->setTitle($faker->unique()->realText($maxNbChars = 80));
+            $article->setSubtitle($faker->unique()->realText($maxNbChars = 60));
+            $article->setImage($i . '.jpeg');
             $article->setBody($faker->unique()->realText($maxNbChars = 2000));
             $article->addTag($tagLists[array_rand($tagLists)]);
             $article->addUser($adminLists[array_rand($adminLists)]);

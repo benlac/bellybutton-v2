@@ -1,15 +1,21 @@
-<h3>Commentaires</h3>
-{{ form_start(form) }}
-{{ form_row(form.username) }}
-    {{ form_row(form.body) }}
-    <button type="submit" class="btn btn--comment">Ajouter</button>
-{{ form_end(form) }}
+<div class="comment">
+    <h3 class="comment__title">Commentaires</h3>
+    <hr>
+    {{ form_start(form) }}
+    {{ form_row(form.username) }}
+        {{ form_row(form.body) }}
+        <button type="submit" class="btn btn--comment">Ajouter</button>
+    {{ form_end(form) }}
 
-{% for comment in article.commentaries %}
-        <div class="comment">
-            <img src="" alt="">
-            <h4> {{comment.username}} </h4>
-            <p> {{comment.body}} </p>
-        </div>
+    {% for comment in article.commentaries %}
+            <div class="comment__display">
+                <i class="fas fa-user-circle fa-3x"></i>
+                <div class="comment__display__content">
+                    <h4 class="comment__display__title"> {{comment.username}} </h4>
+                    <p class="comment__display__text"> {{comment.body}} </p>
+                </div>
+            </div>
+            <hr>
 
-        {% endfor %}
+    {% endfor %}
+</div>

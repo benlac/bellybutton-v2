@@ -241,6 +241,7 @@ strong{
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
+    align-self: center;
 }
 .aside__article__tag{
     text-align: start;
@@ -263,14 +264,25 @@ strong{
 }
 .last__article{
     position: relative;
+    margin-bottom: 2rem;
 }
-.last__article__title{
+.last__article__content{
     position: absolute;
-    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    bottom: 20px;
 }
 .last__article__tag{
-    position: absolute;
-    bottom: 0;
+    color: #e5e5e5;
+    text-align: center;
+}
+.last__article__tag i{
+    color: #e5e5e5;
+}
+.last__article__title{
+    color: #fff;
+    font-size: 2.7em;
+    text-align: center;
 }
 .articles__all{
     display: flex;
@@ -283,9 +295,79 @@ strong{
 .tag{
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+}
+.tag h2{
+    margin-bottom: 1rem;
+}
+.tag a {
+    padding: .5rem 0;
+    font-weight: 100;
+    color: #e5e5e5;
+}
+.tag i{
+    color: #e5e5e5;
 }
 .btn--comment{
     color: #292a2b;
+    margin-top: 1.5rem;
+}
+.comment__textarea{
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    height: 100px;
+    margin-top: 1.5rem;
+}
+.main__blog__title{
+    margin-bottom: 2rem;
+}
+.articles{
+    margin-bottom: 2rem;
+}
+.articles__position{
+    position: relative;
+}
+.articles__tag{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #FFF;
+    padding: .3rem;
+}
+.articles__title{
+    font-size: 1.8em;
+}
+.articles__text{
+    font-family: 'NeueHaasDisplay-Medium', sans-serif;
+    font-size: 1.1em;
+    text-align: left;
+}
+.navigation{
+    text-align: center;
+    font-size: 1.8em;
+}
+.article__content{
+    color: #333;
+    letter-spacing: -.1px;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 1.5em;
+}
+.article__tag, .article__tag i{
+    color: #e5e5e5;
+}
+.comment{
+    margin: 2rem 0;
+}
+.comment__display{
+    display: flex;
+
+    margin-top: 2rem;
+}
+.comment__display__content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
 }
 /* LOGIN */
 

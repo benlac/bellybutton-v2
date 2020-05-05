@@ -14,12 +14,13 @@
     <div class="container__blog">
         <div class="main">
             {{ include('blog/_last_article.html.twig') }}
-            <h2>Les derniers articles</h2>
+            <h2 class="main__blog__title">Les derniers articles</h2>
             {{ include('blog/_articles.html.twig') }}
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
         </div>
         {{ include('blog/_aside.html.twig') }}
-        <div class="navigation">
-            {{ knp_pagination_render(pagination) }}
-        </div>
+        
 {% endblock %}
 

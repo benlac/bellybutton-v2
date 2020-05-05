@@ -1,20 +1,20 @@
         <div class="aside">
             <h2>Les articles les plus consultés</h2>
             {% for article in recentArticle %}
+            
                 <div class="aside__article">
-                    {% if article.image %}
                         <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('thumb') }}" alt="">
-                    {% endif %}
                     <div class="aside__article__content">
                         {% for tag in article.tags %}
+                        <a href="{{ path('blog_show_tag', {id: tag.id}) }}">
                             <h3 class="aside__article__tag"> {{ tag.name }} </h3>
                         {% endfor %}
-                        <p class="aside__article__p"> {{ article.title }} </p>
+                        <p class="aside__article__p"> {{ article.title }} </p></a>
                     </div>
                 </div>
             {% endfor %}
-            <h2>Thèmes</h2>
             <div class="tag">
+                <h2>Thèmes</h2>
              {% for tag in tags %}
                 <a href="{{ path('blog_show_tag', {id: tag.id}) }}"> <i class="fas fa-tags"></i> {{ tag.name }} </a>
              {% endfor %}    
