@@ -123,7 +123,7 @@ class AppFixtures extends Fixture
             $article->setTitle($faker->unique()->realText($maxNbChars = 15));
             $article->setSubtitle($faker->unique()->realText($maxNbChars = 10));
             $article->setImage($faker->imageUrl($width = 640, $height = 480));
-            $article->setBody($faker->unique()->realText($maxNbChars = 200));
+            $article->setBody($faker->unique()->realText($maxNbChars = 2000));
             $article->addTag($tagLists[array_rand($tagLists)]);
             $article->addUser($adminLists[array_rand($adminLists)]);
             $manager->persist($article);
