@@ -8,7 +8,7 @@ easy_admin:
           - {property: 'title'}
           - {property: 'subtitle'}
           - {property: 'body'}
-          - {property: 'image'}
+          - {property: 'imageFile', type: 'file'}
           - {property: 'status'}
           - {property: 'tags'}
     Commentary:
