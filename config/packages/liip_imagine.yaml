@@ -1,0 +1,21 @@
+liip_imagine:
+    filter_sets:
+        thumb:
+            quality: 75
+            filters:
+                thumbnail:
+                    size: [100, 100]
+                    mode: outbound
+        full:
+            quality: 75
+            filters:
+                thumbnail:
+                    size: [900, 600]
+                    mode: outbound
+        average:
+            quality: 75
+            filters:
+                thumbnail:
+                    size: [400, 400]
+                    mode: outbound
+        

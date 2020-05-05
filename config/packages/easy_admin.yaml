@@ -23,7 +23,6 @@ easy_admin:
       form:
         fields:
           - {property: 'name'}
-          - {property: 'articles'}
     User:
       class: App\Entity\User
       form:
@@ -31,12 +30,12 @@ easy_admin:
           - {property: 'email'}
           - {property: 'lastname'}
           - {property: 'status'}
+          - {property: 'userRoles'}
           - {property: 'idInstagram'}
           - {property: 'idFacebook'}
           - {property: 'idYoutube'}
           - {property: 'idSnapchat'}
           - {property: 'idTiktok'}
-          - {property: 'userRoles'}
     Role:
       class: App\Entity\Role
       form:

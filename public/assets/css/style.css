@@ -237,9 +237,6 @@ strong{
     display: flex;
     margin-top: 1.5rem;
 }
-.aside__article img{
-    width: 10%;
-}
 .aside__article__content{
     display: flex;
     flex-direction: column;

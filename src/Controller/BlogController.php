@@ -23,7 +23,7 @@ class BlogController extends AbstractController
     {
         $articles = $articleRepository->findBy([ 'status' => true ], [
             'createdAt' => 'DESC',
-        ]);
+        ], null, 1);
         $lastArticle = $articleRepository->findOneBy([ 'status' => true ],[
             'createdAt' => 'DESC'
         ]);
@@ -49,10 +49,13 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog/{id}", name="blog_show", methods={"GET", "POST"})
      */
-    public function show(Article $article, TagRepository $tagRepository, Request $request, EntityManagerInterface $em)
+    public function show(Article $article, TagRepository $tagRepository, Request $request, EntityManagerInterface $em, ArticleRepository $articleRepository)
     {
         $tags = $tagRepository->findAll();
         $commentary = new Commentary();
+        $recentArticle = $articleRepository->findBy([ 'status' => true ], [
+            'createdAt' => 'DESC'
+        ], 3);
         $form = $this->createForm(CommentaryType::class, $commentary);
         $form->handleRequest($request);
 
@@ -68,6 +71,7 @@ class BlogController extends AbstractController
             'article' => $article,
             'tags' => $tags,
             'form' => $form->createView(),
+            'recentArticle' => $recentArticle,
         ]);
     }
     /**
@@ -77,7 +81,9 @@ class BlogController extends AbstractController
     {
         $articles = $articleRepository->findByTag($tag);
         $tags = $tagRepository->findAll();
-
+        $recentArticle = $articleRepository->findBy([ 'status' => true ], [
+            'createdAt' => 'DESC'
+        ], 3);
         $pagination = $paginator->paginate(
             $articles, 
             $request->query->getInt('page', 1), 
@@ -87,7 +93,8 @@ class BlogController extends AbstractController
         return $this->render('blog/list_tag.html.twig', [
             'articles' => $pagination,
             'tags' => $tags,
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'recentArticle' => $recentArticle,
         ]);
     }
 }

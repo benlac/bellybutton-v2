@@ -73,7 +73,7 @@ class Article
     private $tags;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Commentary", mappedBy="article")
+     * @ORM\OneToMany(targetEntity="App\Entity\Commentary", mappedBy="article", cascade={"remove"})
      */
     private $commentaries;
 

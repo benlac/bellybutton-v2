@@ -2,7 +2,9 @@
             <h2>Les articles les plus consultés</h2>
             {% for article in recentArticle %}
                 <div class="aside__article">
-                    <img src=" {{ asset('assets/blog/images/miniature.jpeg') }}" alt="">
+                    {% if article.image %}
+                        <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('thumb') }}" alt="">
+                    {% endif %}
                     <div class="aside__article__content">
                         {% for tag in article.tags %}
                             <h3 class="aside__article__tag"> {{ tag.name }} </h3>

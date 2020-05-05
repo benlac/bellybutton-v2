@@ -1,6 +1,6 @@
 <div class="last__article">
     <a href="{{ path('blog_show', {id: lastArticle.id}) }}">
-        <img src="{{ absolute_url(lastArticle.image) }}" alt="">
+        <img src="{{ vich_uploader_asset(lastArticle, 'imageFile') | imagine_filter('full') }}" alt="">
         {% for tag in lastArticle.tags %}
             <span class="last__article__tag"> <i class="fas fa-tags"></i> {{ tag.name }} </span>
         {% endfor %}
