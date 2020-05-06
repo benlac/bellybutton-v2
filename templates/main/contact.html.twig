@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+    <a href="{{ path('influencer') }}">Vous êtes influenceurs ?</a>
+    </div>
+    <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% endblock %}
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <div class="container container--contact">
+        <h1 class="contact__title">Bonjour, nous somme <span class="contact__title__span">BellyButton,</span><br> Parlons de votre projet. </h1>
+        <div class="contact__btn">
+            <div class="contact__btn__block">
+                <a class="btn btn--contact" href="">
+                    <h3>Demande commerciale</h3>
+                    <p>Contacter le service commercial pour un déploiement important </p>
+                </a>
+            </div>
+            <div class="contact__btn__block">
+                <a class="btn btn--help" href="">
+                    <h3>Besoin d'aide ?</h3>
+                    <p>Ouvrez un ticket un ticket et obtenez de l'aide</p>
+                </a>
+            </div>
+        </div>
+        <div class="contact__form">
+            <div class="reminder">
+                <h3>Vous pouvez <br> programmer un rappel.</h3>
+                <p>En cliquant <a href="">ici</a>. </p>
+            </div>
+            <div class="contact__form__post">
+                {{ form_start(form) }}
+                <div class="contact__error">
+                    {{ form_errors(form.fullname) }}
+                </div>
+                {{ form_widget(form.fullname) }}
+                
+                <div class="contact__error">
+                    {{ form_errors(form.company) }}
+                </div>
+                {{ form_widget(form.company) }}
+
+                <div class="contact__error">
+                    {{ form_errors(form.email) }}
+                </div>
+                {{ form_widget(form.email) }}
+
+                <div class="contact__error">
+                    {{ form_errors(form.message) }}
+                </div>
+                {{ form_widget(form.message) }}
+
+                <button class="btn btn--contact-form">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}  
