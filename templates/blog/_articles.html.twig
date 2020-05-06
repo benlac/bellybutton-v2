@@ -11,7 +11,7 @@
                         </div>
                             <a href="{{ path('blog_show', {id: article.id}) }}">
                                 <h1 class="articles__title"> {{article.title}} </h1>
-                                <p class="articles__text"> {{ article.body | slice(0,100)}}... </p>
+                                <p class="articles__text"> {{ article.body | slice(0,100) | raw }}...</p>
                             </a>
                     </div>
                 {% endfor %}
