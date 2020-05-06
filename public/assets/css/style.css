@@ -313,6 +313,12 @@ strong{
 .tag i{
     color: #e5e5e5;
 }
+.select{
+    color: #292a2b!important;
+}
+.select i{
+    color: #292a2b;
+}
 .btn--comment{
     color: #292a2b;
     margin-top: 1.5rem;
