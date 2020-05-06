@@ -35,6 +35,7 @@ class MainController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             dump($contact);
+            //TODO mise en place du mailer
         }
         return $this->render('main/contact.html.twig', [
             'form' => $form->createView(),
