@@ -37,7 +37,6 @@ class BlogController extends AbstractController
             $request->query->getInt('page', 1), 
             10 
         );
-    dump($articles);
         return $this->render('blog/index.html.twig', [
             'articles' => $pagination,
             'lastArticle' => $lastArticle,

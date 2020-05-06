@@ -17,13 +17,14 @@ class CommentaryType extends AbstractType
             ->add('username', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Votre nom'
+                    'placeholder' => 'Pseudo',
+                    'class' => 'comment__input'
                 ]
             ])
             ->add('body', TextareaType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Votre commentaire',
+                    'placeholder' => 'Un commentaire ?',
                     'class' => 'comment__textarea'
                 ]
             ])

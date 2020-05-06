@@ -258,6 +258,9 @@ strong{
 .article__content{
     text-align: center;
     margin-bottom: 1.5rem;
+    width: 88%;
+    margin: 0 auto;
+    text-align: left;
 }
 .section1--influencer{
     margin-left: 6rem;
@@ -265,6 +268,7 @@ strong{
 .last__article{
     position: relative;
     margin-bottom: 2rem;
+    text-align: center;
 }
 .last__article__content{
     position: absolute;
@@ -283,6 +287,7 @@ strong{
     color: #fff;
     font-size: 2.7em;
     text-align: center;
+    text-shadow: 0px 0px 20px rgba(0,0,0,0.65);
 }
 .articles__all{
     display: flex;
@@ -317,6 +322,7 @@ strong{
     border: 1px solid #e5e5e5;
     height: 100px;
     margin-top: 1.5rem;
+    font-size: 1.2em;
 }
 .main__blog__title{
     margin-bottom: 2rem;
@@ -332,15 +338,21 @@ strong{
     bottom: 0;
     left: 0;
     background: #FFF;
-    padding: .3rem;
+    padding: .5rem;
 }
 .articles__title{
     font-size: 1.8em;
+    margin-top: 1.5rem;
+}
+.articles__title:hover{
+    color: purple;
+    text-decoration: underline;
 }
 .articles__text{
     font-family: 'NeueHaasDisplay-Medium', sans-serif;
     font-size: 1.1em;
     text-align: left;
+    margin-top: .5rem;
 }
 .navigation{
     text-align: center;
@@ -368,6 +380,12 @@ strong{
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
+}
+.pseudo__admin{
+    color: purple;
+}
+.comment__input{
+    font-size: 1.2em;
 }
 /* LOGIN */
 

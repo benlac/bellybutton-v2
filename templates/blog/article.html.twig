@@ -15,7 +15,7 @@
         <div class="main">
             <div class="article">   
                 <h1> {{article.title}} </h1>
-                <p class="article__author"><span>Tim pruski</span> <span>@timpruski</span> publié le {{article.createdAt |date("m/d/Y")}}</p>
+                <p class="article__author"><span>Tim pruski</span> <span class="pseudo__admin">@timpruski</span> publié le {{article.createdAt |date("m/d/Y")}}</p>
                 <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('full') }}" alt="">
                 <p class="article__content"> {{article.body}} </p>
                 {% for tag in article.tags %}

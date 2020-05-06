@@ -2,14 +2,16 @@
                 {% for article in articles %}
                     <div class="articles">
                         <div class="articles__position">
-                            <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('average')}}" alt="">
+                            {% if article.image %}
+                                <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('average')}}" alt="">
+                            {% endif %}
                             {% for tag in article.tags %}
                             <a class="articles__tag" href="{{ path('blog_show_tag', {id: tag.id}) }}"> <i class="fas fa-tags"></i> {{ tag.name }} </a>
                             {% endfor %}
                         </div>
                             <a href="{{ path('blog_show', {id: article.id}) }}">
                                 <h1 class="articles__title"> {{article.title}} </h1>
-                                <p class="articles__text"> {{ article.body | slice(0,200)}}... </p>
+                                <p class="articles__text"> {{ article.body | slice(0,100)}}... </p>
                             </a>
                     </div>
                 {% endfor %}

@@ -6,7 +6,7 @@
                         <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('thumb') }}" alt="">
                     <div class="aside__article__content">
                         {% for tag in article.tags %}
-                        <a href="{{ path('blog_show_tag', {id: tag.id}) }}">
+                        <a href="{{ path('blog_show', {id: article.id}) }}">
                             <h3 class="aside__article__tag"> {{ tag.name }} </h3>
                         {% endfor %}
                         <p class="aside__article__p"> {{ article.title }} </p></a>
