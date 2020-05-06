@@ -1,5 +1,9 @@
 easy_admin:
    site_name: 'Bellybutton' 
+   design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
    entities:
     Article:
       class: App\Entity\Article
@@ -7,7 +11,7 @@ easy_admin:
         fields:
           - {property: 'title'}
           - {property: 'subtitle'}
-          - {property: 'body'}
+          - {property: 'body', type: 'fos_ckeditor', type_options: { config_name: 'main_config' }}
           - {property: 'imageFile', type: 'file'}
           - {property: 'status'}
           - {property: 'tags'}

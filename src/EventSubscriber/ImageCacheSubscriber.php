@@ -53,6 +53,5 @@ class ImageCacheSubscriber implements EventSubscriberInterface
         if($entity->getImageFile() instanceof UploadedFile){
             $this->cacheManager->remove($this->uploaderHelper->asset($entity, 'imageFile'));
         }
-        //dump($event->getSubject()->getImageFile());
     }
 }
