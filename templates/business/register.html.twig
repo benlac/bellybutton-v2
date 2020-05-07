@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+    <a href="{{ path('influencer') }}">Vous êtes influenceurs ?</a>
+    </div>
+    <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% endblock %}
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<a href="">Influenceur ? cliquer ici</a>
+<h1>Inscrivez-vous, renseignez quelques <br> informations sur vos besoins, on <br> s'occupe du reste. </h1>
+
+{{ form_start(form) }}
+<button class="btn">Envoyer</button>
+{{ form_end(form) }}
+
+{% endblock %}

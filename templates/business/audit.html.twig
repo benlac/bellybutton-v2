@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+    <a href="{{ path('influencer') }}">Vous êtes influenceurs ?</a>
+    </div>
+    <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% endblock %}
+{% block title %}Votre audit{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Pour recevoir votre devis de <br> campagne d'influence marketing <br> sur mesure, c'est <span>simpe.</span></h1>
+    <p>Répondez au questionnaire puis programmez un rendez-vous avec l'équipe. C'est toujours 100% gratuit.</p>
+    {{ form_start(form) }}
+
+    {{ form_row(form.budget) }}
+
+
+    {{ form_row(form.goal) }}
+
+
+    {{ form_row(form.deadline) }}
+    <button class="btn">Envoyer</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

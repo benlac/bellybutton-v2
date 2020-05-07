@@ -90,6 +90,11 @@ class User implements UserInterface
      */
     private $articles;
 
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $companyName;
+
     public function __construct()
     {
         $this->userRoles = new ArrayCollection();
@@ -343,6 +348,18 @@ class User implements UserInterface
             $this->articles->removeElement($article);
             $article->removeUser($this);
         }
+
+        return $this;
+    }
+
+    public function getCompanyName(): ?string
+    {
+        return $this->companyName;
+    }
+
+    public function setCompanyName(?string $companyName): self
+    {
+        $this->companyName = $companyName;
 
         return $this;
     }
