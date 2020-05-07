@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\AuditType;
 use App\Form\RegisterBusinessType;
 use App\Repository\RoleRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class BusinessController extends AbstractController
@@ -35,7 +36,6 @@ class BusinessController extends AbstractController
             $user->setPassword($encodedPassword);
             $em->persist($user);
             $em->flush();
-            dump($user);
 
             return $this->redirectToRoute('business_success');
         }
@@ -50,5 +50,22 @@ class BusinessController extends AbstractController
     public function success()
     {
         return $this->render('business/success.html.twig');
+    }
+    /**
+     * @Route("/business/audit", name="business_audit", methods={"GET", "POST"})
+     */
+    public function audit(Request $request)
+    {
+        $userLogged = $this->getUser();
+        $form = $this->createForm(AuditType::class);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            dump($data);
+            //TODO envoyer via le mailer, les datas du form et l'utilisateur connecté
+        }
+        return $this->render('business/audit.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }
