@@ -49,7 +49,12 @@
                     </label>
                 </div>
             #}
-            <a class="form__login__register" href="">Vous n'avez pas de compte ?</a>
+            <div class="login__register" >
+               <p class="form__login__register">Vous n'avez pas de compte ?</p>
+               <a class="login__register__link" href="">Influenceur</a>
+               <a href=" {{path('business_register')}} ">Entreprise</a> 
+            </div>
+               
             <div class="form__login__btn">
                 <button class="btn btn--login btn--form" type="submit">
                     Connexion

@@ -1,22 +1,32 @@
 {% extends 'base.html.twig' %}
 {% block header %}
-    <a href="{{ path('influencer') }}">Vous êtes influenceurs ?</a>
-    </div>
-    <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
-    {% else %}
-        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
-    {% endif %}
+{{ include('base/_header_business.html.twig') }}
 {% endblock %}
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-<a href="">Influenceur ? cliquer ici</a>
-<h1>Inscrivez-vous, renseignez quelques <br> informations sur vos besoins, on <br> s'occupe du reste. </h1>
+<div class="container__register">
+    
 
-{{ form_start(form) }}
-<button class="btn">Envoyer</button>
-{{ form_end(form) }}
+{{ include('base/_brand_business.html.twig') }}
 
+    <div class="container container--register">
+        <a href="">Influenceur ? cliquer ici</a>
+        <div class="register__form">
+            <h1>Inscrivez-vous, renseignez quelques <br> informations sur vos besoins, on <br> s'occupe du reste. </h1>
+            <p>C'est 100% gratuit, pas besoin de carte de crédit.</p>
+
+            <a class="btn btn--google" href="">connexion avec GMAIL</a>
+            <p>ou</p>
+            {{ form_start(form) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.password) }}
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.lastname) }}
+            {{ form_row(form.companyName) }}
+            <button class="btn btn--register">Créer un compte et recevoir ma recommandation e-influence</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
 {% endblock %}

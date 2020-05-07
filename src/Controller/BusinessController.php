@@ -56,11 +56,12 @@ class BusinessController extends AbstractController
      */
     public function audit(Request $request)
     {
-        $userLogged = $this->getUser();
         $form = $this->createForm(AuditType::class);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+            $userLogged = $this->getUser();
             $data = $form->getData();
+            dump($userLogged);
             dump($data);
             //TODO envoyer via le mailer, les datas du form et l'utilisateur connecté
         }
