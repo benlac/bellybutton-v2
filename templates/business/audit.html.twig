@@ -13,7 +13,7 @@
 
 {% block body %}
 <div class="container">
-    <h1>Pour recevoir votre devis de <br> campagne d'influence marketing <br> sur mesure, c'est <span>simpe.</span></h1>
+    <h1>Pour recevoir votre devis de <br> campagne d'influence marketing <br> sur mesure, c'est <span>simple.</span></h1>
     <p>Répondez au questionnaire puis programmez un rendez-vous avec l'équipe. C'est toujours 100% gratuit.</p>
     {{ form_start(form) }}
 
@@ -24,7 +24,13 @@
 
 
     {{ form_row(form.deadline) }}
-    <button class="btn">Envoyer</button>
+
+    <h2>Programmez un rappel</h2>
+    <p>Nous vous rappelons quand vous êtes disponibles</p>
+
+    {{ form_row(form.dateRdv) }}
+    {{ form_row(form.hourRdv) }}
+    <button class="btn">Programmer ces dates</button>
     {{ form_end(form) }}
 </div>
 {% endblock %}

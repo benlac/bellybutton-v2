@@ -2,13 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 
 class AuditType extends AbstractType
 {
@@ -44,6 +43,14 @@ class AuditType extends AbstractType
                     'au cours de l\'année' => 'au cours de l\'année',
                     'indeterminé pour le moment' => 'indeterminé pour le moment',
                 ]
+            ])
+            ->add('dateRdv', DateType::class, [
+                'widget' => 'single_text',
+                'label' => 'Choississez la date'
+            ])
+            ->add('hourRdv', TimeType::class, [
+                'widget' => 'single_text',
+                'label' => 'Choississez l\'heure'
             ])
             
         ;
