@@ -1,18 +1,18 @@
 @font-face {
     font-family: "NeueHaasDisplay-Roman";
-    src: url("assets/fonts/NeueHaasDisplay-Roman.ttf");
+    src: url("/assets/font/NeueHaasDisplay-Roman.ttf");
   }
 @font-face {
     font-family: "NeueHaasDisplay-Medium";
-    src: url("assets/fonts/NeueHaasDisplay-Medium.ttf");
+    src: url("/assets/font/NeueHaasDisplay-Medium.ttf");
   }
 @font-face {
     font-family: "NeueHaasDisplay-Light";
-    src: url("assets/fonts/NeueHaasDisplay-Light.ttf");
+    src: url("/assets/font/NeueHaasDisplay-Light.ttf");
   }
   @font-face {
     font-family: "Pistilli Roman";
-    src: url("assets/fonts/Pistilli-Roman.otf");
+    src: url("/assets/font/Pistilli-Roman.otf");
   }
 *{
     font-family: 'NeueHaasDisplay-Light', sans-serif;

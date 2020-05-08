@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+    <a href="{{ path('business') }}">Vous êtes une entreprise ?</a>
+    </div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% endblock %}
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<div class="container__register">
+    
+
+{{ include('base/_brand_business.html.twig') }}
+
+    <div class="container container--register">
+        <a href="">Influenceur ? cliquer ici</a>
+        <div class="register__form">
+            <h1>Inscrivez-vous, on s'occupe du reste. </h1>
+            <p>C'est 100% gratuit, pas besoin de carte de crédit.</p>
+
+            <a class="btn btn--google" href="">connexion avec GMAIL</a>
+            <p>ou</p>
+            {{ form_start(form) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.password) }}
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.lastname) }}
+            <button class="btn btn--register">Créer un compte et recevoir des offres de partenariats</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

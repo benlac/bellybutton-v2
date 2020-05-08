@@ -2,8 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use App\Form\RegisterInfluencerType;
+use App\Repository\RoleRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class InfluencerController extends AbstractController
 {
@@ -13,5 +19,35 @@ class InfluencerController extends AbstractController
     public function influencer()
     {
         return $this->render('influencer/index.html.twig');
+    }
+    /**
+     * @Route("/influencer/register", name="influencer_register", methods={"GET", "POST"})
+     */
+    public function register(Request $request, RoleRepository $roleRepository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder)
+    {
+        $user = new User();
+        $form = $this->createForm(RegisterInfluencerType::class, $user);
+        $form->handleRequest($request);
+        $roleBusiness = $roleRepository->findOneBy(['name' => 'ROLE_INFLUENCER']);
+        if($form->isSubmitted() && $form->isValid()){
+            $user->addUserRole($roleBusiness);
+            $encodedPassword = $encoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($encodedPassword);
+            $em->persist($user);
+            $em->flush();
+
+            return $this->redirectToRoute('influencer_success');
+        }
+        return $this->render('influencer/register.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/influencer/success", name="influencer_success", methods={"GET"})
+     */
+    public function success()
+    {
+        return $this->render('influencer/success.html.twig');
     }
 }
