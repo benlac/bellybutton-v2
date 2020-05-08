@@ -46,7 +46,7 @@ class BlogController extends AbstractController
         ]);
     }
     /**
-     * @Route("/blog/{id}", name="blog_show", methods={"GET", "POST"})
+     * @Route("/blog/{id<\d+>}", name="blog_show", methods={"GET", "POST"})
      */
     public function show(Article $article, TagRepository $tagRepository, Request $request, EntityManagerInterface $em, ArticleRepository $articleRepository)
     {
@@ -74,7 +74,7 @@ class BlogController extends AbstractController
         ]);
     }
     /**
-     * @Route("/blog/tag/{id}", name="blog_show_tag", methods={"GET"})
+     * @Route("/blog/tag/{id<\d+>}", name="blog_show_tag", methods={"GET"})
      */
     public function showByTag(ArticleRepository $articleRepository, Tag $tag, TagRepository $tagRepository, PaginatorInterface $paginator, Request $request)
     {

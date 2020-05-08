@@ -511,6 +511,7 @@ strong{
 .form__login__title{
     color: #292a2b;
     margin-bottom: 2rem;
+    font-size: 2.5em;
 }
 .form__login__register{
     margin: 2rem 0;
@@ -702,6 +703,10 @@ footer h2{
 .register__form h1{
     text-align: left;
 }
+.register__form__text{
+    text-align: left;
+    margin-bottom: 2rem;
+}
 .register__form input, select{
     width: 100%;
     margin-top: .3rem;
@@ -754,4 +759,38 @@ footer h2{
     text-align: left;
     font-size: 1.8em;
     margin-bottom: 2rem;
+}
+
+/* SUCCESS */
+.container--success{
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.btn--success{
+    width: 10%;
+    align-self: center;
+    background-color: #e9eaf2;
+    color: #312e5c;
+    margin-top: 2rem;
+    padding: 1rem 0rem;
+    font-weight: 800;
+    font-size: 1.4em;
+    text-align: center;
+}
+.container--success h1{
+    font-style: italic;
+}
+.container--success h3{
+    font-size: 2em;
+}
+.container--success p{
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+.success__span{
+    text-decoration: underline;
 }

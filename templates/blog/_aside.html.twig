@@ -15,9 +15,9 @@
             {% endfor %}
             <div class="tag">
                 <h2>Thèmes</h2>
-                {% dump(app.request.get('id')) %}
+                {% dump(app.request.attributes.get('_route') == "blog_show_tag") %}
              {% for tag in tags %}
-             {% if tag.id == app.request.get('id') %}
+             {% if tag.id == app.request.get('id') and app.request.attributes.get('_route') == "blog_show_tag" %}
                 <a class="select" href="{{ path('blog_show_tag', {id: tag.id}) }}"> <i class="fas fa-tags"></i> {{ tag.name }} </a>
                 {% else %}
                 <a href="{{ path('blog_show_tag', {id: tag.id}) }}"> <i class="fas fa-tags"></i> {{ tag.name }} </a>
