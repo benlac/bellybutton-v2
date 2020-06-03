@@ -1,0 +1,114 @@
+.btn{
+  color: #FFF;
+  border: none;
+  box-shadow: 0 0 5px 0 hsla(0,0%,47.1%,.3);
+  border-radius:28px;
+  padding:15px 56px;
+  font-size: 1.3em;
+  transition-duration: .3s;
+}
+.btn:hover{
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px 0 hsla(0,0%,47.1%,.3);
+}
+.btn--login{
+  background-color: #312e5c;
+}
+.btn--influencer{
+  background-color: #9f7fc8;
+  margin-top: 2rem;
+}
+.btn--society{
+  background-color: #FFF;
+  color: #312e5c;
+  margin-top: 2rem;
+}
+.btn--header{
+  background-color: #312e5c;
+  font-size: 1.9em;
+  padding: 10px 36px;
+  text-align: center;
+}
+.btn--influencer{
+  background: rgb(67,45,156);
+  background: linear-gradient(90deg, rgba(67,45,156,1) 0%, rgba(44,52,172,1) 49%, rgba(39,54,175,1) 100%);
+  text-align: center;
+  margin-top: 3rem;
+}
+.btn--audit{
+  background-color: #FFF;
+  color: #312e5c;
+  font-size: 1.9em;
+  padding: 10px 36px;
+  text-align: center;
+}
+.btn--project{
+  color: #312e5c;
+  margin-top: 1.5rem;
+  background-color: #e9eaf2;
+}
+.btn--login--blog{
+  background-color: #312e5c;
+  font-size: 1.9em;
+
+}
+.btn--comment{
+  color: #292a2b;
+  margin-top: 1.5rem;
+}
+.btn--form{
+  width: 50%;
+  background: rgb(67,45,156);
+  background: linear-gradient(90deg, rgba(67,45,156,1) 0%, rgba(44,52,172,1) 49%, rgba(39,54,175,1) 100%);
+  border-radius: 5px;
+}
+.btn--google{
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  background-color: #e9eaf2;
+}
+.btn--contact{
+  border-radius: 1px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.btn--help{
+  border-radius: 1px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.btn--contact:hover, .btn--help:hover{
+  box-shadow: 0 0 5px 0 hsla(0,0%,47.1%,.3);;
+  transform: none;
+}
+.btn--contact-form{
+  margin-top: 2rem;
+  background-color: #cbd1fe;
+  padding: 0.5rem 3.5rem;
+}
+.btn--register{
+  background-color: #feb2a0;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 4rem;
+}
+.btn--register:hover{
+  background-color: #ff6540;
+}
+.btn--register-audit{
+  width: 100%;
+  margin-top: 2rem;
+  color: #312e5c;
+}
+.btn--success{
+  width: 10%;
+  align-self: center;
+  background-color: #e9eaf2;
+  color: #312e5c;
+  margin-top: 2rem;
+  padding: 1rem 0rem;
+  font-weight: 800;
+  font-size: 1.4em;
+  text-align: center;
+}

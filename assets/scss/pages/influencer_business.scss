@@ -1,0 +1,100 @@
+.section1, .about, .about__second, .about__third, .about__fourth, .section2{
+  display: flex;
+  margin-top: 6rem;
+  justify-content: space-between;
+}
+.section1__content, .about__content, .about__second__content, .about__third__content, .about__fourth__content, .section2__content{
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.section1__p, .section2__p, .about__p, .about__second__p, .about__third__p, .about__fourth__p{
+  text-align: left;
+  color: #312e5c;
+  font-size: 2em;
+  line-height: 1.4em;
+  margin-top: 3rem;
+}
+.section1__h1, .about__h1, .about__second__h1, .about__third__h1, .about__fourth__h1, .section2__h1{
+  text-align: left;
+  color: #312e5c;
+  font-size: 4em;
+}
+.section1__img, .section2__img{
+  width: 53%;
+}
+
+.brand{
+  display: flex;
+  justify-content: space-around;
+}
+.brand__title{
+  align-self: center;
+  color: #312e5c;
+  font-size: 1.8em;
+  font-family: 'NeueHaasDisplay-Medium', sans-serif;
+}
+.brand img{
+  width: 200px;
+}
+
+.about__second__content{
+  margin-right: 8rem;
+}
+.about{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+strong{
+  color: #FFF;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin-left: 1px;
+}
+.section1__P2{
+  text-align: center;
+  font-size: 1em;
+}
+.about__third__content, .about__fourth__content{
+  width: 50%;
+  padding: 8rem;
+}
+.about__third__img, .about__fourth__img{
+  width: 50%;
+}
+.project{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project__title{
+  font-size: 2em;
+  margin: .6rem;
+}
+.project__subtitle{
+  font-weight: 100;
+  font-size: 1.5em;
+  margin-bottom: 1.5rem;
+}
+.project__span{
+  color: #312e5c;
+  font-weight: 900;
+}
+.project__text{
+  margin: 4rem;
+}
+.project__link{
+  text-decoration: underline;
+}
+
+.section2{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}

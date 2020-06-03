@@ -1,0 +1,83 @@
+.container__register{
+  display: flex;
+}
+.container--register{
+  text-align: center;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+.brand__register{
+  display: flex;
+  background-color: #292a2b;
+  width: 17%;
+  flex-direction: column;
+  justify-content: center;
+}
+.yahoo{
+  color: #FFF;
+  padding: 1.2rem;
+}
+.yahoo__p{
+  color: #FFF;
+  margin-bottom: 4rem;
+}
+.yahoo__yahoo{
+  color: #FFF;
+}
+.yahoo i{
+  color: #FFF;
+}
+.register__form{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+.register__form h1{
+  text-align: left;
+}
+.register__form__text{
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.register__form input, select{
+  width: 100%;
+  margin-top: .3rem;
+  border-radius: 10px;
+  height: 50px;
+  text-align: left;
+  background-color: #eff3f6;
+  padding: 1rem;
+  border: none;
+  outline: none;
+}
+.register__form select{
+  font-size: 1.2em;
+}
+.register__form label{
+  text-align: left;   
+  text-transform: uppercase;
+  color: #afb4b8;
+  font-size: 1.2em;
+}
+.register__form div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.register__form input:focus::-webkit-input-placeholder {
+  color: #312e5c;
+  transition: all .5s ease;
+}
+
+
+.audit__rdv{
+  font-size: 2.2em;
+  margin-top: 2rem;
+}
+.audit__content{
+  text-align: left;
+  font-size: 1.8em;
+  margin-bottom: 2rem;
+}

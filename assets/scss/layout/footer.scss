@@ -1,0 +1,35 @@
+footer{
+  display: flex;
+  width: 100%;
+  padding: 2rem;
+  background-color: #f7f7f7;
+}
+footer h2{
+  font-size: 1.5em;
+  margin-bottom: 1.1rem;
+  font-weight: 100;
+}
+.footer__logo{
+  width: 10%;
+}
+.footer__contact{
+  width: 30%;
+}
+.footer__contact__nav{
+  display: flex;
+  flex-direction: column;
+  padding: .6rem;
+}
+.footer__contact__nav a{
+  margin-top: .7rem;
+  color: #bbbcc7;
+}
+.footer__resource{
+  width: 30%;
+}
+.footer__certification{
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
