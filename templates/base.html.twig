@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Bellybutton | {% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body>
         <header class="header__base">
@@ -23,7 +23,6 @@
             </nav>
         </header>
             {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
         <footer>
             <div class="footer__logo">
                 <img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="" width="30%">
@@ -44,5 +43,8 @@
                 <img src="{{ asset('assets/images/logo/adwords.png') }}" alt="Logo de la certification google AdWords">
             </div>
         </footer>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>
