@@ -11,7 +11,7 @@ const Management = () => (
         placeholder="Rechercher une campagnes..."
       />
     </form>
-  <a className="btn btn--dashboard__refresh" href="">Actualiser</a>
+  <a className="btn btn--dashboard__refresh" href=""><i class="fas fa-sync-alt"></i> Actualiser</a>
   </div>
 );
 

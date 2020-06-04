@@ -16,5 +16,9 @@
     background-color: #4285f4;
     color: #FFF;
     border-radius: 5px;
+    & i {
+      margin-right: 1rem;
+      color: #FFF;
+    }
   }
 }
