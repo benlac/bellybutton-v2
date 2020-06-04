@@ -1,0 +1,38 @@
+.dashboard__campagns {
+  .campagns__headers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2rem 0;
+    .campagns__headers__child {
+      text-align: center;
+    }
+  }
+  .campagns__row {
+    border-bottom: 1px solid #e2e2e2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    .campagns__row__child {
+      font-family: "NeueHaasDisplay-Medium", sans-serif;
+      text-align: center;
+      padding: 1rem;
+      &--progress-bar {
+        border: 1px solid #e2e2ee;
+        margin: 1rem;
+        border-radius: 25px;
+        position: relative;
+        .progression {
+          background: rgb(0,37,188);
+          background: linear-gradient(90deg, rgba(0,37,188,1) 0%, rgba(1,71,251,1) 100%);
+          max-width: 100%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-radius: 25px;
+        }
+      }
+    }
+  }
+}

@@ -9,8 +9,10 @@ import './app.scss';
 const App = () => (
   <>
     <Title />
-    <Management />
-    <Campagns />
+    <div className="dashboard__content">
+      <Management />
+      <Campagns progression="80%" />
+    </div>
   </>
 );
 

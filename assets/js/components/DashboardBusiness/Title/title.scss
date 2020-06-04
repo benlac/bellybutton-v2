@@ -1,8 +1,13 @@
 .dashboard__title {
+  display: flex;
+  align-items: center;
   background-color: #e9eaf3;
-  height: 50px;
+  height: 100px;
   margin: 2rem 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
   .dashboard__title__h2 {
-
+    font-family: "NeueHaasDisplay-Medium", sans-serif;
+    margin-left: 8rem;
+    font-size: 1.8em;
   }
 }

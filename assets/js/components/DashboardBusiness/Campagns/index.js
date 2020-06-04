@@ -1,19 +1,23 @@
 import React from 'react';
 
+import Campagn from './Campagn';
+
+import './campagns.scss';
+
 const Campagns = () => (
   <div className="dashboard__campagns">
     <div className="campagns__headers">
-      <div>Nom de la campagne</div>
-      <div>Influenceurs</div>
-      <div>Objectif atteint</div>
-      <div>Date d'ajout</div>
+      <div className="campagns__headers__child">Nom de la campagne</div>
+      <div className="campagns__headers__child">Influenceurs</div>
+      <div className="campagns__headers__child">Objectif atteint</div>
+      <div className="campagns__headers__child">Date d'ajout</div>
     </div>
-    <div className="campagns__row">
-      <div>Lancement nouveau produit</div>
-      <div>12</div>
-      <div>Progress bar</div>
-      <div>01/06/2020</div>
-    </div>
+    <Campagn progression="50%"/>
+    <Campagn progression="20%"/>
+    <Campagn progression="100%"/>
+    <Campagn progression="70%"/>
+    <Campagn progression="10%"/>
+    <Campagn progression="5%"/>
   </div>
 );
 
