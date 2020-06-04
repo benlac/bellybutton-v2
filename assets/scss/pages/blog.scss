@@ -1,0 +1,168 @@
+.container__blog{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.main{
+  width: 60%;
+}
+.aside{
+  width: 35%;
+  margin-top: 2rem;
+}
+.aside__article{
+  display: flex;
+  margin-top: 1.5rem;
+}
+.aside__article__content{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  align-self: center;
+}
+.aside__article__tag{
+  text-align: start;
+  color: #e5e5e5;
+}
+.aside__article__p{
+  text-align: start;
+
+}
+.article__author{
+  text-align: start;
+  margin: 1.5rem 0;
+}
+.article__content{
+  text-align: center;
+  margin-bottom: 1.5rem;
+  width: 88%;
+  margin: 0 auto;
+  text-align: left;
+}
+.section1--influencer{
+  margin-left: 6rem;
+}
+.last__article{
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.last__article__content{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 20px;
+}
+.last__article__tag{
+  color: #e5e5e5;
+  text-align: center;
+}
+.last__article__tag i{
+  color: #e5e5e5;
+}
+.last__article__title{
+  color: #fff;
+  font-size: 2.7em;
+  text-align: center;
+  text-shadow: 0px 0px 20px rgba(0,0,0,0.65);
+}
+.articles__all{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.articles{
+  width: 48%;
+}
+.tag{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.tag h2{
+  margin-bottom: 1rem;
+}
+.tag a {
+  padding: .5rem 0;
+  font-weight: 100;
+  color: #e5e5e5;
+}
+.tag i{
+  color: #e5e5e5;
+}
+.select{
+  color: #292a2b!important;
+}
+.select i{
+  color: #292a2b;
+}
+.comment__textarea{
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  height: 100px;
+  margin-top: 1.5rem;
+  font-size: 1.2em;
+}
+.main__blog__title{
+  margin-bottom: 2rem;
+}
+.articles{
+  margin-bottom: 2rem;
+}
+.articles__position{
+  position: relative;
+}
+.articles__tag{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #FFF;
+  padding: .5rem;
+}
+.articles__title{
+  font-size: 1.8em;
+  margin-top: 1.5rem;
+}
+.articles__title:hover{
+  color: purple;
+  text-decoration: underline;
+}
+.articles__text{
+  font-family: 'NeueHaasDisplay-Medium', sans-serif;
+  font-size: 1.1em;
+  text-align: left;
+  margin-top: .5rem;
+}
+.navigation{
+  text-align: center;
+  font-size: 1.8em;
+}
+.article__content{
+  color: #333;
+  letter-spacing: -.1px;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 1.5em;
+}
+.article__tag, .article__tag i{
+  color: #e5e5e5;
+}
+.comment{
+  margin: 2rem 0;
+}
+.comment__display{
+  display: flex;
+
+  margin-top: 2rem;
+}
+.comment__display__content{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+.pseudo__admin{
+  color: purple;
+}
+.comment__input{
+  font-size: 1.2em;
+}

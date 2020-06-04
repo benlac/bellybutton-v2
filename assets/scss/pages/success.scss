@@ -1,0 +1,22 @@
+.container--success{
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.container--success h1{
+  font-style: italic;
+}
+.container--success h3{
+  font-size: 2em;
+}
+.container--success p{
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+.success__span{
+  text-decoration: underline;
+}

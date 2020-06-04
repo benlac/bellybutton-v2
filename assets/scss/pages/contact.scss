@@ -1,0 +1,69 @@
+.container--contact{
+  text-align: center;
+  width: 50%;
+  align-content: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.contact__title{
+  margin-bottom: 4rem;
+}
+.contact__title__span{
+  color: #cbd1fe;
+}
+.contact__form{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.contact__form__post{
+  width: 50%;
+}
+.contact__form__post input, .contact__form__post textarea{
+  width: 100%;
+  border: none;
+  border-bottom-style: dotted;
+  border-bottom-color: #cdcdcd;
+  transition: all .5s ease;
+  margin-bottom: 2rem;
+}
+.contact__form__post input:focus, .contact__form__post textarea:focus{
+  outline: none;
+  transition: all .2s ease;
+  border-bottom: solid 1px #cbd1fe;
+  transition: all .2s ease;
+}
+
+.contact__form__post input:focus::-webkit-input-placeholder {
+  color: #cbd1fe;
+  transition: all .5s ease;
+}
+.reminder{
+  width: 50%;
+}
+.reminder h3{
+  text-align: left;
+  font-size: 2em;
+  font-weight: 100;
+}
+.reminder p{
+  text-align: left;
+}
+.reminder p a {
+  text-decoration: underline;
+  color: #cbd1fe;
+}
+.contact__btn{
+  display: flex;
+  justify-content: center;
+}
+.contact__btn__block{
+  display: flex;
+  width: 50%;
+}
+.contact__btn__block h3{
+  font-size: 1.6em;
+}
+.contact__btn__block p{
+  font-size: 1em;
+}

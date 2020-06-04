@@ -1,0 +1,28 @@
+{
+    "devDependencies": {
+        "@babel/preset-react": "^7.10.1",
+        "@symfony/webpack-encore": "^0.30.0",
+        "core-js": "^3.0.0",
+        "regenerator-runtime": "^0.13.2",
+        "sass": "^1.26.7",
+        "sass-loader": "^8.0.2",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "start": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "chart.js": "^2.9.3",
+        "prop-types": "^15.7.2",
+        "react": "^16.13.1",
+        "react-chartjs-2": "^2.9.0",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "slugify": "^1.4.0"
+    }
+}

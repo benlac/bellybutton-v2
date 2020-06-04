@@ -1,0 +1,68 @@
+
+
+.stats { 
+  .stats__section1 {
+    display: flex;
+    width: 100%;
+  }
+  .stats__section2 {
+    display: flex;
+  }
+}
+
+.stats-card {
+  background-color: #FFF;
+  border-radius: 5px;
+  padding: .5rem 0 0 .5rem;
+  margin-bottom: 1rem;
+  margin: .5rem;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &--view-by-day {
+    width: 60%;
+  }
+  &--impressions {
+    width: 20%;
+  }
+  &--engagement {
+    width: 20%;
+  }
+  &--view-total {
+    width: 60%;
+  }
+  &--comments {
+    width: 20%;
+  }
+  &--likes {
+    width: 20%;
+  }
+}
+
+.stats-card__title {
+  font-family: "NeueHaasDisplay-Medium", sans-serif;
+  padding: 1rem;
+  font-size: 1.6em;
+}
+.stats-card__content {
+  margin-bottom: 3rem;
+  .stats-card__number {
+    font-family: "NeueHaasDisplay-Medium", sans-serif;
+    font-size: 2em;
+
+  }
+  .stats-card__percent {
+    &--green {
+      color: #46a330;
+    }
+    &--red {
+      color: #bd090c;
+    }
+  }
+  .stats-card__text {
+    font-size: 1em;
+  }
+}
+
+// color negatif percent #bd090c

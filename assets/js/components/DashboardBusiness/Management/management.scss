@@ -1,0 +1,20 @@
+.dashboard__management {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .dashboard__search {
+    width: 25%;
+    .dashboard__input {
+      border-radius: 25px;
+      border: 1px solid #e2e2e2;
+      outline: none;
+      height: 50px;
+      width: 100%;
+    }
+  }
+  .btn--dashboard__refresh {
+    background-color: #4285f4;
+    color: #FFF;
+    border-radius: 5px;
+  }
+}

@@ -69,4 +69,19 @@ class BusinessController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    /**
+     * @Route("/business/dashboard", name="business_dashboard", methods={"GET"})
+     */
+    public function dashboard()
+    {
+        // TODO controller dashboard
+        return $this->render('business/dashboard/campagns.html.twig');
+    }
+    /**
+     * @Route("/business/dashboard/{reactRouting}", name="business_dashboard_stats", defaults={"reactRouting": null})
+     */
+    public function dashboardStat()
+    {
+        return $this->render('business/dashboard/campagns.html.twig');
+    }
 }
