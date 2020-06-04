@@ -12,15 +12,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
+    &:hover {
+      background-color: #e9eaf2;
+    }
     .campagns__row__child {
       font-family: "NeueHaasDisplay-Medium", sans-serif;
       text-align: center;
       padding: 1rem;
-      &--progress-bar {
-        border: 1px solid #e2e2ee;
+      &--progress {
+        display: flex;
+        align-items: center;
+      }
+      .progress-bar {
+        border: none;
         margin: 1rem;
         border-radius: 25px;
         position: relative;
+        height: 25px;
+        width: 100%;
+        box-shadow: inset 0px 10px 4px -9px #e2e2ee;
         .progression {
           background: rgb(0,37,188);
           background: linear-gradient(90deg, rgba(0,37,188,1) 0%, rgba(1,71,251,1) 100%);
@@ -36,3 +46,4 @@
     }
   }
 }
+
