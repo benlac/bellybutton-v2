@@ -9,7 +9,7 @@ const Campagn = ({ progression, title }) => (
   })}`} >
   <div className="campagns__row">
     <div className="campagns__row__child">{title}</div>
-    <div className="campagns__row__child"><i class="fas fa-users"></i> 12</div>
+    <div className="campagns__row__child"><i className="fas fa-users"></i> 12</div>
     <div className="campagns__row__child campagns__row__child--progress">
       <div
       className="progress-bar"
