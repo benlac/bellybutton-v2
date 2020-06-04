@@ -11,7 +11,7 @@ import './app.scss';
 const App = () => (
   <>
     <Route path="/business/dashboard" exact>
-      <Title />
+      <Title name="Campagnes"/>
       <div className="dashboard__content">
         <Management />
         <Campagns />
