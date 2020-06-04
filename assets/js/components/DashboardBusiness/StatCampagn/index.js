@@ -1,8 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-
-
 import './stat_campagn.scss';
 import Title from '../Title';
 import Sort from './Sort';
