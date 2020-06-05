@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import slugify from 'slugify';
 
-const Campagn = ({ view, viewGoal, name, users }) => {
+const Campagn = ({ view, viewGoal, name, users, createdAt }) => {
   let pourcentage = ( viewGoal - view) / view * 100;
-  if(pourcentage > 100){
+  if(pourcentage >= 100){
     pourcentage = 100;
+  } else if (pourcentage < 0) {
+    pourcentage = 0;
   }
   const pourcentageDisplay = `${Math.round(pourcentage)}%`;
 
@@ -28,7 +30,7 @@ const Campagn = ({ view, viewGoal, name, users }) => {
         </div>
         <div className="number">{pourcentageDisplay}</div>
       </div>
-      <div className="campagns__row__child">01/06/2020</div>
+      <div className="campagns__row__child">{createdAt}</div>
     </div>
     </NavLink>
   );

@@ -11,6 +11,10 @@ const businessMiddleware = (store) => (next) => (action) => {
         store.dispatch(saveData(response.data));
         // console.log(response.data);
       })
+      .catch((error) => {
+        console.warn(error);
+        // @TODO : Gerer les messages d'erreur
+      });
     default:
       next(action);
   }
