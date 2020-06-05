@@ -2,10 +2,10 @@
 
 namespace App\Controller\Api;
 
-use App\Repository\CampaignRepository;
 use App\Repository\RoleRepository;
 use App\Repository\UserRepository;
-use Symfony\Component\HttpFoundation\Request;
+use App\Repository\CampaignRepository;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -17,7 +17,7 @@ class BusinessApiController extends AbstractController
     /**
      * @Route("/campaign/{id<\d+>}", name="_campaign", methods={"GET"})
      */
-    public function list(UserRepository $userRepository, RoleRepository $roleRepository,CampaignRepository $campaignRepository, $id, Request $request)
+    public function list(UserRepository $userRepository, RoleRepository $roleRepository,CampaignRepository $campaignRepository, $id)
     { 
       // Je récupère le role "business"  
       $roleBusiness= $roleRepository->findOneBy(['name' => 'ROLE_BUSINESS']);
@@ -25,7 +25,7 @@ class BusinessApiController extends AbstractController
       $business = $userRepository->getUserByRole($roleBusiness, $id);
       // Récuperation des campagnes liée à l'utilisateur $business
       $campaign = $campaignRepository->getCampaignByBusiness($business);
-      dd($campaign);
-      // TODO Serializer les données
+
+      return $this->json(['campaign' => $campaign], Response::HTTP_OK, [], ['groups' => 'campaign_get']);
     }
 }

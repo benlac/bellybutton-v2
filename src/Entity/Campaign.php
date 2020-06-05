@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CampaignRepository")
@@ -15,81 +16,97 @@ class Campaign
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("campaign_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("campaign_get")
      */
     private $name;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("campaign_get")
      */
     private $price;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("campaign_get")
      */
     private $viewGoal;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups("campaign_get")
      */
     private $view;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups("campaign_get")
      */
     private $nbLike;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups("campaign_get")
      */
     private $nbComment;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups("campaign_get")
      */
     private $totalImpression;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups("campaign_get")
      */
     private $costPerThousand;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups("campaign_get")
      */
     private $engagementRate;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups("campaign_get")
      */
     private $status;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("campaign_get")
      */
     private $finishAt;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("campaign_get")
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups("campaign_get")
      */
     private $updatedAt;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="campaigns")
+     * @Groups("campaign_get")
      */
     private $users;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Support", mappedBy="campaign")
+     * @Groups("campaign_get")
      */
     private $supports;
 

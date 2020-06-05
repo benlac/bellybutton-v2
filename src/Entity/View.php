@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ViewRepository")
@@ -13,16 +14,19 @@ class View
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("campaign_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups("campaign_get")
      */
     private $number;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("campaign_get")
      */
     private $createdAt;
 

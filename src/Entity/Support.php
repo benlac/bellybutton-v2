@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SupportRepository")
@@ -15,26 +16,31 @@ class Support
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("campaign_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("campaign_get")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("campaign_get")
      */
     private $idVideo;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Groups("campaign_get")
      */
     private $network;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("campaign_get")
      */
     private $createdAt;
 
@@ -50,16 +56,19 @@ class Support
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\View", mappedBy="support")
+     * @Groups("campaign_get")
      */
     private $views;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="support")
+     * @Groups("campaign_get")
      */
     private $comments;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Like", mappedBy="support")
+     * @Groups("campaign_get")
      */
     private $likes;
 
