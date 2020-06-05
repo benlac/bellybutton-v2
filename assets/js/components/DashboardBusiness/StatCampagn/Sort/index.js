@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 import './sort.scss';
 
-const Sort = () => (
+const Sort = ({ user }) => (
     <div className="sort">
     <Link
-      to="/business/dashboard"
+      to={`/business/dashboard/${user}`}
       className="dashboard-business__back"
     >
       Retour aux campagnes

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import './stat_campagn.scss';
 import Title from '../Title';
-import Sort from './Sort';
+import Sort from '../../../containers/DashboardBusiness/StatCampagn/Sort';
 import Stats from './Stats';
 
 // TODO créer une fonction qui récupère la campagne en fonction du slug 

@@ -76,7 +76,7 @@ class AppFixtures extends Fixture
         
         //User
         $influencerLists = [];
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 30; $i++){
             $influencer = new User();
             $pseudo = $faker->unique()->firstName();
             $influencer->setEmail($faker->unique()->freeEmail);
@@ -91,19 +91,6 @@ class AppFixtures extends Fixture
             $influencer->addUserRole($influencerRole);
             $manager->persist($influencer);
             $influencerLists[] = $influencer;
-        }
-
-        $businessLists = [];
-        for($i = 0; $i < 10; $i++){
-            $business = new User();
-            $pseudo = $faker->unique()->firstName();
-            $business->setEmail($faker->unique()->freeEmail);
-            $business->setFirstname($pseudo);
-            $business->setLastname($faker->unique()->lastName);
-            $business->setPassword($this->passwordEncoder->encodePassword($business, 'business'));
-            $business->addUserRole($businessRole);
-            $manager->persist($business);
-            $businessLists[] = $business;
         }
 
         $adminLists = [];
@@ -154,7 +141,7 @@ class AppFixtures extends Fixture
 
         // Campaign
         $campaignList = [];
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 30; $i++){
             $campaign = new Campaign();
             $campaign->setName($faker->unique()->bellybuttonCampaign());
             $campaign->setPrice(random_int(1000, 50000));
@@ -168,15 +155,28 @@ class AppFixtures extends Fixture
             $date = new DateTime();
             $date = $date->modify('+'.$i.' month');
             $campaign->setFinishAt($date);
-            $campaign->addUser($businessLists[array_rand($businessLists)]);
-            $campaign->addUser($influencerLists[array_rand($influencerLists)]);
             $manager->persist($campaign);
             $campaignList[] = $campaign;
+        }
+        $businessLists = [];
+        for($i = 0; $i < 30; $i++){
+            $business = new User();
+            $pseudo = $faker->unique()->firstName();
+            $business->setEmail($faker->unique()->freeEmail);
+            $business->setFirstname($pseudo);
+            $business->setLastname($faker->unique()->lastName);
+            $business->setPassword($this->passwordEncoder->encodePassword($business, 'business'));
+            $business->addUserRole($businessRole);
+            for($j = 0; $j < 8; $j++){
+                $business->addCampaign($campaignList[array_rand($campaignList)]);
+            }
+            $manager->persist($business);
+            $businessLists[] = $business;
         }
 
         // Support
         $supportList = [];
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 30; $i++){
             $support = new Support();
             $support->setName($faker->bellybuttonSupport());
             $support->setIdVideo($faker->bellybuttonVideo());

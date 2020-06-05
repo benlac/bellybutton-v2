@@ -8,6 +8,7 @@ use App\Form\RegisterBusinessType;
 use App\Repository\RoleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -61,8 +62,8 @@ class BusinessController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $userLogged = $this->getUser();
             $data = $form->getData();
-            dump($userLogged);
-            dump($data);
+            // dump($userLogged);
+            // dump($data);
             //TODO envoyer via le mailer, les datas du form et l'utilisateur connecté
         }
         return $this->render('business/audit.html.twig', [
@@ -70,15 +71,15 @@ class BusinessController extends AbstractController
         ]);
     }
     /**
-     * @Route("/business/dashboard", name="business_dashboard", methods={"GET"})
+     * @Route("/business/dashboard/{id<\d+>}", name="business_dashboard", methods={"GET"})
      */
-    public function dashboard()
+    public function dashboard(User $user)
     {
-        // TODO controller dashboard
+       //@TODO : Mettre en place un voters pour autoriser uniquement un user Authentifier et avec le role business     
         return $this->render('business/dashboard/campagns.html.twig');
     }
     /**
-     * @Route("/business/dashboard/{reactRouting}", name="business_dashboard_stats", defaults={"reactRouting": null})
+     * @Route("/business/dashboard/{id<\d+>}/{reactRouting}", name="business_dashboard_stats", defaults={"reactRouting": null})
      */
     public function dashboardStat()
     {
