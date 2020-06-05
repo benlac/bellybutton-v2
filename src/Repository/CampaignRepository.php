@@ -47,4 +47,16 @@ class CampaignRepository extends ServiceEntityRepository
         ;
     }
     */
+    /**
+     * Fetch campaign by Business users
+     */
+    public function getCampaignByBusiness($businessId)
+    {
+        return $this->createQueryBuilder('c')
+                    ->join('c.users', 'u')
+                    ->andWhere('u = :business')
+                    ->setParameter('business', $businessId)
+                    ->getQuery()
+                    ->getResult();
+    }
 }
