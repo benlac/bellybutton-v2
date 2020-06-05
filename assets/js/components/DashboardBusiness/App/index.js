@@ -9,22 +9,24 @@ import StatCampagn from '../StatCampagn';
 
 import './app.scss';
 
-const App = ({ fetchDatas }) => {
+const App = ({ fetchDatas, fetchUserId }) => {
   useEffect(() => {
-    console.log('useEffect');
+    const userId = window.location.pathname.substr(20);
+    console.log(userId);
+    fetchUserId(userId);
     fetchDatas();
   }, []);
 
   return (
     <>
-      <Route path="/business/dashboard" exact>
+      <Route path={window.location.pathname} exact>
         <Title name="Campagnes"/>
         <div className="dashboard__content">
           <Management />
           <Campagns />
         </div>
       </Route>
-      <Route path="/business/dashboard/:slug">
+      <Route path={window.location.pathname + '/:slug'}>
         <StatCampagn />
       </Route>
     </>

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import slugify from 'slugify';
 
 const Campagn = ({ progression, title }) => (
-  <NavLink to={`/business/dashboard/${slugify(title, {
+  <NavLink to={`${window.location.pathname}/${slugify(title, {
     lower: true,
   })}`} >
   <div className="campagns__row">
