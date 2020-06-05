@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -19,6 +20,7 @@ class User implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("campaign_get")
      */
     private $id;
 
@@ -26,6 +28,7 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\NotBlank
      * @Assert\Email
+     * @Groups("campaign_get")
      */
     private $email;
     
@@ -39,12 +42,14 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=100)
      * @Assert\NotBlank
+     * @Groups("campaign_get")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=100)
      * @Assert\NotBlank
+     * @Groups("campaign_get")
      */
     private $lastname;
 
@@ -90,6 +95,7 @@ class User implements UserInterface
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Role")
+     * @Groups("campaign_get")
      */
     private $userRoles;
 
@@ -103,12 +109,18 @@ class User implements UserInterface
      */
     private $companyName;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Campaign", mappedBy="users")
+     */
+    private $campaigns;
+
     public function __construct()
     {
         $this->userRoles = new ArrayCollection();
         $this->articles = new ArrayCollection();
         $this->status = 1;
         $this->createdAt = new \DateTime();
+        $this->campaigns = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -368,6 +380,34 @@ class User implements UserInterface
     public function setCompanyName(?string $companyName): self
     {
         $this->companyName = $companyName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Campaign[]
+     */
+    public function getCampaigns(): Collection
+    {
+        return $this->campaigns;
+    }
+
+    public function addCampaign(Campaign $campaign): self
+    {
+        if (!$this->campaigns->contains($campaign)) {
+            $this->campaigns[] = $campaign;
+            $campaign->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCampaign(Campaign $campaign): self
+    {
+        if ($this->campaigns->contains($campaign)) {
+            $this->campaigns->removeElement($campaign);
+            $campaign->removeUser($this);
+        }
 
         return $this;
     }
