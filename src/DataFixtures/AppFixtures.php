@@ -2,15 +2,21 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
 use App\Entity\Tag;
 use App\Entity\Role;
+use App\Entity\User;
+use App\Entity\View;
+use App\Entity\Article;
+use App\Entity\Support;
+use App\Entity\Campaign;
+use App\Entity\Commentary;
+use Doctrine\DBAL\Connection;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\DataFixtures\Provider\BellybuttonProvider;
-use App\Entity\Article;
-use App\Entity\Commentary;
-use App\Entity\User;
-use Doctrine\DBAL\Connection;
+use App\Entity\Comment;
+use App\Entity\Like;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
@@ -35,6 +41,11 @@ class AppFixtures extends Fixture
         $connection->query('TRUNCATE user');
         $connection->query('TRUNCATE article_user');
         $connection->query('TRUNCATE commentary');
+        $connection->query('TRUNCATE campaign');
+        $connection->query('TRUNCATE campaign_user');
+        $connection->query('TRUNCATE support');
+        $connection->query('TRUNCATE view');
+        $connection->query('TRUNCATE comment');
     }
     public function load(ObjectManager $manager)
     {
@@ -138,6 +149,79 @@ class AppFixtures extends Fixture
             $commentary->setArticle($articlesList[array_rand($articlesList)]);
             $manager->persist($commentary);
             $commentariesLists[] = $commentary;
+        }
+
+
+        // Campaign
+        $campaignList = [];
+        for($i = 0; $i < 10; $i++){
+            $campaign = new Campaign();
+            $campaign->setName($faker->unique()->bellybuttonCampaign());
+            $campaign->setPrice(random_int(1000, 50000));
+            $campaign->setViewGoal(random_int(100000, 1000000));
+            $campaign->setView(random_int(0, 1000000));
+            $campaign->setNbLike(random_int(0, 9000));
+            $campaign->setNbComment(random_int(0, 9000));
+            $campaign->setTotalImpression($campaign->getNbComment() + $campaign->getNbLike() + $campaign->getView());
+            $campaign->setCostPerThousand(random_int(0, 9000));
+            $campaign->setEngagementRate($campaign->getNbLike() + $campaign->getNbLike() / $campaign->getView());
+            $date = new DateTime();
+            $date = $date->modify('+'.$i.' month');
+            $campaign->setFinishAt($date);
+            $campaign->addUser($businessLists[array_rand($businessLists)]);
+            $manager->persist($campaign);
+            $campaignList[] = $campaign;
+        }
+
+        // Support
+        $supportList = [];
+        for($i = 0; $i < 10; $i++){
+            $support = new Support();
+            $support->setName($faker->bellybuttonSupport());
+            $support->setIdVideo($faker->bellybuttonVideo());
+            $support->setNetwork('Youtube');
+            $support->setCampaign($campaignList[array_rand($campaignList)]);
+            $manager->persist($support);
+            $supportList[] = $support;
+        }
+        
+        // Vues
+        $viewList = [];
+        for($i = 0; $i < 10; $i++){
+            $view = new View();
+            $view->setNumber($faker->numberBetween($min = 0, $max = 9000));
+            $date = new DateTime();
+            $date = $date->modify('+'.$i.' day');
+            $view->setCreatedAt($date);
+            $view->setSupport($supportList[$i]);
+            $manager->persist($view);
+            $viewList[] = $view;
+        }
+
+         // Like
+        $likeList = [];
+         for($i = 0; $i < 10; $i++){
+            $like = new Like();
+            $like->setNumber($faker->numberBetween($min = 0, $max = 9000));
+            $date = new DateTime();
+            $date = $date->modify('+'.$i.' day');
+            $like->setCreatedAt($date);
+            $like->setSupport($supportList[$i]);
+            $manager->persist($like);
+            $likeList[] = $like;
+        }
+
+         // Comment
+        $commentList = [];
+         for($i = 0; $i < 10; $i++){
+            $comment = new Comment();
+            $comment->setNumber(random_int(0, 9000));
+            $date = new DateTime();
+            $date = $date->modify('+'.$i.' day');
+            $comment->setCreatedAt($date);
+            $comment->setSupport($supportList[$i]);
+            $manager->persist($comment);
+            $commentList[] = $comment;
         }
 
 

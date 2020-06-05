@@ -97,6 +97,8 @@ class Campaign
     {
         $this->users = new ArrayCollection();
         $this->supports = new ArrayCollection();
+        $this->createdAt = new \DateTime();
+        $this->status = true;
     }
 
     public function getId(): ?int
