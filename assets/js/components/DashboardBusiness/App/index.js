@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 
 import Title from '../Title';
 import Management from '../Management';
-// import Campagns from '../../../containers/DashboardBusiness/Campagns';
-import Campagns from '../Campagns';
+import Campagns from '../../../containers/DashboardBusiness/Campagns';
+// import Campagns from '../Campagns';
 import StatCampagn from '../StatCampagn';
 
 import './app.scss';
+import Loader from '../Loader';
 
-const App = ({ fetchDatas, fetchUserId }) => {
+const App = ({ fetchDatas, fetchUserId, loading }) => {
   useEffect(() => {
     const userId = window.location.pathname.substr(20);
     fetchUserId(userId);
@@ -20,11 +21,16 @@ const App = ({ fetchDatas, fetchUserId }) => {
   return (
     <>
       <Route path={window.location.pathname} exact>
-        <Title name="Campagnes"/>
-        <div className="dashboard__content">
-          <Management />
-          <Campagns />
-        </div>
+      {loading &&<Loader />}
+      {!loading && (
+        <>
+          <Title name="Campagnes"/>
+          <div className="dashboard__content">
+            <Management />
+            <Campagns />
+          </div>
+        </>
+      )}
       </Route>
       <Route path={window.location.pathname + '/:slug'}>
         <StatCampagn />

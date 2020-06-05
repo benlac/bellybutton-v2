@@ -14,7 +14,12 @@ const Campagns = ({ campaigns }) => {
         <div className="campagns__headers__child">Objectif atteint</div>
         <div className="campagns__headers__child">Date d'ajout</div>
       </div>
-        <Campagn title="Test" progression="34%"/>
+        {campaigns.map((campaign) => {
+          console.log(campaign);
+          return (
+          <Campagn {...campaign} key={campaign.id}/>
+          )
+        })}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import App from '../../../components/DashboardBusiness/Campagns';
 
 
 const mapStateToProps = (state) => ({
-  // campaigns: state.dashboardBusinness.datas,
+  campaigns: state.dashboardBusiness.datas,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -15,5 +15,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(App);
-
-// const pourcentage = ( campaign.viewGoal - campaign.view) / campaign.view * 100;

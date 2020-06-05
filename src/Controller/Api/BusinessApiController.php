@@ -26,6 +26,6 @@ class BusinessApiController extends AbstractController
       // Récuperation des campagnes liée à l'utilisateur $business
       $campaign = $campaignRepository->getCampaignByBusiness($business);
 
-      return $this->json(['campaign' => $campaign], Response::HTTP_OK, [], ['groups' => 'campaign_get']);
+      return $this->json($campaign, Response::HTTP_OK, [], ['groups' => 'campaign_get']);
     }
 }

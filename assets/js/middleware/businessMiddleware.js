@@ -6,11 +6,10 @@ const businessMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_DATAS:
       const userId = store.getState().dashboardBusiness.userId;
-      console.log(userId);
       axios.get(`http://localhost:8000/api/campaign/${userId}`)
       .then((response) => {
         store.dispatch(saveData(response.data));
-        console.log(response.data);
+        // console.log(response.data);
       })
     default:
       next(action);
