@@ -2,6 +2,7 @@
 
 namespace App\Controller\Api;
 
+use App\Service\DateFormatter;
 use App\Repository\RoleRepository;
 use App\Repository\UserRepository;
 use App\Repository\CampaignRepository;
@@ -25,6 +26,10 @@ class BusinessApiController extends AbstractController
       $business = $userRepository->getUserByRole($roleBusiness, $id);
       // Récuperation des campagnes liée à l'utilisateur $business
       $campaign = $campaignRepository->getCampaignByBusiness($business);
+
+      foreach($campaign as $camp){
+        DateFormatter::format($camp, ['createdAt', 'finishAt']);
+      };
 
       return $this->json($campaign, Response::HTTP_OK, [], ['groups' => 'campaign_get']);
     }

@@ -243,36 +243,36 @@ class Campaign
         return $this;
     }
 
-    public function getFinishAt(): ?\DateTimeInterface
+    public function getFinishAt()
     {
         return $this->finishAt;
     }
 
-    public function setFinishAt(\DateTimeInterface $finishAt): self
+    public function setFinishAt($finishAt): self
     {
         $this->finishAt = $finishAt;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    public function setCreatedAt($createdAt): self
     {
         $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    public function setUpdatedAt( $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 

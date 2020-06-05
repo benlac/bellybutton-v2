@@ -4,14 +4,12 @@ import { NavLink } from 'react-router-dom';
 import slugify from 'slugify';
 
 const Campagn = ({ view, viewGoal, name, users }) => {
-  // const pourcentage = `${Math.round(( viewGoal - view) / view * 100)}%`;
   let pourcentage = ( viewGoal - view) / view * 100;
   if(pourcentage > 100){
     pourcentage = 100;
   }
-  
-  console.log(pourcentage);
   const pourcentageDisplay = `${Math.round(pourcentage)}%`;
+
   return (
     <NavLink to={`${window.location.pathname}/${slugify(name, {
       lower: true,
