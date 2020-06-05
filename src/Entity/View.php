@@ -26,6 +26,11 @@ class View
      */
     private $createdAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Support", inversedBy="views")
+     */
+    private $support;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class View
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getSupport(): ?Support
+    {
+        return $this->support;
+    }
+
+    public function setSupport(?Support $support): self
+    {
+        $this->support = $support;
 
         return $this;
     }

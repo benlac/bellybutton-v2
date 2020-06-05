@@ -103,12 +103,18 @@ class User implements UserInterface
      */
     private $companyName;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Campaign", mappedBy="users")
+     */
+    private $campaigns;
+
     public function __construct()
     {
         $this->userRoles = new ArrayCollection();
         $this->articles = new ArrayCollection();
         $this->status = 1;
         $this->createdAt = new \DateTime();
+        $this->campaigns = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -368,6 +374,34 @@ class User implements UserInterface
     public function setCompanyName(?string $companyName): self
     {
         $this->companyName = $companyName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Campaign[]
+     */
+    public function getCampaigns(): Collection
+    {
+        return $this->campaigns;
+    }
+
+    public function addCampaign(Campaign $campaign): self
+    {
+        if (!$this->campaigns->contains($campaign)) {
+            $this->campaigns[] = $campaign;
+            $campaign->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCampaign(Campaign $campaign): self
+    {
+        if ($this->campaigns->contains($campaign)) {
+            $this->campaigns->removeElement($campaign);
+            $campaign->removeUser($this);
+        }
 
         return $this;
     }
