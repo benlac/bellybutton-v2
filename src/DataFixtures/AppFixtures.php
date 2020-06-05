@@ -169,6 +169,7 @@ class AppFixtures extends Fixture
             $date = $date->modify('+'.$i.' month');
             $campaign->setFinishAt($date);
             $campaign->addUser($businessLists[array_rand($businessLists)]);
+            $campaign->addUser($influencerLists[array_rand($influencerLists)]);
             $manager->persist($campaign);
             $campaignList[] = $campaign;
         }
@@ -180,7 +181,7 @@ class AppFixtures extends Fixture
             $support->setName($faker->bellybuttonSupport());
             $support->setIdVideo($faker->bellybuttonVideo());
             $support->setNetwork('Youtube');
-            $support->setCampaign($campaignList[array_rand($campaignList)]);
+            $support->setCampaign($campaignList[$i]);
             $manager->persist($support);
             $supportList[] = $support;
         }
