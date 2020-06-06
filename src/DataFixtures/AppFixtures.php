@@ -92,7 +92,7 @@ class AppFixtures extends Fixture
             $manager->persist($influencer);
             $influencerLists[] = $influencer;
         }
-
+        // Admin
         $adminLists = [];
         for($i = 0; $i < 10; $i++){
             $admin = new User();
@@ -158,21 +158,6 @@ class AppFixtures extends Fixture
             $manager->persist($campaign);
             $campaignList[] = $campaign;
         }
-        $businessLists = [];
-        for($i = 0; $i < 30; $i++){
-            $business = new User();
-            $pseudo = $faker->unique()->firstName();
-            $business->setEmail($faker->unique()->freeEmail);
-            $business->setFirstname($pseudo);
-            $business->setLastname($faker->unique()->lastName);
-            $business->setPassword($this->passwordEncoder->encodePassword($business, 'business'));
-            $business->addUserRole($businessRole);
-            for($j = 0; $j < 8; $j++){
-                $business->addCampaign($campaignList[array_rand($campaignList)]);
-            }
-            $manager->persist($business);
-            $businessLists[] = $business;
-        }
 
         // Support
         $supportList = [];
@@ -181,9 +166,29 @@ class AppFixtures extends Fixture
             $support->setName($faker->bellybuttonSupport());
             $support->setIdVideo($faker->bellybuttonVideo());
             $support->setNetwork('Youtube');
-            $support->setCampaign($campaignList[$i]);
+            for($j = 0; $j < 4; $j++){
+                $support->setCampaign($campaignList[array_rand($campaignList)]);
+            }
             $manager->persist($support);
             $supportList[] = $support;
+        }
+        
+        // user business
+        $businessLists = [];
+        for($i = 0; $i < 5; $i++){
+            $business = new User();
+            $pseudo = $faker->unique()->firstName();
+            $business->setEmail($faker->unique()->freeEmail);
+            $business->setFirstname($pseudo);
+            $business->setLastname($faker->unique()->lastName);
+            $business->setPassword($this->passwordEncoder->encodePassword($business, 'business'));
+            $business->addUserRole($businessRole);
+            for($j = 0; $j < 6; $j++){
+                //@TODO rendre unique une campagne
+                $business->addCampaign($campaignList[array_rand($campaignList)]);
+            }
+            $manager->persist($business);
+            $businessLists[] = $business;
         }
         
         // Vues

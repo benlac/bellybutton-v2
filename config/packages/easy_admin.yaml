@@ -46,4 +46,55 @@ easy_admin:
         fields:
           - {property: 'name'}
           - {property: 'label'}
-
+    Campaign:
+      class: App\Entity\Campaign
+      form:
+        fields:
+          - {property: 'id'}
+          - {property: 'name'}
+          - {property: 'price'}
+          - {property: 'viewGoal'}
+          - {property: 'view'}
+          - {property: 'nbLike'}
+          - {property: 'nbComment'}
+          - {property: 'totalImpression'}
+          - {property: 'costPerThousand'}
+          - {property: 'engagementRate'}
+          - {property: 'status'}
+          - {property: 'finishAt'}
+          - {property: 'createdAt'}
+          - {property: 'supports'}
+    Support:
+      class: App\Entity\Support
+      form:
+        fields:
+          - {property: 'id'}
+          - {property: 'name'}
+          - {property: 'idVideo'}
+          - {property: 'network'}
+          - {property: 'createdAt'}
+          - {property: 'campaign'}
+    View:
+      class: App\Entity\View
+      form:
+        fields:
+          - {property: 'id'}
+          - {property: 'number'}
+          - {property: 'createdAt'}
+          - {property: 'support'}
+    Comment:
+      class: App\Entity\Comment
+      form:
+        fields:
+          - {property: 'id'}
+          - {property: 'number'}
+          - {property: 'createdAt'}
+          - {property: 'support'}
+    Like:
+      class: App\Entity\Like
+      form:
+        fields:
+          - {property: 'id'}
+          - {property: 'number'}
+          - {property: 'createdAt'}
+          - {property: 'support'}

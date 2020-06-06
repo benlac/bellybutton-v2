@@ -117,6 +117,10 @@ class Campaign
         $this->createdAt = new \DateTime();
         $this->status = true;
     }
+    public function __toString()
+    {
+        return $this->name;
+    }
 
     public function getId(): ?int
     {
