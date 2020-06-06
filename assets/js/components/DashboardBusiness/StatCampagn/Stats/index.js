@@ -4,9 +4,16 @@ import { Line } from 'react-chartjs-2';
 import Card from './Card';
 import './stats.scss';
 
-const Stats = () => {
+const Stats = ({ totalImpression, engagementRate, nbLike, nbComment, supports }) => {
+  // @TODO recuperer tous les commentaire et créer une fonction qui les aditione par jours ( idem vue, like)
+  supports.map((support) => (
+    // listComments = support.comments,
+    support.comments.map((comment) => (
+      console.log(comment)
+    ))
+  ));
   const dataByDays = {
-    labels: ['01/06/20', '02/06/20', '03/06/20', '04/06/20', '05/06/20', '06/06/20', '07/06/20', '08/06/20', '09/06/20', '10/06/20', '11/06/20', '12/06/20', '13/06/20', '14/06/20', '15/06/20', '16/06/20'],
+    labels: ['01-06-20', '02/06/20', '03/06/20', '04/06/20', '05/06/20', '06/06/20', '07/06/20', '08/06/20', '09/06/20', '10/06/20', '11/06/20', '12/06/20', '13/06/20', '14/06/20', '15/06/20', '16/06/20'],
     datasets: [
       {
         label: 'Vues par jours',
@@ -50,13 +57,13 @@ const Stats = () => {
         <Card
           nameClass="stats-card stats-card--impressions"
           title="Impressions"
-          stat="374 000"
+          stat={totalImpression}
           percent="+24%"
         />
         <Card
           nameClass="stats-card stats-card--engagement"
           title="Engagement"
-          stat="4,2%"
+          stat={engagementRate}
           percent="-1%"
         />
       </div>
@@ -75,13 +82,13 @@ const Stats = () => {
         <Card
           nameClass="stats-card stats-card--comments"
           title="Commentaires"
-          stat="19000"
+          stat={nbComment}
           percent="+12%"
         />
         <Card
           nameClass="stats-card stats-card--likes"
           title="Likes"
-          stat="31402"
+          stat={nbLike}
           percent="+110%"
         />
       </div>

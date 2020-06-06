@@ -20,7 +20,7 @@ class User implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups("campaign_get")
+     * @Groups({"campaign_get", "user_logged"})
      */
     private $id;
 
@@ -28,7 +28,7 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\NotBlank
      * @Assert\Email
-     * @Groups("campaign_get")
+     * @Groups({"campaign_get", "user_logged"})
      */
     private $email;
     

@@ -6,4 +6,7 @@
 
 {% block body %}
   <div id="root"></div>
+  {% block javascripts %}
+  {{ encore_entry_script_tags('app') }}
+{% endblock %}
 {% endblock %}

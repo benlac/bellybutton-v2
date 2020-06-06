@@ -71,18 +71,11 @@ class BusinessController extends AbstractController
         ]);
     }
     /**
-     * @Route("/business/dashboard/{id<\d+>}", name="business_dashboard", methods={"GET"})
+     * @Route("/business/dashboard/{id<\d+>}/{reactRouting}", name="business_dashboard", defaults={"reactRouting": null})
      */
     public function dashboard(User $user)
     {
        //@TODO : Mettre en place un voters pour autoriser uniquement un user Authentifier et avec le role business     
-        return $this->render('business/dashboard/campagns.html.twig');
-    }
-    /**
-     * @Route("/business/dashboard/{id<\d+>}/{reactRouting}", name="business_dashboard_stats", defaults={"reactRouting": null})
-     */
-    public function dashboardStat()
-    {
         return $this->render('business/dashboard/campagns.html.twig');
     }
 }

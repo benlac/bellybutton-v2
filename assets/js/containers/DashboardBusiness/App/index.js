@@ -6,6 +6,7 @@ import { fetchDatas, fetchUserId } from '../../../actions/dashboardBusiness';
 
 const mapStateToProps = (state) => ({
   loading: state.dashboardBusiness.loading,
+  user: state.dashboardBusiness.userId,
 });
 
 const mapDispatchToProps = (dispatch) => ({

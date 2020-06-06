@@ -23,7 +23,7 @@ const Card = ({
 Card.propTypes = {
   nameClass: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  stat: PropTypes.string.isRequired,
+  stat: PropTypes.number.isRequired,
   percent: PropTypes.string.isRequired,
 }
 
