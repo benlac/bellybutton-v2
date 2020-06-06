@@ -1,4 +1,4 @@
-import { FETCH_USER_ID, SAVE_DATA } from "../actions/dashboardBusiness";
+import { SAVE_DATA, SAVE_USER } from "../actions/dashboardBusiness";
 
 const initialState = {
   datas: [],
@@ -8,10 +8,10 @@ const initialState = {
 
 const nameForTheReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case FETCH_USER_ID:
+    case SAVE_USER:
       return {
         ...state,
-        userId: action.userId,
+        userId: action.user.id
       }
     case SAVE_DATA:
       return {

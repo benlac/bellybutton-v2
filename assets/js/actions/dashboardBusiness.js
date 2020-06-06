@@ -1,14 +1,19 @@
-export const FETCH_DATAS = 'FETCH_DATAS';
 export const FETCH_USER_ID = 'FETCH_USER_ID';
+export const SAVE_USER = 'SAVE_USER';
+export const FETCH_DATAS = 'FETCH_DATAS';
 export const SAVE_DATA = 'SAVE_DATA';
+
+export const fetchUserId = () => ({
+  type: FETCH_USER_ID,
+});
+
+export const saveUser = (user) => ({
+  type: SAVE_USER,
+  user,
+});
 
 export const fetchDatas = () => ({
   type: FETCH_DATAS,
-});
-
-export const fetchUserId = (id) => ({
-  type: FETCH_USER_ID,
-  userId: id,
 });
 
 export const saveData = (data) => ({

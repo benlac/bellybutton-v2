@@ -33,4 +33,19 @@ class BusinessApiController extends AbstractController
 
       return $this->json($campaign, Response::HTTP_OK, [], ['groups' => 'campaign_get']);
     }
+    /**
+     * @Route("/user", name="_user_logged", methods={"GET"})
+     */
+    public function userLogged()
+    { 
+      $user = $this->getUser();
+      if($user === null) {
+        return $this->json([
+            'message' => 'Veuillez vous identifiez'
+            ],
+            Response::HTTP_NOT_FOUND
+        );
+    }
+      return $this->json($user, Response::HTTP_OK, [], ['groups' => 'user_logged']);
+    }
 }

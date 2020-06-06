@@ -10,12 +10,9 @@ import StatCampagn from '../../../containers/DashboardBusiness/StatCampagn';
 import './app.scss';
 import Loader from '../Loader';
 
-const App = ({ fetchDatas, fetchUserId, loading, user }) => {
+const App = ({ fetchUserId, loading, user }) => {
   useEffect(() => {
-    // @TODO recuperer l'id dans l'url via une regex car si id superieur a 2 === appli hs
-    const userId = window.location.pathname.substring(20, 22);
-    fetchUserId(userId);
-    fetchDatas();
+    fetchUserId();
   }, []);
 
   return (
@@ -45,10 +42,12 @@ const App = ({ fetchDatas, fetchUserId, loading, user }) => {
 }
 
 App.propTypes = {
-  fetchDatas: PropTypes.func.isRequired,
   fetchUserId: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-  user: PropTypes.string.isRequired,
+  user: PropTypes.oneOfType([
+    PropTypes.number.isRequired,
+    PropTypes.string.isRequired,
+  ]).isRequired,
 };
 
 export default App;
