@@ -22,6 +22,7 @@ const Reporting = ({ campaigns, sortValue }) => {
   // if (sortValue === 'total') {
   //   supportSorted = supports;
   // };
+  // @TODO gerer le cas ou le support est null
   return (
     <div className="dashboard__campagn-stat">
       <Title name={campaign.name} />

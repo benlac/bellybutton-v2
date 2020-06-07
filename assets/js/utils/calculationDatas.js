@@ -2,7 +2,7 @@ export const sumDatas = (datas) => {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const dataNumber = datas.map((data) => data.number )
   const sumComment = dataNumber.reduce(reducer);
-  
+
   return sumComment;
 };
 
@@ -26,3 +26,4 @@ export const totalImpression = (comments, likes, views) => {
 
 };
 
+// func calcul de total de vues tout les 7 jours
