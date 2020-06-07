@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Title from '../Title';
 import Management from '../Management';
 import Campagns from '../../../containers/DashboardBusiness/Campagns';
-import StatCampagn from '../../../containers/DashboardBusiness/StatCampagn';
+import Reporting from '../../../containers/DashboardBusiness/Reporting';
 
 import './app.scss';
 import Loader from '../Loader';
@@ -33,7 +33,7 @@ const App = ({ fetchUserId, loading, user }) => {
       <Route path={`/business/dashboard/${user}/:slug`}>
       {loading &&<Loader />}
       {!loading && (
-        <StatCampagn />
+        <Reporting />
       )}
       </Route>
     </Switch>

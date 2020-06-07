@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 
-import App from '../../../components/DashboardBusiness/StatCampagn';
+import App from '../../../components/DashboardBusiness/Reporting';
 
 const mapStateToProps = (state) => ({
   campaigns: state.dashboardBusiness.datas,
+  sortValue: state.dashboardBusiness.sortValue,
 });
 
 const mapDispatchToProps = (dispatch) => ({

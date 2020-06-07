@@ -1,9 +1,11 @@
-import { SAVE_DATA, SAVE_USER } from "../actions/dashboardBusiness";
+import { SAVE_DATA, SAVE_USER, SAVE_SORT_VALUE } from "../actions/dashboardBusiness";
 
 const initialState = {
   datas: [],
   userId: '',
   loading: true,
+  sortValue: 'The Beatles - Hey Jude - Allie Sherlock Cover'
+  //todo replace par total
 };
 
 const nameForTheReducer = (state = initialState, action = {}) => {
@@ -19,6 +21,12 @@ const nameForTheReducer = (state = initialState, action = {}) => {
         datas: action.campaigns,
         loading: false,
       }
+    case SAVE_SORT_VALUE:
+      return {
+        ...state,
+        sortValue: action.value,
+      }
+
     default: return state;
   }
 };

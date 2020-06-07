@@ -27,6 +27,19 @@ class BusinessApiController extends AbstractController
       // Récuperation des campagnes liée à l'utilisateur $business
       $campaign = $campaignRepository->getCampaignByBusiness($business);
 
+      // Gestion du format des dates de l'entité View
+      foreach($campaign as $camp){
+        $supports = $camp->getSupports();
+        foreach($supports as $support){
+          $views = $support->getViews();
+          foreach($views as $view) {
+            // dd($view);
+            DateFormatter::format($view, ['createdAt']);
+          }
+        }
+      };
+      
+      // Gestion du format des dates pour l'entité Campaing
       foreach($campaign as $camp){
         DateFormatter::format($camp, ['createdAt', 'finishAt']);
       };

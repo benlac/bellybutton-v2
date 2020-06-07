@@ -7,7 +7,6 @@ const businessMiddleware = (store) => (next) => (action) => {
     case FETCH_USER_ID:
       axios.get('http://localhost:8000/api/user')
         .then((response) => {
-          console.log(response.data);
           store.dispatch(saveUser(response.data));
           store.dispatch(fetchDatas());
         })
@@ -22,7 +21,6 @@ const businessMiddleware = (store) => (next) => (action) => {
       axios.get(`http://localhost:8000/api/campaign/${userId}`)
       .then((response) => {
         store.dispatch(saveData(response.data));
-        console.log(response.data);
       })
       .catch((error) => {
         console.warn(error);
