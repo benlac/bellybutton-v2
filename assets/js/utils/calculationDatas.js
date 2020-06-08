@@ -26,4 +26,4 @@ export const totalImpression = (comments, likes, views) => {
 
 };
 
-// func calcul de total de vues tout les 7 jours
+// Array.isArray(datas) && datas.length == 0 

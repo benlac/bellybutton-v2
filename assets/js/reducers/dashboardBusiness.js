@@ -4,8 +4,7 @@ const initialState = {
   datas: [],
   userId: '',
   loading: true,
-  sortValue: 'The Beatles - Hey Jude - Allie Sherlock Cover'
-  //todo replace par total
+  sortValue: 'total'
 };
 
 const nameForTheReducer = (state = initialState, action = {}) => {

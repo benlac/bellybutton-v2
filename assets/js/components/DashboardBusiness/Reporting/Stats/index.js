@@ -6,11 +6,11 @@ import { sumDatas, engagementRate, totalImpression } from '../../../../utils/cal
 
 import Card from './Card';
 import './stats.scss';
-
+// TODO : gerer pour les vues si state sortValue = total
+// fusioner les dates et les valeurs
 const Stats = ({ likes, comments, views, name }) => {
   const viewsByDay = views.map((view) => view.number );
   const viewsByDate = views.map((view) => view.createdAt );
-
   const dataByDays = {
     labels: viewsByDate,
     datasets: [
@@ -39,10 +39,6 @@ const Stats = ({ likes, comments, views, name }) => {
       }
     ]
   };
-
-  console.log(viewsByDay, viewsByDate);
-  // TODO calcul pour tous les supports
-  // @TODO enlever le state en dur sortValue pour remplacer par total et donc la somme de tous les supports
   return (
     <div className="stats">
       <h2>{name}</h2>

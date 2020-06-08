@@ -6,7 +6,6 @@ import './sort.scss';
 
 const Sort = ({ user, sortValue }) => {
   const handleChange = (e) => {
-    console.log(e.target.value);
     sortValue(e.target.value)
   };
   return (
