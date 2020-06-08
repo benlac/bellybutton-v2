@@ -1,13 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import { getCampaignBySlug } from '../../../../utils/selectors';
 
 import './sort.scss';
 
-const Sort = ({ user, sortValue }) => {
+const Sort = ({ user, sortValue, campaigns }) => {
   const handleChange = (e) => {
     sortValue(e.target.value)
   };
+  const { slug } = useParams();
+  const campaign = getCampaignBySlug(campaigns, slug);
+  const supports = campaign.supports;
+  console.log(supports);
+
   return (
       <div className="sort">
       <Link
@@ -23,21 +31,14 @@ const Sort = ({ user, sortValue }) => {
             id="lists--supports"
             onChange={handleChange}
           >
-            <option
-              className="list__support__item list__support__item" 
-              value="total"
-            >
+          <option className="list__support__item" value="total">
               Stats global
+          </option>
+          {supports.map((support) => (
+            <option key={support.id} className="list__support__item" value={support.name}>
+              {support.name}
             </option>
-            <option className="list__support__item--active" value="The Beatles - Hey Jude - Allie Sherlock Cover">
-            The Beatles - Hey Jude - Allie Sherlock Cover
-            </option>
-            <option className="list__support__item" value="Tuto GraphQL">
-              Tuto GraphQL
-            </option>
-            <option className="list__support__item" value="J'ai trouvé moins intuitif qu'impots.gouv.fr !">
-              J'ai trouvé moins intuitif qu'impots.gouv.fr !
-            </option>
+          ))}
           </select>
         </div>
   );

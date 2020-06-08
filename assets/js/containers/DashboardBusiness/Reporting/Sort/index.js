@@ -6,6 +6,7 @@ import { sortValue } from '../../../../actions/dashboardBusiness';
 
 const mapStateToProps = (state) => ({
   user: state.dashboardBusiness.userId,
+  campaigns: state.dashboardBusiness.datas
 });
 
 const mapDispatchToProps = (dispatch) => ({
