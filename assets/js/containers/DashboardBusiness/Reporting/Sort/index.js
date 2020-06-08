@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import App from '../../../../components/DashboardBusiness/Reporting/Sort';
 
-import { sortValue, resetSortValue } from '../../../../actions/dashboardBusiness';
+import { sortValue } from '../../../../actions/dashboardBusiness';
 
 const mapStateToProps = (state) => ({
   user: state.dashboardBusiness.userId,

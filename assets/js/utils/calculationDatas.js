@@ -25,5 +25,3 @@ export const totalImpression = (comments, likes, views) => {
   return sumComments + sumLikes + sumViews;
 
 };
-
-// Array.isArray(dataNumber) && dataNumber.length == 0 

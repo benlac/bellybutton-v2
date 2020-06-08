@@ -9,8 +9,24 @@ import './stats.scss';
 // TODO : gerer pour les vues si state sortValue = total
 // fusioner les dates et les valeurs
 const Stats = ({ likes, comments, views, name }) => {
-  const viewsByDay = views.map((view) => view.number );
-  const viewsByDate = views.map((view) => view.createdAt );
+   console.log(views);
+
+  // Addtion des nombres qui ont la meme date de création
+  const counts = views.reduce((prev, curr) => {
+    const count = prev.get(curr.createdAt) || 0;
+    prev.set(curr.createdAt, curr.number + count);
+    return prev;
+  }, new Map());
+  
+  const reducedObjArr = [...counts].map(([createdAt, number]) => {
+    return {createdAt, number}
+  })
+  
+  console.log(reducedObjArr);
+
+  const viewsByDay = reducedObjArr.map((view) => view.number );
+  const viewsByDate = reducedObjArr.map((view) => view.createdAt );
+
   const dataByDays = {
     labels: viewsByDate,
     datasets: [

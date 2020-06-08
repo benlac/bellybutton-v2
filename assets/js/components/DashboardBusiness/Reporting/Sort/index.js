@@ -14,7 +14,6 @@ const Sort = ({ user, sortValue, campaigns }) => {
   const { slug } = useParams();
   const campaign = getCampaignBySlug(campaigns, slug);
   const supports = campaign.supports;
-  console.log(supports);
 
   return (
       <div className="sort">
