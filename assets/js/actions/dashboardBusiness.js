@@ -32,4 +32,3 @@ export const resetSortValue = () => ({
   type: RESET_SORT_VALUE,
 });
 
-resetSortValue

@@ -13,9 +13,6 @@ const mapDispatchToProps = (dispatch) => ({
   sortValue: (value) => {
     dispatch(sortValue(value))
   },
-  resetSortValue: () => {
-    dispatch(resetSortValue());
-  }
 });
 
 export default connect(

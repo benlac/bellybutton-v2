@@ -7,13 +7,10 @@ import { getCampaignBySlug } from '../../../../utils/selectors';
 
 import './sort.scss';
 
-const Sort = ({ user, sortValue, campaigns, resetSortValue }) => {
+const Sort = ({ user, sortValue, campaigns }) => {
   const handleChange = (e) => {
     sortValue(e.target.value)
   };
-  const handleValue = () => {
-    resetSortValue();
-  }
   const { slug } = useParams();
   const campaign = getCampaignBySlug(campaigns, slug);
   const supports = campaign.supports;
@@ -24,7 +21,6 @@ const Sort = ({ user, sortValue, campaigns, resetSortValue }) => {
       <Link
         to={`/business/dashboard/${user}`}
         className="dashboard-business__back"
-        onClick={handleValue}
       >
         Retour aux campagnes
       </Link>
