@@ -1,7 +1,7 @@
 export const sumDatas = (datas) => {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const dataNumber = datas.map((data) => data.number )
-  const sumComment = dataNumber.reduce(reducer);
+  const sumComment = Array.isArray(dataNumber) && dataNumber.length !== 0 ? dataNumber.reduce(reducer) : 0;
 
   return sumComment;
 };
@@ -11,9 +11,9 @@ export const engagementRate = (comments, likes, views) => {
   const sumComments = sumDatas(comments);
   const sumLikes = sumDatas(likes);
   const sumViews = sumDatas(views);
-  const result = (sumComments + sumLikes) / sumViews;
-
-  return Math.round( result * 100) / 100;
+  const calcul = (sumComments + sumLikes) / sumViews;
+  const resultat = Math.round( calcul * 100) / 100;
+  return Number.isNaN(Math.round( calcul * 100) / 100) ? 0 : resultat;
 };
 
 export const totalImpression = (comments, likes, views) => {
@@ -26,4 +26,4 @@ export const totalImpression = (comments, likes, views) => {
 
 };
 
-// Array.isArray(datas) && datas.length == 0 
+// Array.isArray(dataNumber) && dataNumber.length == 0 

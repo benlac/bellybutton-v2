@@ -97,9 +97,9 @@ const Stats = ({ likes, comments, views, name }) => {
 }
 
 Stats.propTypes = {
-  likes: PropTypes.array.isRequired,
-  comments: PropTypes.array.isRequired,
-  views: PropTypes.array.isRequired,
+  likes: PropTypes.array,
+  comments: PropTypes.array,
+  views: PropTypes.array,
 };
 
 export default Stats;

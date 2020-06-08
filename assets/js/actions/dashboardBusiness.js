@@ -3,6 +3,7 @@ export const SAVE_USER = 'SAVE_USER';
 export const FETCH_DATAS = 'FETCH_DATAS';
 export const SAVE_DATA = 'SAVE_DATA';
 export const SAVE_SORT_VALUE = 'SAVE_SORT_VALUE';
+export const RESET_SORT_VALUE = 'RESET_SORT_VALUE';
 
 export const fetchUserId = () => ({
   type: FETCH_USER_ID,
@@ -26,3 +27,9 @@ export const sortValue = (value) => ({
   type: SAVE_SORT_VALUE,
   value,
 });
+
+export const resetSortValue = () => ({
+  type: RESET_SORT_VALUE,
+});
+
+resetSortValue

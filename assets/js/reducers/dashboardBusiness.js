@@ -1,4 +1,4 @@
-import { SAVE_DATA, SAVE_USER, SAVE_SORT_VALUE } from "../actions/dashboardBusiness";
+import { SAVE_DATA, SAVE_USER, SAVE_SORT_VALUE, RESET_SORT_VALUE } from "../actions/dashboardBusiness";
 
 const initialState = {
   datas: [],
@@ -24,6 +24,11 @@ const nameForTheReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         sortValue: action.value,
+      }
+    case RESET_SORT_VALUE:
+      return {
+        ...state,
+        sortValue: 'total',
       }
 
     default: return state;
