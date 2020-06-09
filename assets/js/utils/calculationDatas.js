@@ -25,3 +25,36 @@ export const totalImpression = (comments, likes, views) => {
   return sumComments + sumLikes + sumViews;
 
 };
+
+export const addNumbWithSameDate = (views) => {
+  const counts = views.reduce((prev, curr) => {
+    const count = prev.get(curr.createdAt) || 0;
+    prev.set(curr.createdAt, curr.number + count);
+    return prev;
+  }, new Map());
+  
+  const reducedObjArr = [...counts].map(([createdAt, number]) => {
+    return {createdAt, number}
+  })
+  return reducedObjArr;
+}
+
+export const addNumbAndSortEveryFive = (datas) => {
+  let sum = 0;
+  const arraySumNumber = datas.map((item) => {
+    sum += item.number;
+    const newArray = {createdAt: item.createdAt, number: sum};
+    return newArray;
+  })
+
+  const sortEveryFiveDay = arraySumNumber.map((item, key) => {
+    if ( key % 5 === 0 ) {
+      const newArray = {createdAt: item.createdAt, number: item.number};
+      return newArray
+    }
+  })
+
+  const viewEveryFive = sortEveryFiveDay.filter((item) => item !== undefined);
+  
+  return viewEveryFive;
+}

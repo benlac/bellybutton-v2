@@ -2,30 +2,19 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 
-import { sumDatas, engagementRate, totalImpression } from '../../../../utils/calculationDatas';
+import { sumDatas, engagementRate, totalImpression, addNumbWithSameDate, addNumbAndSortEveryFive } from '../../../../utils/calculationDatas';
 
 import Card from './Card';
 import './stats.scss';
-// TODO : gerer pour les vues si state sortValue = total
-// fusioner les dates et les valeurs
+
 const Stats = ({ likes, comments, views, name }) => {
-   console.log(views);
-
-  // Addtion des nombres qui ont la meme date de création
-  const counts = views.reduce((prev, curr) => {
-    const count = prev.get(curr.createdAt) || 0;
-    prev.set(curr.createdAt, curr.number + count);
-    return prev;
-  }, new Map());
+  const reducedObjArr = addNumbWithSameDate(views); 
+  const viewEveryFive = addNumbAndSortEveryFive(reducedObjArr);
   
-  const reducedObjArr = [...counts].map(([createdAt, number]) => {
-    return {createdAt, number}
-  })
-  
-  console.log(reducedObjArr);
-
   const viewsByDay = reducedObjArr.map((view) => view.number );
   const viewsByDate = reducedObjArr.map((view) => view.createdAt );
+  const viewFiveNum = viewEveryFive.map((view) => view.number);
+  const viewFiveDate = viewEveryFive.map((view) => view.createdAt);
 
   const dataByDays = {
     labels: viewsByDate,
@@ -42,7 +31,7 @@ const Stats = ({ likes, comments, views, name }) => {
     ]
   };
   const dataTotal = {
-    labels: ['01/06/20', '07/06/20','14/06/20'],
+    labels: viewFiveDate,
     datasets: [
       {
         label: 'Vues totales',
@@ -51,7 +40,7 @@ const Stats = ({ likes, comments, views, name }) => {
         borderColor: 'rgba(0,37,188,1)',
         pointBackgroundColor: 'rgba(1,71,251,1)',
         pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-        data: [0, 500, 1000]
+        data: viewFiveNum
       }
     ]
   };
