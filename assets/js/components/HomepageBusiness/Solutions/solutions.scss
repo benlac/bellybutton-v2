@@ -1,0 +1,56 @@
+@import '../../../../scss/tools/vars';
+.home__solutions {
+  .home__solutions__title {
+    text-align: center;
+    font-size: 3.2em;
+    font-family: $fontBold;
+  }
+  .home__solutions__subtitle {
+    font-size: 1.8em;
+    margin-top: .5rem;
+    margin-bottom: 4rem;
+  }
+}
+// Card
+// ==================
+.home__cards {
+  display: flex;
+  .home__solutions__card {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 1.5rem;
+    .home__card__img {
+      transform: translatey(0px);
+      animation: float 9s ease-in-out infinite;
+    }
+    .home__card__title {
+      font-family: $fontBold;
+      color: $font;
+      font-size: 1.8em;
+    }
+    .home__card__content {
+      text-align: justify;
+      word-break: break-all;
+      line-height: 1.2em;
+    }
+  }
+}
+.test {
+  animation: float 6s ease-in-out infinite;
+
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}

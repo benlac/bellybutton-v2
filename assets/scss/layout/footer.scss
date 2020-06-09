@@ -24,6 +24,10 @@ footer h2{
   margin-top: .7rem;
   color: #bbbcc7;
 }
+.footer__contact__nav a:hover {
+  animation: swingHorizontal 1s ease;
+  animation-iteration-count: 1;
+}
 .footer__resource{
   width: 30%;
 }
@@ -32,4 +36,32 @@ footer h2{
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+}
+
+@keyframes swingHorizontal
+{
+  15%
+  {
+      transform: translateX(5px);
+  }
+  30%
+  {
+      transform: translateX(-5px);
+  }
+  50%
+  {
+      transform: translateX(3px);
+  }
+  65%
+  {
+      transform: translateX(-3px);
+  }
+  80%
+  {
+      transform: translateX(2px);
+  }
+  100%
+  {
+      transform: translateX(0);
+  }
 }
