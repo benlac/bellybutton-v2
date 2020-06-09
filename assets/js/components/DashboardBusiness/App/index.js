@@ -5,17 +5,14 @@ import PropTypes from 'prop-types';
 import Title from '../Title';
 import Management from '../Management';
 import Campagns from '../../../containers/DashboardBusiness/Campagns';
-import StatCampagn from '../../../containers/DashboardBusiness/StatCampagn';
+import Reporting from '../../../containers/DashboardBusiness/Reporting';
 
 import './app.scss';
 import Loader from '../Loader';
 
-const App = ({ fetchDatas, fetchUserId, loading, user }) => {
+const App = ({ fetchUserId, loading, user }) => {
   useEffect(() => {
-    // @TODO recuperer l'id dans l'url via une regex car si id superieur a 2 === appli hs
-    const userId = window.location.pathname.substring(20, 22);
-    fetchUserId(userId);
-    fetchDatas();
+    fetchUserId();
   }, []);
 
   return (
@@ -36,7 +33,7 @@ const App = ({ fetchDatas, fetchUserId, loading, user }) => {
       <Route path={`/business/dashboard/${user}/:slug`}>
       {loading &&<Loader />}
       {!loading && (
-        <StatCampagn />
+        <Reporting />
       )}
       </Route>
     </Switch>
@@ -45,10 +42,12 @@ const App = ({ fetchDatas, fetchUserId, loading, user }) => {
 }
 
 App.propTypes = {
-  fetchDatas: PropTypes.func.isRequired,
   fetchUserId: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-  user: PropTypes.string.isRequired,
+  user: PropTypes.oneOfType([
+    PropTypes.number.isRequired,
+    PropTypes.string.isRequired,
+  ]).isRequired,
 };
 
 export default App;

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Campagn from './Campagn';
 
 import './campagns.scss';
 
-const Campagns = ({ campaigns }) => {
+const Campagns = ({ campaigns, resetSortValue }) => {
   // console.log(campaigns);
+  useEffect(() => {
+    resetSortValue();
+  });
   return (
     <div className="dashboard__campagns">
       <div className="campagns__headers">

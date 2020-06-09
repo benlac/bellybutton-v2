@@ -1,17 +1,18 @@
-import { FETCH_USER_ID, SAVE_DATA } from "../actions/dashboardBusiness";
+import { SAVE_DATA, SAVE_USER, SAVE_SORT_VALUE, RESET_SORT_VALUE } from "../actions/dashboardBusiness";
 
 const initialState = {
   datas: [],
   userId: '',
   loading: true,
+  sortValue: 'total'
 };
 
 const nameForTheReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case FETCH_USER_ID:
+    case SAVE_USER:
       return {
         ...state,
-        userId: action.userId,
+        userId: action.user.id
       }
     case SAVE_DATA:
       return {
@@ -19,6 +20,17 @@ const nameForTheReducer = (state = initialState, action = {}) => {
         datas: action.campaigns,
         loading: false,
       }
+    case SAVE_SORT_VALUE:
+      return {
+        ...state,
+        sortValue: action.value,
+      }
+    case RESET_SORT_VALUE:
+      return {
+        ...state,
+        sortValue: 'total',
+      }
+
     default: return state;
   }
 };

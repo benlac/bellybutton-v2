@@ -5,7 +5,7 @@ export const slugifyTitle = (title) => slugify(title, {
   lower: true,
 });
 
-export const getRecipeBySlug = (campaigns, slug) => {
+export const getCampaignBySlug = (campaigns, slug) => {
   const campaignFound = campaigns.find((campaign) => {
     const slugForCampaign = slugifyTitle(campaign.name);
    

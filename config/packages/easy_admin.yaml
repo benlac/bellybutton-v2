@@ -50,7 +50,6 @@ easy_admin:
       class: App\Entity\Campaign
       form:
         fields:
-          - {property: 'id'}
           - {property: 'name'}
           - {property: 'price'}
           - {property: 'viewGoal'}
@@ -63,12 +62,10 @@ easy_admin:
           - {property: 'status'}
           - {property: 'finishAt'}
           - {property: 'createdAt'}
-          - {property: 'supports'}
     Support:
       class: App\Entity\Support
       form:
         fields:
-          - {property: 'id'}
           - {property: 'name'}
           - {property: 'idVideo'}
           - {property: 'network'}
@@ -78,7 +75,6 @@ easy_admin:
       class: App\Entity\View
       form:
         fields:
-          - {property: 'id'}
           - {property: 'number'}
           - {property: 'createdAt'}
           - {property: 'support'}
@@ -86,7 +82,6 @@ easy_admin:
       class: App\Entity\Comment
       form:
         fields:
-          - {property: 'id'}
           - {property: 'number'}
           - {property: 'createdAt'}
           - {property: 'support'}
@@ -94,7 +89,6 @@ easy_admin:
       class: App\Entity\Like
       form:
         fields:
-          - {property: 'id'}
           - {property: 'number'}
           - {property: 'createdAt'}
           - {property: 'support'}

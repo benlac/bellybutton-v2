@@ -7,6 +7,16 @@
     padding: .5rem 0 0 .5rem;
     margin: 0 0 1rem .5rem;
   }
+  .list__support {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    width: 15%;
+    margin: 0 0 1rem .5rem;
+    .list__support__item {
+      padding: .5rem;
+    }
+  }
   .dashboard-business__back{
     margin: 1rem .5rem;
     display: inline-block;
