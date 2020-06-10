@@ -75,7 +75,8 @@ class BusinessController extends AbstractController
      */
     public function dashboard(User $user)
     {
-       //@TODO : Mettre en place un voters pour autoriser uniquement un user Authentifier et avec le role business     
+       //@TODO : Mettre en place un voters pour autoriser uniquement un user Authentifier et avec le role business   
+        $this->denyAccessUnlessGranted('SHOW', $user);  
         return $this->render('business/dashboard/campagns.html.twig');
     }
 }
