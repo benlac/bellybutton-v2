@@ -21,7 +21,7 @@ const Solutions = () => (
         </p>
       </div>
       <div className="home__solutions__card">
-        <img className="home__card__img test" src={social} alt=""/>
+        <img className="home__card__img" src={social} alt=""/>
         <h4 className="home__card__title" >Un catalogue d'influenceurs</h4>
         <p className="home__card__content">
           Nos influenceurs multiplateformes couvrent des thématiques variées et possèdent des  communautés de tailles différentes, nous permettant de recommander à nos clients les KOLs de leur marché, pour la réalisation de campagnes d’influences d’autant plus impactantes.
@@ -35,7 +35,7 @@ const Solutions = () => (
         </p>
       </div>
       <div className="home__solutions__card">
-        <img className="home__card__img test" src={brain} alt=""/>
+        <img className="home__card__img" src={brain} alt=""/>
         <h4 className="home__card__title" >Des idées innovantes</h4>
         <p className="home__card__content">
           Notre équipe met à votre disposition tout son savoir faire en matière de tendances pour vous assurer des campagnes en phase avec les attentes du marché, pour un taux de conversion encore et toujours optimisé.

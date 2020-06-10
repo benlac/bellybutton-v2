@@ -2,8 +2,10 @@ import React from 'react';
 
 import Header from '../Header';
 import Solutions from '../Solutions';
+import Contact from '../Contact';
 
 import './app.scss';
+import Teams from '../Teams';
 
 const App = () => (
   <div className="container">
@@ -11,8 +13,8 @@ const App = () => (
     <div>Banner</div>
     <div>Affecting</div>
     <Solutions />
-    <div>Teams</div>
-    <div>Contact</div>
+    <Teams />
+    <Contact />
   </div>
 );
 

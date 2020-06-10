@@ -14,7 +14,7 @@
     .section1__p {
       text-align: left;
       color: #312e5c;
-      font-size: 2em;
+      font-size: 1.6em;
       line-height: 1.4em;
       margin-top: 3rem;
     }
@@ -29,25 +29,25 @@
 
     .img__discussion {
       position: absolute;
-      left: -208px;
-      bottom: -160px;
-      width: 80%;
+      left: 80px;
+      bottom: 30px;
+      width: 8%;
       transform: translatey(0px);
       animation: float 5s ease-in-out infinite;
     }
     .img__heart {
       position: absolute;
-      top: -80px;
-      right: -150px;
-      width: 80%;
+      top: 150px;
+      right: 110px;
+      width: 8%;
       transform: translatey(0px);
       animation: float 5s ease-in-out infinite;
     }
     .img__picture {
       position: absolute;
-      top: -140px;
-      left: -100px;
-      width: 80%;
+      left: 150px;
+      top: 90px;
+      width: 8%;
       transform: translatey(0px);
       animation: float 5s ease-in-out infinite;
     }
