@@ -8,14 +8,18 @@ import './app.scss';
 import Teams from '../Teams';
 
 const App = () => (
-  <div className="container">
-    <Header />
-    <div>Banner</div>
-    <div>Affecting</div>
-    <Solutions />
-    <Teams />
-    <Contact />
-  </div>
+  <>
+    <div className="container">
+      <Header />
+      <div>Banner</div>
+      <div>Affecting</div>
+      <Solutions />
+    </div>
+      <Teams />
+    <div className="container">
+      <Contact />
+    </div>
+  </>
 );
 
 export default App;

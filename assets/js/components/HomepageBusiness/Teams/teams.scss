@@ -3,26 +3,33 @@
 .section2 {
   display: flex;
   margin-top: 6rem;
-  justify-content: space-between;
   margin: 0 auto;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
   align-items: center;
-  .section2__img {
-  width: 53%;
+  .section2__business__img {
+  width: 40%;
   }
   .section2__content {
     align-self: center;
     display: flex;
     flex-direction: column;
-    margin-right: 8rem;
+    width: 40%;
+    margin: 0 auto;
     .section2__h1 {
       text-align: left;
       color: $fontMain;
       font-size: 3.8em;
     }
     .section2__subtitle {
-      
+      font-size: 1.6em;
+      word-spacing: .1rem;
+      margin: 1.6rem;
+
+      .section2__viraux { 
+        font-family: $fontBold;
+
+      }
     }
     .section2__p {
       text-align: left;
