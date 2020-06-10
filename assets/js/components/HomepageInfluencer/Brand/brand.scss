@@ -1,0 +1,59 @@
+@import '../../../../scss/tools/vars';
+
+.section1 {
+  display: flex;
+  margin-top: 6rem;
+  justify-content: space-between;
+  .section1__content {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    .section1__h1 {
+      text-align: left;
+      color: #312e5c;
+      font-size: 4em;
+    }
+    .section1__p {
+      text-align: left;
+      color: $font;
+      font-size: 1.6em;
+      line-height: 1.4em;
+      margin-top: 3rem;
+    }
+    .section1__P2 {
+      text-align: center;
+      font-size: 1em;
+    }
+  }
+  .section1__img {
+    width: 53%;
+
+    .img__influ {
+      position: relative;
+      z-index: 2;
+    }
+
+    .img__montgolfiere {
+      position: absolute;
+      z-index: 1;
+      left: -110px;
+      top: 80px;
+      margin-left: -100px;
+      animation: translation 24s infinite linear both
+    }
+  }
+}
+
+.section1--influencer{
+  margin-left: 6rem;
+  position: relative;
+}
+
+@keyframes translation {
+  100% {
+		transform: translateX(0);
+	}
+	0% {
+		transform: translateX(100vw);
+	}
+}

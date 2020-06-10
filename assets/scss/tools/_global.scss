@@ -1,9 +1,9 @@
 *{
-  font-family: 'NeueHaasDisplay-Light', sans-serif;
-  color: $font;
+  font-family: $fontLight, sans-serif;
+  color: $fontMain;
 }
 h1{
-  font-family: 'NeueHaasDisplay-Medium', sans-serif;
+  font-family: $fontBold, sans-serif;
   font-size: 3em;
 }
 img{

@@ -3,32 +3,13 @@
 {{ include('base/_header_business.html.twig') }}
 {% endblock %}
 {% block title %}Entreprise{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('homeBusiness') }}
+{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="section1">
-        <div class="section1__content">
-            <h1 class="section1__h1">Des millions de vues <br> à portée de clic</h1>
-            <p class="section1__p">Une équipe d'experts et de passionés, des outils <br> puissants et un vrai suivi à votre disposition. <br> Recevez votre devis de campagne d'influence <br> personnalisé sous 24 heures.</p>
-            <a class="btn btn--influencer" href="">Obtenez votre solution <strong>sur mesure</strong></a>
-            <p class="section1__P2">Audit complet gratuit, sans engagement, sans carte bancaire</p>
-        </div>
-        <img class="section1__img" src="{{ asset('assets/images/illus/illu_business.png') }}" alt="Illustration représentant les médias sociaux">
-    </div>
-</div>
-
-{{ include('base/_brand.html.twig') }}
-
-<div class="section1__content">
-    <h1 class="section1__h1">Pourquoir l'e-influence est-elle bénéfique<br> pour votre image de marque ?</h1>
-    <h4>Avez-vous déjà entendu parler de l'e-influence ?</h4>
-    <p class="section1__p">Si la réponse est oui, c’est sûrement dû à son efficacité redoutable. <br>Si la réponse est non, c’est sûrement dû au fait que cette technologie soit nouvelle et encore méconnue.
-    Devenez un pure player et faite partie des piliers du marketing 3.0 !</p>
-
-       <p>Aujourd’hui, certains influenceurs sont devenus des KOLs (leaders d’opinion).
-        Leur communauté ultra engagée garanti des taux d’engagement remarquables, des publicités virales et des ventes qui explosent.
-        Résultat : Un véritable retour sur investissement quantitatif et qualitatif.</p>
-</div>
-<img class="section1__img" src="" alt="Illustration représentant les médias sociaux">
-</div>
+    <div id="root_business"></div>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('homeBusiness') }}
+    {% endblock %}
 {% endblock %}

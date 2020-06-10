@@ -22,14 +22,31 @@
   margin-left: 1.2rem;
 }
 .header__base__link a{
-  font-family: 'NeueHaasDisplay-Medium', sans-serif;
+  font-family: $fontLight, sans-serif;
+  text-transform: lowercase;
   color: #312e5c;
   font-size: 2.4em;
   font-weight: 600;
   transition: .5s;
+  display: inline-block;
+  position: relative;
 }
-.header__base__link a:hover{
-  color: #FFF;
+
+.header__base__link a::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #312e5c;
+  transform-origin: bottom right;
+  transition: transform 0.25s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.header__base__link a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .container{

@@ -1,0 +1,51 @@
+@import '../../../../scss/tools/vars';
+.home__solutions {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  .home__solutions__title {
+    text-align: center;
+    font-size: 3.2em;
+    font-family: $fontBold;
+  }
+  .home__solutions__subtitle {
+    font-size: 1.8em;
+    margin-top: .5rem;
+    margin-bottom: 4rem;
+  }
+}
+// Card
+// ==================
+.home__cards {
+  display: flex;
+  .home__solutions__card {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 1.5rem;
+    .home__card__img {
+      transform: translatey(0px);
+      animation: floating 4.1s 1s ease-in-out alternate infinite running;
+    }
+    .home__card__title {
+      font-family: $fontBold;
+      color: $font;
+      font-size: 1.8em;
+      line-height: 1.4em;
+    }
+    .home__card__content {
+      text-align: justify;
+      word-break: break-all;
+      line-height: 1.2em;
+    }
+  }
+}
+@keyframes floating {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    transform: translate3d(0,-1em,0);
+  }
+}

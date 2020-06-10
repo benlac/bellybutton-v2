@@ -1,0 +1,48 @@
+@import '../../../../scss/tools/vars';
+
+.project{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project__title{
+  font-size: 2em;
+  margin: .6rem;
+  color: $font;
+  font-family: $fontBold;
+}
+.project__subtitle{
+  font-weight: 100;
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+  color: $font;
+}
+.project__span{
+  color: $fontMain;
+  font-weight: 900;
+  font-family: $fontBold;
+}
+.project__text{
+  margin: 4rem;
+  color: $font;
+}
+
+.project__link{
+  position: relative;
+  margin-left: .2rem;
+}
+.project__link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 70%;
+  left: -0.1px;
+  right: -0.1px;
+  bottom: 0;
+  transition: top .1s ease-in-out;
+  background-color: #e9eaf2;
+}
+.project__link:hover::after {
+  top: 0;
+}
