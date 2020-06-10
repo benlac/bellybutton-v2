@@ -10,38 +10,49 @@
     {% endif %}
 {% endblock %}
 {% block title %}À propos{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('about') }}
+{% endblock %}
 
 {% block body %}
-    <div class="about">
-        <div class="about__content">
-            <h1 class="about__h1">À propos de nous</h1>
-            <p class="about__p">Bellybutton aide les agences à <br>pénétrer dans le monde du marketing d'influence<br> afin d'atteindre un public plus large grâce à de <br> puissants outils de prédiction, des performances et <br> à une équipe d'experts en marketing d'influence</p>
-        </div>
-        <img class="about__img" src="{{ asset('assets/images/illus/about.png') }}" alt="Illustration représentant les médias sociaux">
-    </div>
-
-    <div class="about__second">
-        <img class="about__second__img" src="{{ asset('assets/images/illus/about_2.png') }}" alt="Illustration représentant les médias sociaux">
-        <div class="about__second__content">
-            <h1 class="about__second__h1">Une équipe d'experts</h1>
-            <p class="about__second__p">L’équipe Bellybutton est composée d'experts mais <br> surtout de personnes passionnées par le monde <br> de l'influence marketing. Nous vous conseillons et <br> vous assistons dans le lancement de campagnes <br> publicitaires à fort impact. Toujours disponible, <br> toujours ouverte à la discussion, notre équipe <br> veut fournir les services les plus adaptés à vos besoins <br> réels pour construire une relation de long terme et <br> significative avec vous.</p>
-        </div>
-    </div>
-
-    <div class="about__third">
-        <div class="about__third__content">
-            <h1 class="about__third__h1">Responsabilité <br>environnementale</h1>
-            <p class="about__third__p">Parce que nous pensons qu’une entreprise au <br> 21ème siècle se doit de s’engager concrètement <br> dans l’action écologique (et non plus seulement <br> faire du washing), pour concrétiser nos ambitions <br> d’impact et utiliser notre visibilité et notre influence. <br> Bellybutton s’associe avec L’Or de nos Forêts <br> (ODNF), association loi 1901 oeuvrant pour la <br> création de forêts-jardins comestibles en France et <br> dans le monde. 2% des bénéfices de Bellybutton <br> sont ainsi versés à l’ODNF. #Offronsnotreinfluence</p>
-        </div>
-        <img class="about__third__img" src="{{ asset('assets/images/illus/about_3.png') }}" alt="Illustration représentant les médias sociaux">
-    </div>
-
-    <div class="about__fourth">
-        <img class="about__fourth__img" src="{{ asset('assets/images/illus/about_4.png') }}" alt="Illustration représentant les médias sociaux">
-        <div class="about__fourth__content">
-            <h1 class="about__fourth__h1">Bellybutton x ODNF</h1>
-            <p class="about__fourth__p">Reforestation massive, préservation d’espaces <br> verts en France, mise en place d’un lien social <br> prometteur ou encore la participation aux <br> ressources de la banque alimentaire locale...en <br> d’autres termes autant d’ambitions qui nous ont <br> poussé à décider de reverser 2% de nos bénéfices <br> à l’association. Aussi, nous nous engageons pour <br> chaque opération commerciale menée à un don de 10€ <br> à l’association Planète Urgence, pour la <br> plantation de 10 arbres. Travailler avec nous c’est <br> donc concrètement soutenir la cause écologique. <br> Participer à une opération commerciale avec nous c'est donc participer aussi au combat écologique</p>
-        </div>
-    </div>
-{{ include('base/_project.html.twig') }}
+    <div id="root_about"></div>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('about') }}
+    {% endblock %}
 {% endblock %}
+
+
+
+
+{# <div class="about">
+    <div class="about__content">
+        <h1 class="about__h1">À propos de nous</h1>
+        <p class="about__p">Bellybutton aide les agences à <br>pénétrer dans le monde du marketing d'influence<br> afin d'atteindre un public plus large grâce à de <br> puissants outils de prédiction, des performances et <br> à une équipe d'experts en marketing d'influence</p>
+    </div>
+    <img class="about__img" src="{{ asset('assets/images/illus/about.png') }}" alt="Illustration représentant les médias sociaux">
+</div>
+
+<div class="about__second">
+    <img class="about__second__img" src="{{ asset('assets/images/illus/about_2.png') }}" alt="Illustration représentant les médias sociaux">
+    <div class="about__second__content">
+        <h1 class="about__second__h1">Une équipe d'experts</h1>
+        <p class="about__second__p">L’équipe Bellybutton est composée d'experts mais <br> surtout de personnes passionnées par le monde <br> de l'influence marketing. Nous vous conseillons et <br> vous assistons dans le lancement de campagnes <br> publicitaires à fort impact. Toujours disponible, <br> toujours ouverte à la discussion, notre équipe <br> veut fournir les services les plus adaptés à vos besoins <br> réels pour construire une relation de long terme et <br> significative avec vous.</p>
+    </div>
+</div>
+
+<div class="about__third">
+    <div class="about__third__content">
+        <h1 class="about__third__h1">Responsabilité <br>environnementale</h1>
+        <p class="about__third__p">Parce que nous pensons qu’une entreprise au <br> 21ème siècle se doit de s’engager concrètement <br> dans l’action écologique (et non plus seulement <br> faire du washing), pour concrétiser nos ambitions <br> d’impact et utiliser notre visibilité et notre influence. <br> Bellybutton s’associe avec L’Or de nos Forêts <br> (ODNF), association loi 1901 oeuvrant pour la <br> création de forêts-jardins comestibles en France et <br> dans le monde. 2% des bénéfices de Bellybutton <br> sont ainsi versés à l’ODNF. #Offronsnotreinfluence</p>
+    </div>
+    <img class="about__third__img" src="{{ asset('assets/images/illus/about_3.png') }}" alt="Illustration représentant les médias sociaux">
+</div>
+
+<div class="about__fourth">
+    <img class="about__fourth__img" src="{{ asset('assets/images/illus/about_4.png') }}" alt="Illustration représentant les médias sociaux">
+    <div class="about__fourth__content">
+        <h1 class="about__fourth__h1">Bellybutton x ODNF</h1>
+        <p class="about__fourth__p">Reforestation massive, préservation d’espaces <br> verts en France, mise en place d’un lien social <br> prometteur ou encore la participation aux <br> ressources de la banque alimentaire locale...en <br> d’autres termes autant d’ambitions qui nous ont <br> poussé à décider de reverser 2% de nos bénéfices <br> à l’association. Aussi, nous nous engageons pour <br> chaque opération commerciale menée à un don de 10€ <br> à l’association Planète Urgence, pour la <br> plantation de 10 arbres. Travailler avec nous c’est <br> donc concrètement soutenir la cause écologique. <br> Participer à une opération commerciale avec nous c'est donc participer aussi au combat écologique</p>
+    </div>
+</div>
+{{ include('base/_project.html.twig') }} #}

@@ -6,8 +6,11 @@
   right: 28px;
   z-index: 5;
   transition: .3s;
+  display: none;
+  animation: 0.4s cubic-bezier(1, 0, 0, 1) 0s 1 normal both running show-profil;
+
   &--visible {
-    display: none;
+    display: block;
   }
   .menu__auth__nav {
     display: flex;
@@ -17,5 +20,17 @@
       padding: 2rem;
       font-size: 2em;
     }
+  }
+}
+
+@keyframes show-profil {
+  0% {
+    transform: scale(.5);
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+      transform: scale(1);
+      transform-origin: 100% 0%;
   }
 }

@@ -1,0 +1,25 @@
+.about__third {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 6rem;
+
+  .about__third__content {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    .about__third__h1 {
+      text-align: left;
+      color: #312e5c;
+      font-size: 3.8em;
+    }
+    .about__third__p {
+      text-align: left;
+      color: #312e5c;
+      font-size: 1.6em;
+      line-height: 1.4em;
+      margin-top: 3rem;
+    }
+  }
+}

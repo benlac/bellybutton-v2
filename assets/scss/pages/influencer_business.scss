@@ -1,26 +1,3 @@
-.about, .about__second, .about__third, .about__fourth{
-  display: flex;
-  margin-top: 6rem;
-  justify-content: space-between;
-}
-.about__content, .about__second__content, .about__third__content, .about__fourth__content{
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.about__p, .about__second__p, .about__third__p, .about__fourth__p{
-  text-align: left;
-  color: #312e5c;
-  font-size: 1.6em;
-  line-height: 1.4em;
-  margin-top: 3rem;
-}
-.about__h1, .about__second__h1, .about__third__h1, .about__fourth__h1{
-  text-align: left;
-  color: #312e5c;
-  font-size: 3.8em;
-}
 .brand{
   display: flex;
   justify-content: space-around;
@@ -61,25 +38,4 @@ strong{
 .about__third__img, .about__fourth__img{
   width: 50%;
 }
-.project{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.project__title{
-  font-size: 2em;
-  margin: .6rem;
-}
-.project__subtitle{
-  font-weight: 100;
-  font-size: 1.5em;
-  margin-bottom: 1.5rem;
-}
-.project__span{
-  color: #312e5c;
-  font-weight: 900;
-}
-.project__text{
-  margin: 4rem;
-}
+

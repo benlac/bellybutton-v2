@@ -2,10 +2,10 @@
         <a class="logo__login" href="" id="login_auth"><i class="far fa-user-circle fa-4x "></i></a> 
         <div class="menu__auth" id="auth_menu">
           <nav class="menu__auth__nav">
-            <a class="menu__auth__nav__link" href="">Benoit Lacombled</a>
+            <a class="menu__auth__nav__link" href="">{{ app.user.username }}</a>
             <a class="menu__auth__nav__link" href="">Paramètre du compte</a>
             <a class="menu__auth__nav__link" href="">Mon dashboard</a>
-            <a class="menu__auth__nav__link" href="">Se deconnecter</a>
+            <a class="menu__auth__nav__link" href={{ path('app_logout') }}>Se deconnecter</a>
           </nav>
         </div>
     {% else %}
