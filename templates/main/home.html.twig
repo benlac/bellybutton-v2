@@ -9,12 +9,7 @@
         </div>
         <div class="home__header__nav__div">
             <a class="home__language home__language--fr" href="">fr</a>
-            <a class="home__language home__language--en" href="">en</a>
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a class="logo__login" href=""><i class="far fa-user-circle fa-2x "></i></a> 
-            {% else %}
-            <a class="btn btn--login" href="{{ path('app_login') }}">Login</a>
-            {% endif %}
+            <a class="home__language home__language--en" href="">en</a>     
         </div>
     </nav>
 </header>

@@ -1,0 +1,21 @@
+.menu__auth {
+  position: absolute;
+  background-color: #22313d;
+  top: 70px;
+  width: 12%;
+  right: 28px;
+  z-index: 5;
+  transition: .3s;
+  &--visible {
+    display: none;
+  }
+  .menu__auth__nav {
+    display: flex;
+    flex-direction: column;
+    .menu__auth__nav__link {
+      color: #FFF;
+      padding: 2rem;
+      font-size: 2em;
+    }
+  }
+}

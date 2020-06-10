@@ -1,0 +1,16 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="logo__login" href="" id="login_auth"><i class="far fa-user-circle fa-4x "></i></a> 
+        <div class="menu__auth" id="auth_menu">
+          <nav class="menu__auth__nav">
+            <a class="menu__auth__nav__link" href="">Benoit Lacombled</a>
+            <a class="menu__auth__nav__link" href="">Paramètre du compte</a>
+            <a class="menu__auth__nav__link" href="">Mon dashboard</a>
+            <a class="menu__auth__nav__link" href="">Se deconnecter</a>
+          </nav>
+        </div>
+    {% else %}
+        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
+    {% endif %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('layout') }}
+{% endblock %}
