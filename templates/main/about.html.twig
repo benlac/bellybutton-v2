@@ -3,11 +3,7 @@
 <a href="{{ path('home') }}">Notre offre</a>
     </div>
     <a class="btn btn--audit" href=" {{path('business_audit')}} ">Votre audit <br>gratuit</a>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <a class="logo__login" href=""><i class="far fa-user-circle fa-4x "></i></a> 
-    {% else %}
-        <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
-    {% endif %}
+{{ include('base/_auth.html.twig') }}
 {% endblock %}
 {% block title %}À propos{% endblock %}
 {% block stylesheets %}
