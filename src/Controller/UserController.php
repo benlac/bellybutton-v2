@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class UserController extends AbstractController
 {
@@ -123,14 +124,16 @@ class UserController extends AbstractController
     /**
      * @Route("user/delete/{id}", name="user_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, User $user)
+    public function delete(Request $request, User $user, Session $session)
     {
+      $session = new Session();
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
+            $session->invalidate();
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('app_logout');
     }
 }
