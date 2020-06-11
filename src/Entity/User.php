@@ -36,6 +36,10 @@ class User implements UserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank
+     *  @Assert\Regex(
+     *  pattern="/^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/",
+     *  message="Votre mot de passe doit contenir au moins 1 chiffre, 1 majuscule, 1 minuscule et avoir une longueur d'au moins 8 caractères."
+     * )
      */
     private $password;
 
@@ -113,6 +117,11 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity="App\Entity\Campaign", mappedBy="users")
      */
     private $campaigns;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $resetToken;
 
     public function __construct()
     {
@@ -408,6 +417,18 @@ class User implements UserInterface
             $this->campaigns->removeElement($campaign);
             $campaign->removeUser($this);
         }
+
+        return $this;
+    }
+
+    public function getResetToken(): ?string
+    {
+        return $this->resetToken;
+    }
+
+    public function setResetToken(?string $resetToken): self
+    {
+        $this->resetToken = $resetToken;
 
         return $this;
     }

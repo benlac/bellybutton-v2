@@ -8,9 +8,10 @@
             <a class="menu__auth__nav__link" href={{ path('app_logout') }}>Se deconnecter</a>
           </nav>
         </div>
+        {% block javascripts %}
+          {{ encore_entry_script_tags('layout') }}
+        {% endblock %}
     {% else %}
         <a class="btn btn--header" href="{{ path('app_login') }}">Inscription<br>connexion</a>
     {% endif %}
-{% block javascripts %}
-    {{ encore_entry_script_tags('layout') }}
-{% endblock %}
+

@@ -8,7 +8,7 @@ use App\Form\RegisterBusinessType;
 use App\Repository\RoleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use App\Notification\UserNotification;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -25,7 +25,7 @@ class BusinessController extends AbstractController
     /**
      * @Route("/business/register", name="business_register", methods={"GET", "POST"})
      */
-    public function register(Request $request, RoleRepository $roleRepository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder)
+    public function register(Request $request, RoleRepository $roleRepository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder, UserNotification $notification)
     {
         $user = new User();
         $form = $this->createForm(RegisterBusinessType::class, $user);
@@ -37,6 +37,7 @@ class BusinessController extends AbstractController
             $user->setPassword($encodedPassword);
             $em->persist($user);
             $em->flush();
+            $notification->notify($user);
 
             return $this->redirectToRoute('business_success');
         }
@@ -74,8 +75,7 @@ class BusinessController extends AbstractController
      * @Route("/business/dashboard/{id<\d+>}/{reactRouting}", name="business_dashboard", defaults={"reactRouting": null})
      */
     public function dashboard(User $user)
-    {
-       //@TODO : Mettre en place un voters pour autoriser uniquement un user Authentifier et avec le role business   
+    { 
         $this->denyAccessUnlessGranted('SHOW', $user);  
         return $this->render('business/dashboard/campagns.html.twig');
     }
