@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{{ include('base/_header_business.html.twig') }}
+{% endblock %}
+{% block title %}Paramètres du compte{% endblock %}
+
+{% block body %}
+
+    <h1>Mes paramètres</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.lastname) }}
+    {{ form_row(form.companyName) }}
+      <button class="btn ">{{ button_label|default('Enregistrer les modifications') }}</button>
+    {{ form_end(form) }}
+
+      
+    <form method="post" action="{{ path('user_delete', {'id': user.id}) }}" >
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+      <button class="">Supprimer mon compte</button>
+    </form>
+{% endblock %}
+

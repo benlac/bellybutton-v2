@@ -3,7 +3,7 @@
         <div class="menu__auth" id="auth_menu">
           <nav class="menu__auth__nav">
             <a class="menu__auth__nav__link" href="">{{ app.user.username }}</a>
-            <a class="menu__auth__nav__link" href="">Paramètre du compte</a>
+            <a class="menu__auth__nav__link" href={{ path('user_edit', {id: app.user.id}) }}>Paramètre du compte</a>
             <a class="menu__auth__nav__link" href="">Mon dashboard</a>
             <a class="menu__auth__nav__link" href={{ path('app_logout') }}>Se deconnecter</a>
           </nav>
