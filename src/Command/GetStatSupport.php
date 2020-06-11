@@ -23,10 +23,13 @@ class GetStatSupport extends Command
 
     private $em;
 
-    public function __construct(CampaignRepository $campaignRepository, EntityManagerInterface $em)
+    private $apiKey;
+
+    public function __construct(CampaignRepository $campaignRepository, EntityManagerInterface $em, string $apiKey)
     {
         $this->campaignRepository = $campaignRepository;
         $this->em = $em;
+        $this->apiKey = $apiKey;
         parent::__construct();
     }
 
@@ -91,8 +94,8 @@ class GetStatSupport extends Command
 
     public function getStatFromApi($idVideo)
     {
-      $apiKey = 'AIzaSyAUkCjkYzeoyjOmjv2D2tp_ZXblAQ3oAis';
-      $url = 'https://www.googleapis.com/youtube/v3/videos?id='.$idVideo.'&key='.$apiKey.'&part=statistics';
+
+      $url = 'https://www.googleapis.com/youtube/v3/videos?id='.$idVideo.'&key='.$this->apiKey.'&part=statistics';
 
       $responseContent = file_get_contents($url);
 
