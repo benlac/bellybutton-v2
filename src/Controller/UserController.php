@@ -126,6 +126,7 @@ class UserController extends AbstractController
      */
     public function delete(Request $request, User $user, Session $session)
     {
+      $this->denyAccessUnlessGranted('REMOVE', $user);  
       $session = new Session();
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();

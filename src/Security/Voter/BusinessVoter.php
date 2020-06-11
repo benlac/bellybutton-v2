@@ -11,7 +11,7 @@ class BusinessVoter extends Voter
 {
     protected function supports($attribute, $subject)
     {
-        return in_array($attribute, ['SHOW', 'EDIT'])
+        return in_array($attribute, ['SHOW', 'EDIT', 'REMOVE'])
             && $subject instanceof User;
     }
 
@@ -27,9 +27,13 @@ class BusinessVoter extends Voter
                 return $business === $user;
                 break;
         }
-
         switch ($attribute) {
             case 'EDIT':
+                return $business === $user;
+                break;
+        }
+        switch ($attribute) {
+            case 'REMOVE':
                 return $business === $user;
                 break;
         }
