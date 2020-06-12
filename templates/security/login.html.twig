@@ -16,7 +16,7 @@
 
             <h1 class="form__login__title">Me connecter</h1>
 
-            <a class="btn btn--google" href="">connexion avec GMAIL</a>
+            <a class="btn btn--google" href="{{ path('user_redirect_google') }}">connexion avec GMAIL</a>
             <p>ou</p>
             <label class="login__label" for="inputEmail">Email</label>
             <input class="login__input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>

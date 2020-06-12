@@ -12,12 +12,24 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Routing\Generator\UrlGenerator;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class UserController extends AbstractController
 {
+    private $clientId;
+
+    private $clientSecret;
+
+    public function __construct(string $googleClientId, string $googleClientSecret)
+    {
+        $this->clientId = $googleClientId;
+        $this->clientSecret = $googleClientSecret;
+    }
     /**
      * Forgotten password
      * 
@@ -136,5 +148,14 @@ class UserController extends AbstractController
         }
 
         return $this->redirectToRoute('app_logout');
+    }
+    /**
+     * @Route("login/google", name="user_redirect_google")
+     */
+    public function googleConnect(UrlGeneratorInterface $generator)
+    {
+        $url = $generator->generate('home', [], UrlGeneratorInterface::ABSOLUTE_URL);
+        
+        return new RedirectResponse("https://accounts.google.com/o/oauth2/v2/auth?scope=email&access_type=online&response_type=code&state=state_parameter_passthrough_value&redirect_uri=".$url."&client_id=".$this->clientId);
     }
 }
