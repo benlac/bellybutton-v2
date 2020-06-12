@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\UserType;
 use App\Form\ResetPasswordType;
 use App\Form\ForgotPasswordType;
 use App\Repository\UserRepository;
@@ -14,7 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 class UserController extends AbstractController
 {
@@ -96,45 +94,5 @@ class UserController extends AbstractController
             'form' => $form->createView(),
             'reset' => false
         ]);
-    }
-    /**
-     * @Route("/user/profile/{id<\d+>}", name="user_edit", methods={"GET","POST"})
-     */
-    public function edit(User $user, Request $request, UserPasswordEncoderInterface $passwordEncoder)
-    {
-      $this->denyAccessUnlessGranted('EDIT', $user);  
-      $form = $this->createForm(UserType::class, $user);
-      $form->handleRequest($request);
-
-      if ($form->isSubmitted() && $form->isValid()) {
-          if($form->get('password')->getData()){
-              $encodedPassword = $passwordEncoder->encodePassword($user, $form->get('password')->getData());
-              $user->setPassword($encodedPassword);
-          }
-          $this->getDoctrine()->getManager()->flush();
-
-          return $this->redirectToRoute('home');
-      }
-
-      return $this->render('main/account_settings.html.twig', [
-          'user' => $user,
-          'form' => $form->createView(),
-      ]);
-    }
-    /**
-     * @Route("user/delete/{id}", name="user_delete", methods={"DELETE"})
-     */
-    public function delete(Request $request, User $user, Session $session)
-    {
-      $this->denyAccessUnlessGranted('REMOVE', $user);  
-      $session = new Session();
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($user);
-            $session->invalidate();
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('app_logout');
     }
 }

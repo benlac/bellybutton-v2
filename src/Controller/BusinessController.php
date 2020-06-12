@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\AuditType;
+use App\Form\UserType;
 use App\Form\RegisterBusinessType;
 use App\Repository\RoleRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -12,6 +13,7 @@ use App\Notification\UserNotification;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class BusinessController extends AbstractController
 {
@@ -78,5 +80,47 @@ class BusinessController extends AbstractController
     { 
         $this->denyAccessUnlessGranted('SHOW', $user);  
         return $this->render('business/dashboard/campagns.html.twig');
+    }
+
+    /**
+     * @Route("/business/profile/{id<\d+>}", name="business_edit", methods={"GET","POST"})
+     */
+    public function edit(User $user, Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+      $this->denyAccessUnlessGranted('EDIT', $user);  
+      $form = $this->createForm(UserType::class, $user);
+      $form->handleRequest($request);
+
+      if ($form->isSubmitted() && $form->isValid()) {
+          if($form->get('password')->getData()){
+              $encodedPassword = $passwordEncoder->encodePassword($user, $form->get('password')->getData());
+              $user->setPassword($encodedPassword);
+          }
+          $this->getDoctrine()->getManager()->flush();
+
+          return $this->redirectToRoute('home');
+      }
+
+      return $this->render('business/business_account_settings.html.twig', [
+          'user' => $user,
+          'form' => $form->createView(),
+      ]);
+    }
+
+    /**
+     * @Route("business/profile/delete/{id}", name="business_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, User $user, Session $session)
+    {
+      $this->denyAccessUnlessGranted('REMOVE', $user);  
+      $session = new Session();
+        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($user);
+            $session->invalidate();
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('app_logout');
     }
 }
