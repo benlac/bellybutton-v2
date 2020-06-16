@@ -23,11 +23,11 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
-    .addEntry('homeBusiness', './assets/js/homeBusiness.js')
-    .addEntry('homeInfluencer', './assets/js/homeInfluencer.js')
-    .addEntry('about', './assets/js/about.js')
-    .addEntry('layout', './assets/js/layout.js')
+    .addEntry('app', './assets/js/entryPoints/app.js')
+    .addEntry('homeBusiness', './assets/js/entryPoints/homeBusiness.js')
+    .addEntry('homeInfluencer', './assets/js/entryPoints/homeInfluencer.js')
+    .addEntry('about', './assets/js/entryPoints/about.js')
+    .addEntry('layout', './assets/js/entryPoints/layout.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

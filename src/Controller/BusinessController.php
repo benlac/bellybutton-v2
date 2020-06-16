@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\AuditType;
 use App\Form\UserType;
 use App\Form\RegisterBusinessType;
+use App\Form\UserEditPasswordType;
 use App\Repository\RoleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -92,10 +93,10 @@ class BusinessController extends AbstractController
       $form->handleRequest($request);
 
       if ($form->isSubmitted() && $form->isValid()) {
-          if($form->get('password')->getData()){
-              $encodedPassword = $passwordEncoder->encodePassword($user, $form->get('password')->getData());
-              $user->setPassword($encodedPassword);
-          }
+        //   if($form->get('password')->getData()){
+        //       $encodedPassword = $passwordEncoder->encodePassword($user, $form->get('password')->getData());
+        //       $user->setPassword($encodedPassword);
+        //   }
           $this->getDoctrine()->getManager()->flush();
 
           return $this->redirectToRoute('home');
@@ -105,6 +106,36 @@ class BusinessController extends AbstractController
           'user' => $user,
           'form' => $form->createView(),
       ]);
+    }
+
+    /**
+     * @Route("/business/profile/password/{id<\d+>}", name="business_edit_password")
+     */
+    public function editPassword(User $user, Request $request, UserPasswordEncoderInterface $encoder)
+    {
+        $this->denyAccessUnlessGranted('EDIT', $user);  
+
+        $user = $this->getUser();
+
+        $form = $this->createForm(UserEditPasswordType::class, $user);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $user->setPassword($encoder->encodePassword($user, $user->getPassword()));
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Mot de passe modifié.');
+
+            return $this->redirectToRoute('business_edit', array( 'id' => $user->getid()));
+        }
+
+        return $this->render('business/edit_password.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**

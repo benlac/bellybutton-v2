@@ -1,25 +1,31 @@
 {% extends 'base.html.twig' %}
 {% block header %}
-{{ include('base/_header_business.html.twig') }}
+</div>
+{{ include('base/_auth.html.twig') }}
 {% endblock %}
 {% block title %}Paramètres du compte{% endblock %}
 
 {% block body %}
 
-    <h1>Mes paramètres</h1>
+    {% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="error__flash" >
+            {{ message|raw }}
+        </div>
+    {% endfor %}
+    {% endfor %}
 
-    <a href={{ path('business_edit_password', {id: app.user.id}) }}>Modifier mon mot de passe</a>
+    <h1>Mes paramètres</h1>
 
     {{ form_start(form) }}
     {{ form_row(form.email) }}
     {{ form_row(form.firstname) }}
     {{ form_row(form.lastname) }}
-    {{ form_row(form.companyName) }}
       <button class="btn ">{{ button_label|default('Enregistrer les modifications') }}</button>
     {{ form_end(form) }}
 
       
-    <form method="post" action="{{ path('business_delete', {'id': user.id}) }}" >
+    <form method="post" action="{{ path('influencer_delete', {'id': user.id}) }}" >
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
       <!-- @TODO => JS pour confirmer la suppression du compte -->

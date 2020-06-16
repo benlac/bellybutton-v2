@@ -8,8 +8,7 @@
         <a class="menu__auth__nav__link" href={{ path('business_dashboard', {id: app.user.id}) }}>Mon dashboard</a>
       {% else %}
         <!-- @TODO créer route pour dashboard influencer -->
-        <a class="menu__auth__nav__link" href="">Paramètre du compte influ</a>
-        <a class="menu__auth__nav__link" href="">Mon dashboard influ</a>
+        <a class="menu__auth__nav__link" href={{ path('influencer_edit', {id: app.user.id}) }}>Paramètre du compte</a>
       {% endif %}
       {% if is_granted('ROLE_ADMIN') %}
         <a class="menu__auth__nav__link" href={{ path('easyadmin')}}>Back-office</a>
