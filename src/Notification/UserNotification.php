@@ -29,7 +29,7 @@ class UserNotification
         ->setTo($user->getEmail())
         ->setBody(
             $this->renderer->render(
-                'emails/registration.html.twig',
+                'mails/registration.html.twig',
                 ['user' => $user]
             ),
             'text/html'

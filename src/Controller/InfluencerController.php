@@ -56,4 +56,11 @@ class InfluencerController extends AbstractController
     {
         return $this->render('influencer/success.html.twig');
     }
+    /**
+     * @Route("/influencer/associate/{id<\d+>}/{reactRouting}", name="influencer_dashboard", defaults={"reactRouting": null})
+     */
+    public function dashboard()
+    {  
+        return $this->render('influencer/dashboard/associate.html.twig');
+    }
 }
