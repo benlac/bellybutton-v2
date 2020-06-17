@@ -18,7 +18,7 @@ class BlogApiController extends AbstractController
     /**
      * @Route("/blog/api/comments/{id<\d+>}", name="blog_api_comments", methods={"GET"})
      */
-    public function list(CommentaryRepository $commentaryRepository, Article $article)
+    public function list(CommentaryRepository $commentaryRepository, Article $article, Request $request)
     { 
       $comments = $commentaryRepository->findBy(['article' => $article], ['createdAt' => 'DESC']);
 
@@ -29,7 +29,7 @@ class BlogApiController extends AbstractController
       return $this->json($comments, Response::HTTP_OK, [], ['groups' => 'comments_show']);
     }
     /**
-     * @Route("/blog/api/article/{id<\d+>}", name="blog_api_comments", methods={"POST"})
+     * @Route("/blog/api/article/{id<\d+>}", name="blog_api_post", methods={"POST"})
      */
     public function addComment(Article $article, SerializerInterface $serializer, Request $request, EntityManagerInterface $em)
     {

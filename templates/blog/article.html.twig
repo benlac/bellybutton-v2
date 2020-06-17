@@ -27,7 +27,7 @@
                     <a class="article__tag" href="{{ path('blog_show_tag', {id: tag.id}) }}"><i class="fas fa-tags"></i>{{ tag.name }} </a>
                 {% endfor %}
             </div> 
-            <div id="root_comments"></div>
+            <div id="root_comments" data-article-id="{{ article.id }}"></div>
         </div>
             {{ include('blog/_aside.html.twig') }}
             {% block javascripts %}

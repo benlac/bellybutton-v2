@@ -5,7 +5,10 @@ import App from '../components/BlogComments/App';
 import '../../scss/app.scss';
 
 const target = document.getElementById('root_comments');
+
+const articleId = target.dataset.articleId;
+
 render(
-  <App />,
+  <App articleId={articleId} />,
   target
 );

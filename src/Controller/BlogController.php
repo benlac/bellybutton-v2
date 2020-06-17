@@ -65,7 +65,6 @@ class BlogController extends AbstractController
 
             return $this->redirectToRoute('blog_show', ['id' => $article->getId()] );
         }
-
         return $this->render('blog/article.html.twig', [
             'article' => $article,
             'tags' => $tags,
