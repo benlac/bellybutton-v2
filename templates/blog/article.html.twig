@@ -5,6 +5,9 @@
 {{ include('base/_auth.html.twig') }}
 {% endblock %}
 {% block title %}Blog{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('comments') }}
+{% endblock %}
 {% block body %}
 <div class="container">
     <div class="container__blog">
@@ -24,9 +27,11 @@
                     <a class="article__tag" href="{{ path('blog_show_tag', {id: tag.id}) }}"><i class="fas fa-tags"></i>{{ tag.name }} </a>
                 {% endfor %}
             </div> 
-
-            {{ include('blog/_comment.html.twig') }}
+            <div id="root_comments"></div>
         </div>
             {{ include('blog/_aside.html.twig') }}
+            {% block javascripts %}
+                {{ encore_entry_script_tags('comments') }}
+            {% endblock %}
 {% endblock %}
 

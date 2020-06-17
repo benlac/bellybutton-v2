@@ -94,13 +94,6 @@
 .select i{
   color: #292a2b;
 }
-.comment__textarea{
-  width: 100%;
-  border: 1px solid #e5e5e5;
-  height: 100px;
-  margin-top: 1.5rem;
-  font-size: 1.2em;
-}
 .main__blog__title{
   margin-bottom: 2rem;
 }
@@ -145,22 +138,6 @@
 .article__tag, .article__tag i{
   color: #e5e5e5;
 }
-.comment{
-  margin: 2rem 0;
-}
-.comment__display{
-  display: flex;
-
-  margin-top: 2rem;
-}
-.comment__display__content{
-  display: flex;
-  flex-direction: column;
-  margin-left: 2rem;
-}
 .pseudo__admin{
   color: purple;
-}
-.comment__input{
-  font-size: 1.2em;
 }
