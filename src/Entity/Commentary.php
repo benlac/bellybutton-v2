@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentaryRepository")
@@ -13,32 +14,38 @@ class Commentary
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("comments_show")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Groups("comments_show")
      */
     private $username;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("comments_show")
      */
     private $body;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("comments_show")
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups("comments_show")
      */
     private $updatedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Article", inversedBy="commentaries")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups("comments_show")
      */
     private $article;
 
@@ -76,12 +83,12 @@ class Commentary
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    public function setCreatedAt($createdAt): self
     {
         $this->createdAt = $createdAt;
 

@@ -139,7 +139,7 @@ class BusinessController extends AbstractController
     }
 
     /**
-     * @Route("business/profile/delete/{id}", name="business_delete", methods={"DELETE"})
+     * @Route("business/profile/delete/{id<\d+>}", name="business_delete", methods={"DELETE"})
      */
     public function delete(Request $request, User $user, Session $session)
     {
