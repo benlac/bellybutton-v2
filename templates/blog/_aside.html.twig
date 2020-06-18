@@ -2,16 +2,17 @@
             <h2>Les articles les plus consultés</h2>
             {% for article in recentArticle %}
             
+            <a href="{{ path('blog_show', {id: article.id}) }}">
                 <div class="aside__article">
                         <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('thumb') }}" alt="">
                     <div class="aside__article__content">
                         {% for tag in article.tags %}
-                        <a href="{{ path('blog_show', {id: article.id}) }}">
                             <h3 class="aside__article__tag"> {{ tag.name }} </h3>
                         {% endfor %}
-                        <p class="aside__article__p"> {{ article.title }} </p></a>
+                        <p class="aside__article__p"> {{ article.title }} </p>
                     </div>
                 </div>
+            </a>
             {% endfor %}
             <div class="tag">
                 <h2>Thèmes</h2>

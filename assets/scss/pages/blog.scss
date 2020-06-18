@@ -134,10 +134,17 @@
   text-align: left;
   line-height: 1.7;
   font-size: 1.5em;
+  margin-bottom: 2rem;
 }
 .article__tag, .article__tag i{
   color: #e5e5e5;
 }
 .pseudo__admin{
   color: purple;
+}
+.article {
+  margin-top: 2rem;
+}
+.article__content strong {
+  font-family: $fontBold;
 }
