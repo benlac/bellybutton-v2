@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Title from '../Title';
-import Management from '../Management';
+import Management from '../../../containers/DashboardBusiness/Management';
 import Campagns from '../../../containers/DashboardBusiness/Campagns';
 import Reporting from '../../../containers/DashboardBusiness/Reporting';
 

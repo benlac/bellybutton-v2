@@ -4,6 +4,8 @@ export const FETCH_DATAS = 'FETCH_DATAS';
 export const SAVE_DATA = 'SAVE_DATA';
 export const SAVE_SORT_VALUE = 'SAVE_SORT_VALUE';
 export const RESET_SORT_VALUE = 'RESET_SORT_VALUE';
+export const HANDLE_CHANGE_SEARCH = 'HANDLE_CHANGE_SEARCH';
+export const SEARCH_CAMPAIGN = 'SEARCH_CAMPAIGN';
 
 export const fetchUserId = () => ({
   type: FETCH_USER_ID,
@@ -32,3 +34,11 @@ export const resetSortValue = () => ({
   type: RESET_SORT_VALUE,
 });
 
+export const handleChangeSearch = (e) => ({
+  type: HANDLE_CHANGE_SEARCH,
+  data: e,
+});
+
+export const searchCampaign = () => ({
+  type: SEARCH_CAMPAIGN,
+});

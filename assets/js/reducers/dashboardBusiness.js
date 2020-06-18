@@ -1,13 +1,21 @@
-import { SAVE_DATA, SAVE_USER, SAVE_SORT_VALUE, RESET_SORT_VALUE } from "../actions/dashboardBusiness";
+import {
+  SAVE_DATA,
+  SAVE_USER,
+  SAVE_SORT_VALUE,
+  RESET_SORT_VALUE,
+  HANDLE_CHANGE_SEARCH,
+  SEARCH_CAMPAIGN,
+} from "../actions/dashboardBusiness";
 
 const initialState = {
   datas: [],
   userId: '',
   loading: true,
-  sortValue: 'total'
+  sortValue: 'total',
+  valueSearch: ''
 };
 
-const nameForTheReducer = (state = initialState, action = {}) => {
+const dashboardBusinessReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_USER:
       return {
@@ -30,9 +38,23 @@ const nameForTheReducer = (state = initialState, action = {}) => {
         ...state,
         sortValue: 'total',
       }
+    case HANDLE_CHANGE_SEARCH:
+      return {
+        ...state,
+        valueSearch: action.data,
+      }
+    case SEARCH_CAMPAIGN: {
+      const sortDatas = 
+        state.datas.filter(data => data.name.includes(state.valueSearch));
 
+      return {
+        ...state,
+        datas: sortDatas,
+        valueSearch: '',
+      }
+    }
     default: return state;
   }
 };
 
-export default nameForTheReducer;
+export default dashboardBusinessReducer;
