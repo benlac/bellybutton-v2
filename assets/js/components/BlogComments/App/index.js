@@ -10,6 +10,8 @@ const App = ({ articleId }) => {
   const [loading, setLoading] = useState(true);
   const [comments, setComments] = useState([]);
   const [article, setArticle] = useState(articleId);
+  const [valueUser, setValueUser] = useState('');
+  const [valueComment, setValueComment] = useState('');
 
   useEffect(() => {
     loadComments();
@@ -28,9 +30,42 @@ const App = ({ articleId }) => {
       })
   }
 
+  const addNewComment = () => {
+    const newComment = {
+        username: valueUser,
+        body: valueComment,
+        createdAt: new Date()
+    }
+    setComments([
+      {
+        ...newComment,
+        id: comments.length + 1
+      },
+      ...comments
+    ]);
+    axios({
+      method: 'post',
+      url: `http://localhost:8000/blog/api/article/${article}`,
+      data: newComment,
+    })
+      .then((response) => {
+        console.log(response);
+        setValueComment('');
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+  }
+
   return (
     <div className="comments">
-      <AddComment />
+      <AddComment
+        valueUser={valueUser}
+        handleChange={setValueUser}
+        valueComment={valueComment}
+        handleChangeComment={setValueComment}
+        submitComment={addNewComment}
+      />
       {loading && <Loader />}
       {!loading && <ListComments comments={comments}/>}
     </div>
