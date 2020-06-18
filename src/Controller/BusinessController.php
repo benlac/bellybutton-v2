@@ -11,10 +11,12 @@ use App\Repository\RoleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Notification\UserNotification;
+use App\Security\LoginFormAuthenticator;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
 class BusinessController extends AbstractController
 {
@@ -28,7 +30,7 @@ class BusinessController extends AbstractController
     /**
      * @Route("/business/register", name="business_register", methods={"GET", "POST"})
      */
-    public function register(Request $request, RoleRepository $roleRepository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder, UserNotification $notification)
+    public function register(Request $request, RoleRepository $roleRepository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder, UserNotification $notification, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator)
     {
         $user = new User();
         $form = $this->createForm(RegisterBusinessType::class, $user);
@@ -42,7 +44,12 @@ class BusinessController extends AbstractController
             $em->flush();
             $notification->notify($user);
 
-            return $this->redirectToRoute('business_success');
+            return $guardHandler->authenticateUserAndHandleSuccess(
+                $user,
+                $request,
+                $authenticator,
+                'main' 
+            );
         }
 
         return $this->render('business/register.html.twig', [

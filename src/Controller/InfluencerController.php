@@ -8,12 +8,14 @@ use App\Form\UserEditPasswordType;
 use App\Repository\RoleRepository;
 use App\Form\RegisterInfluencerType;
 use App\Notification\UserNotification;
+use App\Security\LoginFormAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
 class InfluencerController extends AbstractController
 {
@@ -27,7 +29,7 @@ class InfluencerController extends AbstractController
     /**
      * @Route("/influencer/register", name="influencer_register", methods={"GET", "POST"})
      */
-    public function register(Request $request, RoleRepository $roleRepository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder, UserNotification $notification)
+    public function register(Request $request, RoleRepository $roleRepository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder, UserNotification $notification, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator)
     {
         $user = new User();
         $form = $this->createForm(RegisterInfluencerType::class, $user);
@@ -41,7 +43,12 @@ class InfluencerController extends AbstractController
             $em->flush();
             $notification->notify($user);
 
-            return $this->redirectToRoute('influencer_success');
+            return $guardHandler->authenticateUserAndHandleSuccess(
+                $user,
+                $request,
+                $authenticator,
+                'main' 
+            );
         }
         return $this->render('influencer/register.html.twig', [
             'form' => $form->createView(),

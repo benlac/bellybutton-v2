@@ -4,14 +4,13 @@
     </div>
 {{ include('base/_auth.html.twig') }}
 {% endblock %}
-{% block title %}Félicitation{% endblock %}
+{% block title %}Bienvenue{% endblock %}
 
 {% block body %}
 <div class="container container--success">
-    <h1>Félicitation !</h1>
-    <h3>Accédez à votre dashboard</h3>
-    <a class="btn btn--success" href="">Dashboard</a>
-    <p>ça devient serieux !</p>
+    <h1>Bienvenue chez nous</h1>
+    <h3>Vous allez recevoir un mail</h3>
+    <a class="btn btn--success" href="{{ path('influencer') }}">Retour à la home</a>
 </div>
 
 {% endblock %}
