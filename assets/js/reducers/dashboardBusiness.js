@@ -47,7 +47,7 @@ const dashboardBusinessReducer = (state = initialState, action = {}) => {
       }
     case SEARCH_CAMPAIGN: {
       const sortDatas = 
-        state.datas.filter(data => data.name.includes(state.valueSearch));
+        state.datas.filter(data => data.name.toLowerCase().includes(state.valueSearch.toLowerCase()));
 
       return {
         ...state,

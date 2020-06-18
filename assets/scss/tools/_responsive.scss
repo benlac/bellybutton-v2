@@ -1,0 +1,14 @@
+$xsmall: 375px;
+$xsmall-down: "only screen and (max-width: #{$xsmall})";
+
+$small: 480px;
+$small-down: "only screen and (max-width: #{$small})";
+
+$medium: 768px;
+$medium-down: "only screen and (max-width: #{$medium})";
+
+$large: 1024px;
+$large-down: "only screen and (max-width: #{$large})";
+
+$xlarge: 1440px;
+$xlarge-down: "only screen and (max-width: #{$xlarge})";
