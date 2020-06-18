@@ -12,7 +12,8 @@ const initialState = {
   userId: '',
   loading: true,
   sortValue: 'total',
-  valueSearch: ''
+  valueSearch: '',
+  searchDatasResult: [],
 };
 
 const dashboardBusinessReducer = (state = initialState, action = {}) => {
@@ -26,6 +27,7 @@ const dashboardBusinessReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         datas: action.campaigns,
+        searchDatasResult: action.campaigns,
         loading: false,
       }
     case SAVE_SORT_VALUE:
@@ -49,7 +51,7 @@ const dashboardBusinessReducer = (state = initialState, action = {}) => {
 
       return {
         ...state,
-        datas: sortDatas,
+        searchDatasResult: sortDatas,
         valueSearch: '',
       }
     }

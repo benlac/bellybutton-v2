@@ -5,7 +5,7 @@ import App from '../../../components/DashboardBusiness/Campagns';
 import { resetSortValue } from '../../../actions/dashboardBusiness';
 
 const mapStateToProps = (state) => ({
-  campaigns: state.dashboardBusiness.datas,
+  campaigns: state.dashboardBusiness.searchDatasResult,
 });
 
 const mapDispatchToProps = (dispatch) => ({
