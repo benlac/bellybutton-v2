@@ -1,3 +1,11 @@
+@import '../../../../scss/app.scss';
+
 .comments{
   margin: 2rem 0;
+}
+@media #{$xsmall-down} {
+  .comments {
+    padding: 0 .2em;
+    text-align: center;
+  }
 }

@@ -14,7 +14,7 @@
         <div class="main">
             <a class="main__back-to-home" href="{{ path('blog') }}">Retour aux articles</a>
             <div class="article">   
-                <h1> {{article.title}} </h1>
+                <h1 class="article__title"> {{article.title}} </h1>
                 <p class="article__author">
                     {% for user in article.users %}
                     <span>{{ user.firstname }} {{ user.lastname }}</span> 
