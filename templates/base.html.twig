@@ -12,6 +12,7 @@
     <body>
         <header class="header__base">
             <nav class="header__base__nav">
+                <a id="burger__menu__link" href=""><i class="fa fa-bars" style="font-size:36px"></i></a>
                 <div class="header__logo">
                 <a href="{{ path('home') }}"><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton">
                 </a>
@@ -23,6 +24,16 @@
                     {% block header %}{% endblock %}
             </nav>
         </header>
+        <div id="menu__burger" class="burger__menu">
+            <div class="header__logo">
+                <a href="{{ path('home') }}"><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton">
+                </a>
+            </div>
+            <a href="{{ path('about') }}">À propos de nous</a>
+            <a href="">Tarifs</a>
+            <a href="{{ path('blog') }}">Blog</a>
+        </div>
+        <div class="overlay"></div>
             {% block body %}{% endblock %}
         <footer>
             <div class="footer__logo">
@@ -44,5 +55,8 @@
                 <img src="{{ asset('assets/images/logo/adwords.png') }}" alt="Logo de la certification google AdWords">
             </div>
         </footer>
+        {% block layout %}
+            {{ encore_entry_script_tags('layout') }}
+        {% endblock %}
     </body>
 </html>
