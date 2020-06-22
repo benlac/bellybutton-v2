@@ -43,6 +43,7 @@ const App = ({ articleId }) => {
       },
       ...comments
     ]);
+    setValueComment('');
     axios({
       method: 'post',
       url: `http://localhost:8000/blog/api/article/${article}`,

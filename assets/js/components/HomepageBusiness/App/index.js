@@ -6,12 +6,13 @@ import Contact from '../Contact';
 
 import './app.scss';
 import Teams from '../Teams';
+import Banner from '../Banner';
 
 const App = () => (
   <>
     <div className="container">
       <Header />
-      <div>Banner</div>
+      <Banner />
       <div>Affecting</div>
       <Solutions />
     </div>

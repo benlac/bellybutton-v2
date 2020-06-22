@@ -26,12 +26,13 @@
         </header>
         <div id="menu__burger" class="burger__menu">
             <div class="header__logo">
-                <a href="{{ path('home') }}"><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton">
+                <a class="menu__burger__link" href="{{ path('home') }}"><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton">
                 </a>
             </div>
-            <a href="{{ path('about') }}">À propos de nous</a>
-            <a href="">Tarifs</a>
-            <a href="{{ path('blog') }}">Blog</a>
+            <a class="menu__burger__link" href="{{ path('home') }}">Notre offre</a>
+            <a class="menu__burger__link" href="{{ path('about') }}">À propos de nous</a>
+            <a class="menu__burger__link" href="">Tarifs</a>
+            <a class="menu__burger__link" href="{{ path('blog') }}">Blog</a>
         </div>
         <div class="overlay"></div>
             {% block body %}{% endblock %}

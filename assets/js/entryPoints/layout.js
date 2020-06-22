@@ -2,10 +2,12 @@
 const loginAuth = document.getElementById('login_auth');
 const menuAuth = document.getElementById('auth_menu');
 
-loginAuth.addEventListener('click', (e) => {
-  e.preventDefault();
-  menuAuth.classList.toggle('menu__auth--visible');
-})
+if (loginAuth) {
+  loginAuth.addEventListener('click', (e) => {
+    e.preventDefault();
+    menuAuth.classList.toggle('menu__auth--visible');
+  })
+}
 
 const iconBurger = document.getElementById('burger__menu__link');
 const burgerMenu = document.getElementById('menu__burger');

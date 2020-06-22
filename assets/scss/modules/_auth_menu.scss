@@ -1,13 +1,17 @@
 .menu__auth {
-  position: absolute;
-  background-color: #22313d;
-  top: 70px;
-  width: 12%;
-  right: 28px;
-  z-index: 5;
-  transition: .3s;
   display: none;
+  position: fixed;
+  background-color:rgb(199,210,229);
+  background: linear-gradient(90deg, rgba(199,210,229,1) 0%, rgba(222,222,238,1) 100%);
+  top: 59px;
+  right: 0;
+  width: 40%;
+  bottom: 0;
+  z-index: 18;
+  transition: .3s;
   animation: 0.4s cubic-bezier(1, 0, 0, 1) 0s 1 normal both running show-profil;
+  padding: 2rem;
+  text-align: center;
 
   &--visible {
     display: block;
@@ -15,10 +19,11 @@
   .menu__auth__nav {
     display: flex;
     flex-direction: column;
+    align-items: center;
     .menu__auth__nav__link {
       color: #FFF;
-      padding: 2rem;
-      font-size: 2em;
+      padding: 2rem 0;
+      font-size: 32px;
       word-break: break-all;
     }
   }
