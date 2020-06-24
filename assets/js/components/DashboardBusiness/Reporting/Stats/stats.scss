@@ -1,12 +1,9 @@
-
+@import '../../../../../scss/tools/responsive';
 
 .stats { 
-  .stats__section1 {
+  .stats__section {
     display: flex;
     width: 100%;
-  }
-  .stats__section2 {
-    display: flex;
   }
 }
 
@@ -16,27 +13,14 @@
   padding: .5rem 0 0 .5rem;
   margin-bottom: 1rem;
   margin: .5rem;
-  height: 300px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  &--view-by-day {
-    width: 60%;
-  }
-  &--impressions {
-    width: 20%;
-  }
-  &--engagement {
-    width: 20%;
-  }
-  &--view-total {
-    width: 60%;
-  }
-  &--comments {
-    width: 20%;
-  }
-  &--likes {
-    width: 20%;
+  width: 60%;
+  .stats-card__title {
+    padding: 1rem;
+    font-size: 1.5em;
   }
 }
 
@@ -64,5 +48,64 @@
     font-size: 1em;
   }
 }
+.stats__container__end {
+  display: flex;
+  width: 40%;
+  .stats-card {
+    width: 50%;
+  }
+}
 
-// color negatif percent #bd090c
+@media #{$xlarge-down} {
+
+}
+
+@media #{$large-down} {
+  .stats {
+    .stats__section {
+      flex-direction: column;
+      .stats-card--chart {
+        width: 100%;
+      }
+    }
+    .stats__container__end {
+      width: 100%;
+    }
+  }
+}
+
+// @media #{$medium-down} {
+
+
+@media #{$small-down} {
+  .stats {
+    .stats__section {
+      .stats-card {
+        margin: .5rem 0;
+        &--impressions {
+          margin-right: .1rem;
+        }
+        &--comments {
+          margin-right: .1rem;
+        }
+      }
+      .stats-card--chart {
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .stats__container__end {
+      width: 100%;
+      .stats-card__title {
+        font-size: 1.3em;
+      }
+      .stats-card__number {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+// @media #{$xsmall-down} {
+
+// }

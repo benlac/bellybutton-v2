@@ -23,7 +23,6 @@ const Sort = ({ user, sortValue, campaigns }) => {
       >
         Retour aux campagnes
       </Link>
-        <div className="sort__influencers">Trier par vidéo</div>
           <select
             className="list__support"
             name="list-supports"

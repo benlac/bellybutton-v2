@@ -40,7 +40,7 @@ const Reporting = ({ campaigns, sortValue }) => {
       <Title name={campaign.name} />
       <div className="stats__container">
         <Sort />
-          <Stats {...supportSorted}/>
+        <Stats {...supportSorted}/>
       </div>
     </div>
   );

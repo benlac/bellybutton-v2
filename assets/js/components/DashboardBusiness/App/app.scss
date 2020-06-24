@@ -1,5 +1,28 @@
+@import '../../../../scss/tools/responsive';
+
 .dashboard__content {
   width: 80%;
   margin: 0 auto 2rem;
   min-height: 100vh;
+}
+
+@media #{$medium-down} {
+  .dashboard__title {
+    margin-top: 5rem;
+  }
+  .dashboard__content {
+    margin-bottom: 5rem;
+  }
+}
+
+@media #{$small-down} {
+  .dashboard__content {
+    width: 100%;
+  }
+}
+
+@media #{$xsmall-down} {
+  .dashboard__title__h2 {
+    margin-left: 4rem;
+  }
 }

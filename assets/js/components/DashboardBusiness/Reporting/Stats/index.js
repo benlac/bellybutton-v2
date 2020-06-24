@@ -10,7 +10,6 @@ import './stats.scss';
 const Stats = ({ likes, comments, views, name }) => {
   const reducedObjArr = addNumbWithSameDate(views); 
   const viewEveryFive = addNumbAndSortEveryFive(reducedObjArr);
-  
   const viewsByDay = reducedObjArr.map((view) => view.number );
   const viewsByDate = reducedObjArr.map((view) => view.createdAt );
   const viewFiveNum = viewEveryFive.map((view) => view.number);
@@ -47,9 +46,9 @@ const Stats = ({ likes, comments, views, name }) => {
   return (
     <div className="stats">
       <h2>{name}</h2>
-      <div className="stats__section1">
-        <div className="stats-card stats-card--view-by-day">
-          <h3>Vues par jours</h3>
+      <div className="stats__section">
+        <div className="stats-card stats-card--chart">
+          <h3 className="stats-card__title">Vues par jours</h3>
           <div>
             <Line 
               data={dataByDays}
@@ -59,22 +58,24 @@ const Stats = ({ likes, comments, views, name }) => {
             />
           </div>
         </div>
-        <Card
-          nameClass="stats-card stats-card--impressions"
-          title="Impressions"
-          stat={totalImpression(comments, likes, views)}
-          percent="+24%"
-        />
-        <Card
-          nameClass="stats-card stats-card--engagement"
-          title="Engagement"
-          stat={`${engagementRate(comments, likes, views)} %`}
-          percent="-1%"
-        />
+        <div className="stats__container__end">
+          <Card
+            nameClass="stats-card stats-card--impressions"
+            title="Impressions"
+            stat={totalImpression(comments, likes, views)}
+            percent="+24%"
+          />
+          <Card
+            nameClass="stats-card stats-card--engagement"
+            title="Engagement"
+            stat={`${engagementRate(comments, likes, views)} %`}
+            percent="-1%"
+          />
+        </div>
       </div>
-      <div className="stats__section2">
-        <div className="stats-card stats-card--view-total">
-          <h3>Vues totales</h3>
+      <div className="stats__section">
+        <div className="stats-card stats-card--chart">
+          <h3 className="stats-card__title">Vues totales</h3>
           <div>
             <Line 
               data={dataTotal}
@@ -84,18 +85,20 @@ const Stats = ({ likes, comments, views, name }) => {
             />
           </div>
         </div>
-        <Card
-          nameClass="stats-card stats-card--comments"
-          title="Commentaires"
-          stat={sumDatas(comments)}
-          percent="+12%"
-        />
-        <Card
-          nameClass="stats-card stats-card--likes"
-          title="Likes"
-          stat={sumDatas(likes)}
-          percent="+110%"
-        />
+        <div className="stats__container__end">
+          <Card
+            nameClass="stats-card stats-card--comments"
+            title="Commentaires"
+            stat={sumDatas(comments)}
+            percent="+12%"
+          />
+          <Card
+            nameClass="stats-card stats-card--likes"
+            title="Likes"
+            stat={sumDatas(likes)}
+            percent="+110%"
+          />
+        </div>
       </div>
     </div>
   );

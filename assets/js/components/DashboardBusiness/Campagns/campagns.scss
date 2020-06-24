@@ -1,3 +1,5 @@
+@import '../../../../scss/tools/responsive';
+
 .dashboard__campagns {
   .campagns__headers {
     display: grid;
@@ -47,3 +49,50 @@
   }
 }
 
+@media #{$medium-down} {
+  .dashboard__campagns {
+    .campagns__headers {
+      display: none;
+    }
+    .campagns__row {
+      grid-template-columns: 1fr;
+      grid-template-row: 1fr 1fr;
+      .campagns__row__child {
+        text-align: left;
+        padding-bottom: 0;
+      }
+      .campagns__row__child--users {
+        display: none;
+      }
+      .campagns__row__child--date {
+        display: none;
+      }
+    }
+  }
+}
+
+@media #{$small-down} {
+  .dashboard__campagns {
+    .campagns__row {
+      .campagns__row__child {
+        padding: 1rem 2rem;
+        &--progress {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media #{$xsmall-down} {
+  .dashboard__campagns {
+    .campagns__row {
+      .campagns__row__child {
+        padding: 1rem 2rem;
+        .progress-bar {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

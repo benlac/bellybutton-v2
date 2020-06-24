@@ -1,3 +1,5 @@
+@import '../../../../scss/tools/responsive';
+
 .dashboard__management {
   display: flex;
   justify-content: space-between;
@@ -19,6 +21,30 @@
     & i {
       margin-right: 1rem;
       color: #FFF;
+    }
+  }
+}
+
+@media #{$medium-down} {
+  .dashboard__management {
+    justify-content: center;
+    .dashboard__search {
+      justify-content: center;
+      width: 60%;
+      .dashboard__input {
+        margin-bottom: 1rem;
+      }
+    }
+    .btn--dashboard__refresh {
+      display: none;
+    }
+  }
+}
+
+@media #{$xsmall-down} {
+  .dashboard__management {
+    .dashboard__search {
+      width: 80%;
     }
   }
 }

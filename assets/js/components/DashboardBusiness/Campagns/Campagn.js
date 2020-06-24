@@ -17,8 +17,8 @@ const Campagn = ({ view, viewGoal, name, users, createdAt }) => {
       lower: true,
     })}`} >
     <div className="campagns__row">
-      <div className="campagns__row__child">{name}</div>
-      <div className="campagns__row__child"><i className="fas fa-users"></i> {users.length}</div>
+      <div className="campagns__row__child campagns__row__child--title">{name}</div>
+      <div className="campagns__row__child campagns__row__child--users"><i className="fas fa-users"></i> {users.length}</div>
       <div className="campagns__row__child campagns__row__child--progress">
         <div
         className="progress-bar"
@@ -30,7 +30,7 @@ const Campagn = ({ view, viewGoal, name, users, createdAt }) => {
         </div>
         <div className="number">{pourcentageDisplay}</div>
       </div>
-      <div className="campagns__row__child">{createdAt}</div>
+      <div className="campagns__row__child campagns__row__child--date">{createdAt}</div>
     </div>
     </NavLink>
   );
