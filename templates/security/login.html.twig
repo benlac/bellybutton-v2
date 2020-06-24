@@ -16,8 +16,6 @@
 
             <h1 class="form__login__title">Me connecter</h1>
 
-            <a class="btn btn--google" href="">connexion avec GMAIL</a>
-            <p>ou</p>
             <label class="login__label" for="inputEmail">Email</label>
             <input class="login__input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
             <label class="login__label" for="inputPassword">Password</label>
@@ -33,15 +31,15 @@
             </div>
                
             <div class="form__login__btn">
-                <button class="btn btn--login btn--form" type="submit">
+                <button class="btn btn--form" type="submit">
                     Connexion
                 </button>
-                <a href={{ path('forgot_password') }}>Mot de passe oublié ?</a>
+                <a class="fogot-password" href={{ path('forgot_password') }}>Mot de passe oublié ?</a>
             </div>
         </form>
     </div>
     <div class="form__aside">
-        <img src=" {{ asset('assets/images/illus/rocket.png') }} " alt="Illustration d'une fusée qui décolle">
+        <img class="img__login" src=" {{ asset('assets/images/illus/rocket.png') }} " alt="Illustration d'une fusée qui décolle">
     </div>
 </div>
 {% endblock %}

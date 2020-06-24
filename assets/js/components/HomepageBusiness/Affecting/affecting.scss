@@ -1,0 +1,42 @@
+@import '../../../../scss/tools/vars';
+
+.section1 {
+  display: flex;
+  margin-top: 6rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+  align-items: center;
+  .section1__business__img {
+  width: 40%;
+  }
+  .section1__content {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+    .section1__h1 {
+      text-align: left;
+      color: $fontMain;
+      font-size: 3.8em;
+    }
+    .section1__subtitle {
+      font-size: 1.6em;
+      word-spacing: .1rem;
+      margin: 1.6rem;
+
+      .section1__viraux { 
+        font-family: $fontBold;
+
+      }
+    }
+    .section1__p {
+      text-align: left;
+      color: $font;
+      font-size: 1.6em;
+      line-height: 1.6em;
+      margin-top: 3rem;
+    }
+  }
+}

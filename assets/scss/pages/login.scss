@@ -72,3 +72,45 @@
   text-decoration: underline;
   transition: .5s;
 }
+@media #{$large-down} {
+  .form__login__register {
+    font-size: 1em;
+  }
+  .btn--form {
+    padding: 10px 27px;
+    font-size: 1.2em;
+  }
+}
+@media #{$medium-down} {
+  .img__login {
+    display: none;
+  }
+  .form__aside {
+    width: 0;
+  }
+  .form__login {
+    width: 100%;
+    margin: 7rem 0;
+  }
+}
+@media #{$small-down} {
+  .login__register {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .form__login__btn {
+    flex-direction: column;
+    .fogot-password {
+      margin-top: 1rem;
+    }
+  }
+}
+@media #{$xsmall-down} {
+  .btn--form {
+    padding: 10px 5px;
+    font-size: 1.1em;
+  }
+  .form__login__register {
+    font-size: .9em;
+  }
+}

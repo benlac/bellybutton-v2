@@ -2,9 +2,21 @@
   display: flex;
 }
 .container--register{
+  width: 100%;
   text-align: center;
   margin-top: 6rem;
   margin-bottom: 6rem;
+  position: relative;
+  form {
+  z-index: 10;
+  }
+}
+.wave--register {
+  z-index: 0;
+  position: absolute;
+  bottom: -10rem;
+  width: 100%;
+  left: 0;
 }
 .brand__register{
   display: flex;
@@ -12,6 +24,7 @@
   width: 17%;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 .yahoo{
   color: #FFF;
@@ -79,4 +92,51 @@
   text-align: left;
   font-size: 1.8em;
   margin-bottom: 2rem;
+}
+
+@media #{$large-down} {
+  .container--register {
+    width: 80%;
+  }
+  .brand__register {
+    width: 25%;
+  }
+}
+@media #{$medium-down} {
+  .brand__register {
+    display: none
+  }
+  .register__form {
+    width: 85%;
+    .register__form__title {
+      font-size: 2em;
+      margin-top: .5rem;
+    }
+  }
+}
+@media #{$small-down} {
+  .btn--register {
+    padding: 6px 17px;
+    font-size: 1em;
+  }
+  .register__form {
+    .register__form__title {
+      font-size: 1.6em;
+    }
+    .register__form__text {
+      font-size: 1em;
+    }
+    input {
+      padding: .4rem;
+      font-size: 1em;
+    }
+    label {
+      font-size: 1em;
+    }
+  }
+}
+@media #{$xsmall-down} {
+  .register__form {
+    width: 100%;
+  }
 }
