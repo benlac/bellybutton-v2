@@ -1,4 +1,5 @@
 @import '../../../../scss/tools/vars';
+@import '../../../../scss/tools/_responsive';
 
 .project{
   display: flex;
@@ -45,4 +46,41 @@
 }
 .project__link:hover::after {
   top: 0;
+}
+
+@media #{$small-down} {
+  .project {
+    .project__title {
+      font-size: 1.8em;
+    }
+    .project__subtitle {
+      font-size: 1.2em;
+      text-align: center;
+    }
+    .btn--project {
+      padding: 10px 25px;
+      font-size: 1.2em;
+    }
+    .project__text {
+      margin: 3rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+@media #{$xsmall-down} {
+  .project {
+    .project__title {
+      font-size: 1.4em;
+    }
+    .project__subtitle {
+      font-size: 1em;
+    }
+    .btn--project {
+      padding: 10px 25px;
+      font-size: 1em;
+    }
+  }
+  .project__text {
+    font-size: 1rem;
+  }
 }

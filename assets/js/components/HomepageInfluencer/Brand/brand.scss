@@ -1,4 +1,5 @@
 @import '../../../../scss/tools/vars';
+@import '../../../../scss/tools/_responsive';
 
 .section1 {
   display: flex;
@@ -19,15 +20,13 @@
       font-size: 1.6em;
       line-height: 1.4em;
       margin-top: 3rem;
+      width: 70%;
     }
     .section1__P2 {
       text-align: center;
       font-size: 1em;
     }
   }
-  .section1__img {
-    width: 53%;
-
     .img__influ {
       position: relative;
       z-index: 2;
@@ -42,7 +41,6 @@
       animation: translation 24s infinite linear both
     }
   }
-}
 
 .section1--influencer{
   margin-left: 6rem;
@@ -56,4 +54,82 @@
 	0% {
 		transform: translateX(100vw);
 	}
+}
+@media #{$xlarge-down} {
+  .section1 {
+    .img__montgolfiere {
+      top: 30px;
+    }
+  }
+}
+@media #{$large-down} {
+  .section1 {
+    .section1__content {
+      width: 70%;
+      .section1__h1 {
+        font-size: 2em;
+      }
+        .section1__p {
+          width: 100%;
+          font-size: 1.4em;
+        }
+    }
+  }
+  .btn--influencer {
+    padding: 8px 17px;
+    font-size: 1em;
+  }
+}
+@media #{$medium-down} {
+  .section1--influencer {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    .img__montgolfiere {
+      margin-left: 15px;
+      animation: translation 15s infinite linear both;
+    }
+    .section1__img {
+      width: 100%;
+    }
+    .section1__content {
+      width: 80%;
+      align-items: center;
+      .section1__h1 {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+  .btn--influencer {
+    width: 40%;
+  }
+}
+@media #{$small-down} {
+  .section1--influencer {
+    .img__montgolfiere {
+      margin-left: 40px;
+      animation: translation 10s infinite linear both;
+      width: 12%;
+    }
+    .section1__content {
+      .section1__h1 {
+        font-size: 1.4em;
+      }
+      .section1__p {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .btn--influencer {
+    width: 80%;
+  }
+}
+@media #{$xsmall-down} {
+  .section1--influencer {
+    .img__montgolfiere {
+      margin-left: 70px;
+      animation: translation 7s infinite linear both;
+      width: 12%;
+    }
+  }
 }

@@ -109,7 +109,7 @@ class InfluencerController extends AbstractController
             return $this->redirectToRoute('influencer_edit_password', array( 'id' => $user->getid()));
         }
 
-        return $this->render('business/edit_password.html.twig', [
+        return $this->render('influencer/edit_password.html.twig', [
             'form' => $form->createView(),
         ]);
     }

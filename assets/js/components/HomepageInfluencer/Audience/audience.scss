@@ -1,4 +1,5 @@
 @import '../../../../scss/tools/vars';
+@import '../../../../scss/tools/responsive';
 
 .section2 {
   display: flex;
@@ -27,6 +28,48 @@
       font-size: 1.6em;
       line-height: 1.6em;
       margin-top: 3rem;
+      width: 80%;
     }
   }
+}
+
+@media #{$large-down} {
+  .section2 {
+    .section2__content {
+      margin-right: 0;
+      .section2__h1 {
+        font-size: 3em;
+      }
+      .section2__p {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
+@media #{$medium-down} {
+ .section2 {
+   flex-direction: column-reverse;
+   .section2__content {
+     align-items: center;
+   }
+   .section2__img {
+     width: 100%;
+   }
+ }
+}
+@media #{$small-down} {
+  .section2 {
+    .section2__content {
+      .section2__h1 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+      .section2__p {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+@media #{$xsmall-down} {
+
 }

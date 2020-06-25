@@ -11,16 +11,23 @@
     flex-direction: column;
 
     .about__h1 {
-      text-align: left;
+      text-align: center;
       color: #312e5c;
       font-size: 3.8em;
     }
     .about__p {
-      text-align: left;
+      text-align: justify;
       color: #312e5c;
       font-size: 1.6em;
       line-height: 1.4em;
       margin-top: 3rem;
+    }
+    .about__p__second {
+      text-align: justify;
+      color: #312e5c;
+      font-size: 1.6em;
+      line-height: 1.4em;
+      margin-top: 1rem;
     }
   }
 }

@@ -1,0 +1,43 @@
+.settings__account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .form__settings div {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__settings input{
+    width: 100%;
+    margin-top: .3rem;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #eff3f6;
+    padding: 1rem;
+    border: none;
+    outline: none;
+  }
+  .form__settings label{
+    text-align: left;   
+    text-transform: uppercase;
+    color: #afb4b8;
+    font-size: 1.2em;
+  }
+  .form__settings input:focus::-webkit-input-placeholder {
+    color: #312e5c;
+    transition: all .5s ease;
+  }
+  .btn--account-settings {
+    margin: 1rem;
+      background: linear-gradient(90deg, #432d9c 0%, #2c34ac 49%, #2736af 100%);
+  }
+  .btn--delete {
+    background: #FFF;
+    border: none;
+    text-decoration: underline;
+    color: red;
+    margin-top: 3rem;
+  }
+}

@@ -5,25 +5,31 @@
 {% block title %}Paramètres du compte{% endblock %}
 
 {% block body %}
-
+  <div class="settings__account">
+    {% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="error__flash" >
+            {{ message|raw }}
+        </div>
+    {% endfor %}
+    {% endfor %}
     <h1>Mes paramètres</h1>
 
-    <a href={{ path('business_edit_password', {id: app.user.id}) }}>Modifier mon mot de passe</a>
-
-    {{ form_start(form) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.firstname) }}
-    {{ form_row(form.lastname) }}
-    {{ form_row(form.companyName) }}
-      <button class="btn ">{{ button_label|default('Enregistrer les modifications') }}</button>
+    {{ form_start(form, {'attr': {'class': 'form__settings'}}) }}
+    {{ form_row(form.email, {'attr': {'class': 'form__settings--row'}}) }}
+    {{ form_row(form.firstname, {'attr': {'class': 'form__settings--row'}}) }}
+    {{ form_row(form.lastname, {'attr': {'class': 'form__settings--row'}}) }}
+    {{ form_row(form.companyName, {'attr': {'class': 'form__settings--row'}}) }}
+      <button class="btn btn--account-settings">{{ button_label|default('Enregistrer les modifications') }}</button>
     {{ form_end(form) }}
 
-      
+    <a href={{ path('business_edit_password', {id: app.user.id}) }}>Modifier mon mot de passe</a>
     <form method="post" action="{{ path('business_delete', {'id': user.id}) }}" >
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
       <!-- @TODO => JS pour confirmer la suppression du compte -->
-      <button class="">Supprimer mon compte</button>
+      <button class="btn--delete">Supprimer mon compte</button>
     </form>
+  </div>
 {% endblock %}
 

@@ -13,8 +13,8 @@ const Header = () => (
       <h1 className="section1__h1">
         Des millions de vues <br /> à portée de clic
       </h1>
-      <p className="section1__p">Une équipe d'experts et de passionés, des outils <br /> puissants et un vrai suivi à votre disposition. <br /> Recevez votre devis de campagne d'influence <br /> personnalisé sous 24 heures.</p>
-      <a className="btn btn--influencer" href="">Obtenez votre solution <strong>sur mesure</strong></a>
+      <p className="section1__p">Une équipe d'experts et de passionés, des outils puissants et un vrai suivi à votre disposition. Recevez votre devis de campagne d'influence personnalisé sous 24 heures.</p>
+      <a className="btn btn--business" href="">Obtenez votre solution <strong>sur mesure</strong></a>
       <p className="section1__P2">Audit complet gratuit, sans engagement, sans carte bancaire</p>
     </div>
     <div className="section1__img">

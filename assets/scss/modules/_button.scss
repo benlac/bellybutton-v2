@@ -12,7 +12,15 @@
   box-shadow: 0 10px 20px 0 hsla(0,0%,47.1%,.3);
 }
 .btn--influencer{
-  background-color: #9f7fc8;
+  background: rgb(67,45,156);
+  background: linear-gradient(90deg, rgba(67,45,156,1) 0%, rgba(44,52,172,1) 49%, rgba(39,54,175,1) 100%);
+  margin-top: 2rem;
+  width: 60%;
+  text-align: center;
+}
+.btn--home-influencer{
+  background: rgb(67,45,156);
+  background: linear-gradient(90deg, rgba(67,45,156,1) 0%, rgba(44,52,172,1) 49%, rgba(39,54,175,1) 100%);
   margin-top: 2rem;
 }
 .btn--society{
@@ -26,11 +34,17 @@
   padding: 10px 36px;
   text-align: center;
 }
-.btn--influencer{
+.btn--business{
   background: rgb(67,45,156);
   background: linear-gradient(90deg, rgba(67,45,156,1) 0%, rgba(44,52,172,1) 49%, rgba(39,54,175,1) 100%);
   text-align: center;
   margin-top: 2rem;
+  strong {
+    color: #FFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin-left: 1px;
+  }
 }
 .btn--audit{
   background-color: #FFF;

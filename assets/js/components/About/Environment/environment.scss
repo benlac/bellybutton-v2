@@ -3,16 +3,21 @@
   justify-content: space-between;
   margin: 0 auto;
   margin-top: 6rem;
-
+  .about__third__img {
+    width: 50%;
+  }
   .about__third__content {
     align-self: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 50%;
 
     .about__third__h1 {
       text-align: left;
       color: #312e5c;
       font-size: 3.8em;
+      width: 75%;
     }
     .about__third__p {
       text-align: left;
@@ -20,6 +25,8 @@
       font-size: 1.6em;
       line-height: 1.4em;
       margin-top: 3rem;
+      width: 75%;
     }
+
   }
 }

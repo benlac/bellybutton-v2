@@ -1,6 +1,51 @@
+@import '../../../../scss/tools/responsive';
+
 .brand {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 10rem 0;
+  .brands__all {
+    width: 70%;
+  }
+  .brand__mobile {
+    display: none;
+  }
+}
+
+
+@media #{$large-down} {
+  .brand {
+    .brands__all {
+      width: 85%;
+    }
+  }
+}
+@media #{$medium-down} {
+  .brand {
+    .brands__all {
+      width: 90%;
+    }
+  }
+}
+@media #{$small-down} {
+  .brand {
+    margin: 2rem 0;
+    .brands__all {
+      display: none;
+    }
+    .brand__mobile {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 40%;
+        margin: 1rem auto;
+      }
+      .plarium {
+        width: 20%;
+      }
+    }
+  }
+}
+@media #{$xsmall-down} {
 }
