@@ -20,3 +20,14 @@
 .success__span{
   text-decoration: underline;
 }
+
+.success__mail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .success__mail__title {
+    margin-bottom: 2rem;
+  }
+}

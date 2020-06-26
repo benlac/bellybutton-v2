@@ -2,6 +2,7 @@
 
 namespace App\Notification;
 
+use App\Entity\Contact;
 use App\Entity\User;
 use Twig\Environment;
 
@@ -25,7 +26,7 @@ class UserNotification
     public function notify(User $user)
     {
         $message = (new \Swift_Message('Email de confirmation d\'inscription'))
-        ->setFrom('admin@bellybutton.com')
+        ->setFrom('tp@bellybutton-group.com')
         ->setTo($user->getEmail())
         ->setBody(
             $this->renderer->render(
@@ -41,7 +42,7 @@ class UserNotification
     public function resetPassword($userEmail, $token)
     {
         $message = (new \Swift_Message('Email d\'alerte : réinitilisation du mot de passe'))
-        ->setFrom('admin@bellybutton.com')
+        ->setFrom('tp@bellybutton-group.com')
         ->setTo($userEmail)
         ->setBody(
             $this->renderer->render(
@@ -54,5 +55,37 @@ class UserNotification
         );
 
         $this->mailer->send($message);
+    }
+    public function audit($data)
+    {
+        $message = (new \Swift_Message('Demande d\'audit'))
+        ->setFrom($data['email'])
+        ->setTo('tp@bellybutton-group.com')
+        ->setBody(
+            $this->renderer->render(
+                'mails/audit.html.twig',
+                ['data' => $data]
+            ),
+            'text/html'
+        );
+
+        $this->mailer->send($message);
+
+    }
+    public function contact(Contact $contact)
+    {
+        $message = (new \Swift_Message('Demande de contact'))
+        ->setFrom($contact->getEmail())
+        ->setTo('tp@bellybutton-group.com')
+        ->setBody(
+            $this->renderer->render(
+                'mails/contact.html.twig',
+                ['contact' => $contact]
+            ),
+            'text/html'
+        );
+
+        $this->mailer->send($message);
+
     }
 }

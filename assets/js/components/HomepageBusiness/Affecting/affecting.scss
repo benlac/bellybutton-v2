@@ -1,42 +1,82 @@
 @import '../../../../scss/tools/vars';
+@import '../../../../scss/tools/responsive';
 
-.section1 {
+.business-einfluence {
   display: flex;
   margin-top: 6rem;
-  margin: 0 auto;
-  margin-top: 4rem;
-  margin-bottom: 10rem;
-  align-items: center;
-  .section1__business__img {
-  width: 40%;
+  margin: 4rem auto 10rem;
+  justify-content: space-between;
+  .business-einfluence__img {
+    width: 50%;
   }
-  .section1__content {
+  .business-einfluence__content {
     align-self: center;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
-    .section1__h1 {
+    .business-einfluence__h1 {
       text-align: left;
       color: $fontMain;
       font-size: 3.8em;
     }
-    .section1__subtitle {
-      font-size: 1.6em;
-      word-spacing: .1rem;
-      margin: 1.6rem;
-
-      .section1__viraux { 
-        font-family: $fontBold;
-
-      }
-    }
-    .section1__p {
+    .business-einfluence__p {
       text-align: left;
       color: $font;
       font-size: 1.6em;
       line-height: 1.6em;
       margin-top: 3rem;
+    }
+  }
+}
+
+@media #{$xlarge-down} {
+  .business-einfluence {
+    .business-einfluence__content {
+      padding: 2rem;
+    }
+  }
+}
+@media #{$large-down} {
+  .business-einfluence {
+    .business-einfluence__content {
+      padding: 2rem;
+      .business-einfluence__h1 {
+        font-size: 2em;
+      }
+        .business-einfluence__p {
+          width: 100%;
+          font-size: 1.4em;
+        }
+    }
+  }
+}
+@media #{$medium-down} {
+  .business-einfluence {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    .business-einfluence__img {
+      width: 100%;
+    }
+    .business-einfluence__content {
+      width: 80%;
+      align-items: center;
+      .business-einfluence__h1 {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+@media #{$small-down} {
+  .business-einfluence {
+    .business-einfluence__content {
+      .business-einfluence__h1 {
+        font-size: 1.4em;
+      }
+      .business-einfluence__p {
+        font-size: 1.2em;
+      }
     }
   }
 }

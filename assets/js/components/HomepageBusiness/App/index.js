@@ -11,14 +11,12 @@ import Affecting from '../Affecting';
 
 const App = () => (
   <>
-    <div className="container">
       <Header />
+    <div className="container">
       <Banner />
     </div>
       <Affecting />
-    <div className="container">
       <Solutions />
-    </div>
       <Teams />
     <div className="container">
       <Contact />

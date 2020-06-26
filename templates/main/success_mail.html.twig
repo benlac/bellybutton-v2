@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{{ include('base/_header_business.html.twig') }}
+{% endblock %}
+{% block title %}Merci, pour votre message{% endblock %}
+
+{% block body %}
+<div class="success__mail">
+  <p class="success__mail__title">Merci votre message à été envoyé avec succès, nous reviendrons vers vous au plus vite</p>
+  <a class="btn btn--error" href="{{ path('home') }}">Retournez sur la page d'accueil</a>
+  
+</div>
+{% endblock %}

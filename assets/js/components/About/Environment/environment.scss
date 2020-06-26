@@ -1,3 +1,5 @@
+@import '../../../../scss/tools/responsive';
+
 .about__third {
   display: flex;
   justify-content: space-between;
@@ -28,5 +30,39 @@
       width: 75%;
     }
 
+  }
+}
+
+@media #{$large-down} {
+  .about__third {
+    .about__third__content {
+      .about__third__h1 {
+        font-size: 3em;
+      }
+      .about__third__p {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
+@media #{$medium-down} {
+  .about__third {
+    flex-direction: column-reverse;
+    .about__third__img {
+      width: 100%;
+    }
+    .about__third__content {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+}
+@media #{$small-down} {
+  .about__third {
+    .about__third__content {
+      .about__third__h1 {
+        font-size: 2.2em;
+      }
+    }
   }
 }

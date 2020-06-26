@@ -100,6 +100,11 @@
     text-decoration: underline;
   }
 }
+@media #{$xlarge-down} {
+  .wave--register {
+    height: 50%;
+  }
+}
 @media #{$large-down} {
   .container--register {
     width: 80%;
@@ -109,6 +114,9 @@
   }
   .register__form__accept {
     font-size: 1.2em;
+  }
+  .wave--register {
+    height: 40%;
   }
 }
 @media #{$medium-down} {
@@ -121,6 +129,9 @@
       font-size: 2em;
       margin-top: .5rem;
     }
+  }
+  .wave--register {
+    display: none;
   }
 }
 @media #{$small-down} {
@@ -145,6 +156,9 @@
   }
   .register__form__accept {
     font-size: 1em;
+  }
+  .audit__content {
+    font-size: 1.3em;
   }
 }
 @media #{$xsmall-down} {

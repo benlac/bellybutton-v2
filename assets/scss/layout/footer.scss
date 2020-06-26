@@ -25,10 +25,12 @@ footer h2{
 .footer__contact__nav a{
   margin-top: .7rem;
   color: #bbbcc7;
-  transition: transform 0.3s;
+  transition: .3s;
 }
 .footer__contact__nav a:hover {
-  transform: scale(1.2);
+  color: #bbbcc7;
+  opacity: .5;
+  transition: .3s;
 }
 .footer__resource{
   width: 30%;

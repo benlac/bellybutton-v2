@@ -1,3 +1,5 @@
+@import '../../../../scss/tools/responsive';
+
 .about {
   display: flex;
   justify-content: space-between;
@@ -30,4 +32,26 @@
       margin-top: 1rem;
     }
   }
+}
+
+@media #{$medium-down} {
+  .about {
+    .about__content {
+      .about__h1 {
+        font-size: 3em;
+      }
+      .about__p {
+        font-size: 1.4em;
+      }
+      .about__p__second {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
+@media #{$small-down} {
+
+}
+@media #{$xsmall-down} {
+
 }

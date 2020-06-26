@@ -66,16 +66,15 @@ class BusinessController extends AbstractController
     /**
      * @Route("/business/audit", name="business_audit", methods={"GET", "POST"})
      */
-    public function audit(Request $request)
+    public function audit(Request $request, UserNotification $notification)
     {
         $form = $this->createForm(AuditType::class);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $userLogged = $this->getUser();
             $data = $form->getData();
-            // dump($userLogged);
-            // dump($data);
-            //TODO envoyer via le mailer, les datas du form et l'utilisateur connecté
+            dump($data);
+            $notification->audit($data);
+            return $this->render('main/success_mail.html.twig');
         }
         return $this->render('business/audit.html.twig', [
             'form' => $form->createView(),
@@ -100,13 +99,10 @@ class BusinessController extends AbstractController
       $form->handleRequest($request);
 
       if ($form->isSubmitted() && $form->isValid()) {
-        //   if($form->get('password')->getData()){
-        //       $encodedPassword = $passwordEncoder->encodePassword($user, $form->get('password')->getData());
-        //       $user->setPassword($encodedPassword);
-        //   }
           $this->getDoctrine()->getManager()->flush();
 
-          return $this->redirectToRoute('home');
+          return $this->redirectToRoute('business_edit', array( 'id' => $user->getid()));
+          // @TODO : flash message pour confirmer la modif enregistrée
       }
 
       return $this->render('business/business_account_settings.html.twig', [

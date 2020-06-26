@@ -1,3 +1,5 @@
+@import '../../../../scss/tools/responsive';
+
 .about__second {
   display: flex;
   justify-content: space-between;
@@ -30,4 +32,36 @@
       width: 75%;
     }
   }
+}
+
+@media #{$large-down} {
+  .about__second {
+    .about__second__content {
+      .about__second__h1 {
+        font-size: 3em;
+      }
+      .about__second__p {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
+@media #{$medium-down} {
+  .about__second {
+    flex-direction: column;
+    .about__second__img {
+      width: 100%;
+    }
+    .about__second__content {
+      width: 100%;
+      margin-top: 2rem;
+      .about__second__h1 {
+      }
+      .about__second__p {
+      }
+    }
+  }
+}
+@media #{$small-down} {
+
 }

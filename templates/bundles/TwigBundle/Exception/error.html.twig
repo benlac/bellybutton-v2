@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{{ include('base/_header_business.html.twig') }}
+{% endblock %}
+{% block title %}Page non trouvée{% endblock %}
+
+{% block body %}
+<div class="error">
+  <div class="error__content">
+    <h1 class="error__title">Erreur</h1>
+    <p class="error__subtitle">Oops, il n'y a rien ici.</p>
+    <p class="error__title">Il semble que la page que vous recherchez n'est pas disponible.</p>
+    <a class="btn btn--error" href="{{ path('home') }}">Retournez sur la page d'accueil</a>
+  </div>
+  <div class="error__img">
+    <img src="{{ asset('assets/images/illus/error.png') }}" alt="">
+  </div>
+</div>
+{% endblock %}

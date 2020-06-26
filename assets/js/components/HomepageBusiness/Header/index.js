@@ -8,16 +8,16 @@ import picture from '../../../../images/icons/picture.png'
 import './header.scss';
 
 const Header = () => (
-  <div className="section1">
-    <div className="section1__content">
-      <h1 className="section1__h1">
-        Des millions de vues <br /> à portée de clic
+  <div className="header-business">
+    <div className="header-business__content">
+      <h1 className="header-business__h1">
+        Des millions de vues à portée de clic
       </h1>
-      <p className="section1__p">Une équipe d'experts et de passionés, des outils puissants et un vrai suivi à votre disposition. Recevez votre devis de campagne d'influence personnalisé sous 24 heures.</p>
-      <a className="btn btn--business" href="">Obtenez votre solution <strong>sur mesure</strong></a>
-      <p className="section1__P2">Audit complet gratuit, sans engagement, sans carte bancaire</p>
+      <p className="header-business__p">Une équipe d'experts et de passionés, des outils puissants et un vrai suivi à votre disposition. Recevez votre devis de campagne d'influence personnalisé sous 24 heures.</p>
+      <a className="btn btn--business" href="/business/audit">Obtenez votre solution <strong>sur mesure</strong></a>
+      <p className="header-business__P2">Audit complet gratuit, sans engagement, sans carte bancaire</p>
     </div>
-    <div className="section1__img">
+    <div className="header-business__img">
       <img
         className="img__header"
         src={header_business} alt="Illustration représentant les médias sociaux"

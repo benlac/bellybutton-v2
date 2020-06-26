@@ -1,0 +1,8 @@
+{% extends "mails/base.html.twig" %}
+{% block body %}
+    <h2>Demande de contact</h2>
+    <p>Nom & Prénom: {{contact.fullname}}</p>
+    <p>Société: {{contact.company}}</p>
+    <p>Mail: {{contact.email}}</p>
+    <p>M%essage: {{contact.message}}</p>
+{% endblock %}

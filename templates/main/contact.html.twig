@@ -2,14 +2,14 @@
 {% block header %}
     <a href="{{ path('influencer') }}">Vous êtes influenceurs ?</a>
     </div>
-    <a class="btn btn--audit" href="">Votre audit <br>gratuit</a>
+    <a class="btn btn--audit" href=" {{path('business_audit')}} ">Votre audit gratuit</a>
 {{ include('base/_auth.html.twig') }}
 {% endblock %}
 {% block title %}Contact{% endblock %}
 
 {% block body %}
     <div class="container container--contact">
-        <h1 class="contact__title">Bonjour, nous somme <span class="contact__title__span">BellyButton,</span><br> Parlons de votre projet. </h1>
+        <h1 class="contact__title">Bonjour, nous somme <span class="contact__title__span">Bellybutton,</span><br> Parlons de votre projet. </h1>
         <div class="contact__btn">
             <div class="contact__btn__block">
                 <a class="btn btn--contact" href="">
@@ -18,7 +18,7 @@
                 </a>
             </div>
             <div class="contact__btn__block">
-                <a class="btn btn--help" href="">
+                <a class="btn btn--contact" href="">
                     <h3>Besoin d'aide ?</h3>
                     <p>Ouvrez un ticket un ticket et obtenez de l'aide</p>
                 </a>
@@ -27,7 +27,7 @@
         <div class="contact__form">
             <div class="reminder">
                 <h3>Vous pouvez <br> programmer un rappel.</h3>
-                <p>En cliquant <a href="">ici</a>. </p>
+                <p>En cliquant <a href=" {{path('business_audit')}} ">ici</a>. </p>
             </div>
             <div class="contact__form__post">
                 {{ form_start(form) }}

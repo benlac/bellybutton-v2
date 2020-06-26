@@ -1,0 +1,10 @@
+{% extends "mails/base.html.twig" %}
+{% block body %}
+    <h2>Demande d'audit</h2>
+    <p>Email: {{data.email}}</p>
+    <p>Budget: {{data.budget}}</p>
+    <p>Objectifs: {{data.goal}}</p>
+    <p>Date envisagée de la campagne: {{data.deadline}}</p>
+    <p>Date: {{data.dateRdv|date("m/d/Y")}}</p>
+    <p>Heure: {{data.hourRdv|date('H:i:s')}}</p>
+{% endblock %}

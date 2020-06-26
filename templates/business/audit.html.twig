@@ -11,23 +11,18 @@
     
     <div class="container container--register">
         <div class="register__form">
-            <h1>Pour recevoir votre devis de <br> campagne d'influence marketing <br> sur mesure, c'est <span>simple.</span></h1>
+            <h1 class="register__form__title">Pour recevoir votre devis de <br> campagne d'influence marketing <br> sur mesure, c'est <span>simple.</span></h1>
             <p class="audit__content">Répondez au questionnaire puis programmez un <br> rendez-vous avec l'équipe. C'est toujours 100% gratuit.</p>
             {{ form_start(form) }}
-
-            {{ form_row(form.budget) }}
-
-
-            {{ form_row(form.goal) }}
-
-
-            {{ form_row(form.deadline) }}
-
-            <h2 class="audit__rdv">Programmez un rappel</h2>
-            <p>Nous vous rappelons quand vous êtes disponibles</p>
-            {{ form_row(form.dateRdv) }}
-            {{ form_row(form.hourRdv) }}
-            <button class="btn btn--register-audit">Programmer ces dates</button>
+                {{ form_row(form.email) }}
+                {{ form_row(form.budget) }}
+                {{ form_row(form.goal) }}
+                {{ form_row(form.deadline) }}
+                <h2 class="audit__rdv">Programmez un rappel</h2>
+                <p>Nous vous rappelons quand vous êtes disponibles</p>
+                {{ form_row(form.dateRdv) }}
+                {{ form_row(form.hourRdv) }}
+                <button class="btn btn--register-audit">Programmer ces dates</button>
             {{ form_end(form) }}
         </div>
         <img class="wave--register" src="{{ asset('assets/images/waves/shape.png') }}" alt="">

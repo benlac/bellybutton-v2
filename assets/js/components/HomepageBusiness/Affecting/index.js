@@ -4,13 +4,15 @@ import './affecting.scss';
 import img from '../../../../images/efluence.png';
 
 const Affecting = () => (
-  <div className="section1">
+  <div className="business-einfluence">
+    <div className="business-einfluence__img">
       <img src={img} alt="Illustration représentant les médias sociaux"/>
-    <div className="section1__content">
-      <h1 className="section1__h1">
+    </div>
+    <div className="business-einfluence__content">
+      <h1 className="business-einfluence__h1">
       Avez-vous déjà entendu parler de l'e-influence ?
       </h1>
-      <p className="section1__p">
+      <p className="business-einfluence__p">
       Si la réponse est oui, c’est sûrement dû à son efficacité redoutable. 
       Si la réponse est non, c’est sûrement dû au fait que cette technologie soit nouvelle et encore méconnue.
       Devenez un pure player et faite partie des piliers du marketing 3.0 ! <br/>
