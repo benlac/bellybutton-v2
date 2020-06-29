@@ -166,6 +166,7 @@ class AppFixtures extends Fixture
             $support->setName($faker->bellybuttonSupport());
             $support->setIdVideo($faker->bellybuttonVideo());
             $support->setNetwork('Youtube');
+            $support->setAuthor('Benjamin Code');
             for($j = 0; $j < 4; $j++){
                 $support->setCampaign($campaignList[array_rand($campaignList)]);
             }

@@ -16,29 +16,29 @@ const Sort = ({ user, sortValue, campaigns }) => {
   const supports = campaign.supports;
 
   return (
-      <div className="sort">
+    <div className="sort">
       <Link
         to={`/business/dashboard/${user}`}
         className="dashboard-business__back"
       >
         Retour aux campagnes
       </Link>
-          <select
-            className="list__support"
-            name="list-supports"
-            id="lists--supports"
-            onChange={handleChange}
-          >
-          <option className="list__support__item" value="total">
-              Stats global
-          </option>
-          {supports.map((support) => (
-            <option key={support.id} className="list__support__item" value={support.name}>
-              {support.name}
-            </option>
-          ))}
-          </select>
-        </div>
+      <select
+        className="list__support"
+        name="list-supports"
+        id="lists--supports"
+        onChange={handleChange}
+      >
+      <option className="list__support__item" value="total">
+          Stats global
+      </option>
+      {supports.map((support) => (
+        <option key={support.id} className="list__support__item" value={support.name}>
+          {support.name}
+        </option>
+      ))}
+      </select>
+    </div>
   );
 }
 

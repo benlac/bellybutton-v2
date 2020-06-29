@@ -12,8 +12,6 @@ if (loginAuth) {
 const iconBurger = document.getElementById('burger__menu__link');
 const burgerMenu = document.getElementById('menu__burger');
 
-console.log(burgerMenu);
-
 iconBurger.addEventListener('click', (e) => {
   e.preventDefault();
   burgerMenu.classList.toggle('burger__menu--visible');

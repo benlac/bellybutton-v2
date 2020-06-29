@@ -30,11 +30,11 @@ const Reporting = ({ campaigns, sortValue }) => {
     likes: likesTotal,
     comments: commentsTotal,
     views: viewsTotal,
+    author: '',
   };
 
   // Si sortValue vaut 'total' on envoie l'objet avec les stats global, sinon on tri en fonction de la valeur du select récuperer dans le state
   const supportSorted = sortValue === 'total' ? supportSortedTotal : supports.find((support) => support.name === sortValue);
-
   return (
     <div className="dashboard__campagn-stat">
       <Title name={campaign.name} />

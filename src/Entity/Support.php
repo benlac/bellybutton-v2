@@ -72,6 +72,12 @@ class Support
      */
     private $likes;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups("campaign_get")
+     */
+    private $author;
+
     public function __construct()
     {
         $this->views = new ArrayCollection();
@@ -251,6 +257,18 @@ class Support
                 $like->setSupport(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(string $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }
