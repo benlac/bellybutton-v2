@@ -160,6 +160,36 @@
   font-size: 1.8em;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  .first, .previous, .next, .last {
+    border: 2px solid #aaaaaa;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #ababab;
+    margin: .5rem;
+    font-size: 15px;
+  }
+  .page {
+    border: 2px solid #aaaaaa;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #ababab;
+    font-size: 15px;
+    margin: .5rem;
+  }
+  .current {
+    border: 2px solid #aaaaaa;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 15px;
+    background-color: #aaaaaa;
+    margin: .5rem;
+  }
+}
+
 @media #{$large-down} {
   .container {
     width: 90%;
