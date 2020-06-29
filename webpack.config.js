@@ -29,6 +29,7 @@ Encore
     .addEntry('about', './assets/js/entryPoints/about.js')
     .addEntry('layout', './assets/js/entryPoints/layout.js')
     .addEntry('comments', './assets/js/entryPoints/comments.js')
+    .addEntry('modalDelete', './assets/js/entryPoints/modalDelete.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

@@ -65,7 +65,7 @@ class InfluencerController extends AbstractController
     /**
      * @Route("/influencer/profile/{id<\d+>}", name="influencer_edit", methods={"GET","POST"})
      */
-    public function edit(User $user, Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function edit(User $user, Request $request)
     {
       $this->denyAccessUnlessGranted('EDIT', $user);  
       $form = $this->createForm(InfluencerType::class, $user);

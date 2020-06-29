@@ -24,13 +24,24 @@
       <button class="btn btn--account-settings">{{ button_label|default('Enregistrer les modifications') }}</button>
     {{ form_end(form) }}
 
-    <a href={{ path('influencer_edit_password', {id: app.user.id}) }}>Modifier mon mot de passe</a>
+    <a class="modify-password" href={{ path('influencer_edit_password', {id: app.user.id}) }}>Modifier mon mot de passe</a>
     <form method="post" action="{{ path('influencer_delete', {'id': user.id}) }}" >
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
-      <!-- @TODO => JS pour confirmer la suppression du compte -->
-      <button class="btn--delete">Supprimer mon compte</button>
+      <a id="delete-account" class="btn--delete" href="">Supprimer mon compte</a>
+      <div class="modal__delete" id="modal__delete">
+        <h3 class="modal__delete__title">Suppression du compte</h3>
+        <p class="modal__delete__subtitle">Cette action est irreverssible, êtes vous sur de vouloir supprimé votre compte ?</p>
+        <p class="modal__delete__content">La suppression de compte signifie que votre adresse email ainsi que toutes les données personnelles associées seront effacées de notre base de données.</p>
+        <div class="deletion-choice">
+          <button class="btn-delete btn-delete--delete">Supprimer</button>
+          <a href="" id="cancel-deletion" class="btn-delete btn-delete--cancel">Annuler</a>
+        </div>
+      </div>
     </form>
   </div>
+  {% block javascripts %}
+    {{ encore_entry_script_tags('modalDelete') }}
+  {% endblock %}
 {% endblock %}
 

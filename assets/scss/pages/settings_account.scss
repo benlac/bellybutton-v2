@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
 
   .form__settings div {
     display: flex;
@@ -38,6 +39,79 @@
     border: none;
     text-decoration: underline;
     color: red;
+    display: inline-block;
     margin-top: 3rem;
   }
+
+  .modify-password {
+    text-decoration: underline;
+  }
+  .modal__delete {
+    display: none;
+  }
+
+  .modal__delete--visible {
+    display: flex;
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100px;
+    top: 40%;
+    width: 20%;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 25px 0 rgba(19,28,37,.4);
+    z-index: 10;
+      .modal__delete__title {
+        font-size: 1.8em;
+      }
+      .modal__delete__subtitle {
+        font-size: 1.2;
+      }
+      .modal__delete__content {
+        font-size: 1em;
+      }
+      .deletion-choice {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 2rem;
+        .btn-delete {
+          color: #FFF;
+          border: none;
+          padding: .5rem;
+          border-radius: 9px;
+        }
+        .btn-delete--delete {
+          background-color: red;
+        }
+        .btn-delete--cancel {
+          background-color: #dde1e4;
+        }
+
+      }
+
+  }
+}
+
+.overlay {
+  display: none;
+}
+
+.overlay--visible {
+    display: block;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
 }
