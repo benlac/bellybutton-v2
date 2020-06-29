@@ -1,0 +1,36 @@
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  opacity: .5;
+  color: #FFF;
+  &.active {
+    display: block;
+  }
+}
+
+.cookie-inform-and-ask {
+  background-color: #FFF;
+  opacity: .9;
+  display: none;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+
+  &.active {
+    display: block;
+  }
+
+  .cookie-dialog {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  }
+}
