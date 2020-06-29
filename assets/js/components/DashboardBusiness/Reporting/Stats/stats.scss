@@ -1,12 +1,27 @@
 @import '../../../../../scss/tools/responsive';
 
 .stats { 
+  position: relative;
   .stats__section {
     display: flex;
     width: 100%;
   }
 }
+.stats__support-ref {
+  text-align: center;
+  font-size: 2em;
+  display: inline;
+  position: absolute;
+  top: -60px;
+  right: 0;
+  left: 0;
+  z-index: 0;
+}
 
+.list__support {
+  position: relative;
+  z-index: 5;
+}
 .stats-card {
   background-color: #FFF;
   border-radius: 5px;

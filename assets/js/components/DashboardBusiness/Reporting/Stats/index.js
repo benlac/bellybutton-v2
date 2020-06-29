@@ -7,7 +7,7 @@ import { sumDatas, engagementRate, totalImpression, addNumbWithSameDate, addNumb
 import Card from './Card';
 import './stats.scss';
 
-const Stats = ({ likes, comments, views, name }) => {
+const Stats = ({ likes, comments, views, name, author }) => {
   const reducedObjArr = addNumbWithSameDate(views); 
   const viewEveryFive = addNumbAndSortEveryFive(reducedObjArr);
   const viewsByDay = reducedObjArr.map((view) => view.number );
@@ -43,9 +43,10 @@ const Stats = ({ likes, comments, views, name }) => {
       }
     ]
   };
+  const hyphen = author !== '' ? '-' : '';
   return (
     <div className="stats">
-      <h2>{name}</h2>
+      <h2 className="stats__support-ref">{`${name} ${hyphen} ${author}`}</h2>
       <div className="stats__section">
         <div className="stats-card stats-card--chart">
           <h3 className="stats-card__title">Vues par jours</h3>

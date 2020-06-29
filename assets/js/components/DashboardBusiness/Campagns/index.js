@@ -6,7 +6,7 @@ import Campagn from './Campagn';
 import './campagns.scss';
 
 const Campagns = ({ campaigns, resetSortValue }) => {
-  // console.log(campaigns);
+  console.log(campaigns);
   useEffect(() => {
     resetSortValue();
   });
