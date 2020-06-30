@@ -41,3 +41,39 @@ footer h2{
   justify-content: flex-end;
   align-items: flex-start;
 }
+
+@media #{$medium-down} {
+  footer {
+    justify-content: space-around;
+  }
+  .footer__certification {
+    display: none;
+  }
+}
+@media #{$small-down} {
+  footer {
+    justify-content: space-around;
+    padding: .5rem;
+    .footer__contact {
+      margin-left: 2rem;
+      width: 50%;
+    }
+    .footer__contact__nav {
+      padding: 0;
+      a{
+        font-size: 1em;
+      }
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    .footer__logo {
+      position: absolute;
+      left: 8px;
+      width: 20%;
+    }
+  }
+}
+@media #{$xsmall-down} {
+
+}
