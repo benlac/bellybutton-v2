@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+<a href="{{ path('home') }}">Notre offre</a>
+    </div>
+    <a class="btn btn--audit" href=" {{path('business_audit')}} ">Votre audit gratuit</a>
+{{ include('base/_auth.html.twig') }}
+{% endblock %}
+{% block title %}Gestion des cookies{% endblock %}
+
+
+{% block body %}
+<div class="container">
+  <h1 class="cookies__title">Gestion des cookies</h1>
+  <div class="cookies__intro">
+    <p>Le site que vous visitez utilise des traceurs (cookies). Ainsi, le site est susceptible d'accéder à des informations déjà stockées dans votre équipement terminal de communications électroniques et d'y inscrire des informations.</p>
+    <ul>
+      <h3>Les traceurs utilisés par le site relèvent de deux catégories :</h3>
+      <li>- traceurs dits strictement nécessaires, qui ne nécessitent pas votre consentement préalable,</li>
+      <li>- autres traceurs soumis à votre consentement préalable.</li>
+    </ul>
+  </div>
+  <div class="cookies__content">
+    <h2>1 - Traceurs exemptés de consentement préalable</h2>
+
+    <p>Nous utilisons ces traceurs pour permettre et faciliter la navigation sur le site notamment en mémorisant vos préférences de navigation définies au cours de votre session</p>
+    <p>Ces traceurs ne peuvent pas, techniquement, être désactivés depuis le site. Vous pouvez néanmoins vous opposer à l'utilisation de ces traceurs, exclusivement en paramétrant votre navigateur. Ce paramétrage dépend du navigateur que vous utilisez, mais il est en général simple à réaliser : en principe, vous pouvez soit activer une fonction de navigation privée soit uniquement interdire ou restreindre les traceurs (cookies). Attention, il se peut que des traceurs aient été enregistrés sur votre périphérique avant le paramétrage de votre navigateur : dans ce cas, effacez votre historique de navigation, toujours en utilisant le paramétrage de votre navigateur.</p>
+
+    <h2>2 - Traceurs sous notre contrôle</h2>
+
+    <p>Le tableau ci-dessous liste les traceurs sous notre contrôle qui sont soumis à votre consentement préalable. <br> voir tableau reech : <a href="https://www.reech.com/fr/cookies" target="_blank">https://www.reech.com/fr/cookies</a></p>
+
+    <h2>2.2 - Traceurs sous le contrôle de tiers</h2>
+
+    <a href="https://www.reech.com/fr/cookies" target="_blank">https://www.reech.com/fr/cookies</a>
+
+    <p>L'utilisation des traceurs est régie par l'article 32 II de la loi n° 78-17 du 6 janvier 1978, transposant l'article 5.3 de la directive 2002/58/CE du parlement européen et du conseil du 12 juillet 2002 modifiée par la directive 2009/136/CE.</p>
+
+    <p> Pour en savoir plus sur les cookies et traceurs, nous vous invitons à consulter le site de la CNIL : <a href="www.cnil.fr">www.cnil.fr</a></p>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+.legal__title, .cookies__title, .legal__title {
+  text-align: center;
+  margin: 4rem 0;
+}
+.legal__intro, .cookies__intro {
+  width: 90%;
+  margin: 0 auto;
+  p {
+    text-align: left;
+  }
+  li {
+    margin: 1rem 0 1rem 2rem;
+  }
+  h3 {
+    font-size: 1.6em;
+  }
+  h2 {
+    font-size: 2em;
+    margin: 2rem 0;
+  }
+}
+
+.legal__perimeter {
+  width: 90%;
+  margin: 2rem auto;
+  h2 {
+    font-size: 2em;
+  }
+  p {
+    text-align: left;
+  }
+}
+.legal__responsable, .cookies__content, .legal__content {
+  width: 90%;
+  margin: 2rem auto;
+  h2 {
+    font-size: 2em;
+    margin: 2rem 0;
+  }
+  h3 {
+    font-size: 1.6em;
+    margin: 2rem 0;
+  }
+  p {
+    text-align: left;
+  }
+  .legal__address {
+    text-align: center;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+.legal__data {
+  width: 90%;
+  margin: 2rem auto;
+  h2 {
+    font-size: 2em;
+    margin: 1rem 0;
+  }
+  h4 {
+    font-size: 1.6em;
+    margin: 1rem 0;
+  }
+  p {
+    text-align: left;
+  }
+  li {
+    margin: 1rem 0 1rem 2rem;
+  }
+}

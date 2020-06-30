@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+<a href="{{ path('home') }}">Notre offre</a>
+    </div>
+    <a class="btn btn--audit" href=" {{path('business_audit')}} ">Votre audit gratuit</a>
+{{ include('base/_auth.html.twig') }}
+{% endblock %}
+{% block title %}Mentions légales{% endblock %}
+
+
+{% block body %}
+<div class="container">
+  <h1 class="legal__title">Politique de protection des données personnelles</h1>
+  <div class="legal__intro">
+    <p>Conscient de l’importance d’assurer la confidentialité des données, la société BELLYBUTTON GROUP prend des engagements forts vis-à-vis de la protection des données à caractère personnel.</p>
+    <p>La présente politique de protection des données personnelles a pour objectif d’informer la personne physique concernée sur les engagements et mesures pris afin de veiller à la protection des données à caractère personnel.</p>
+    <p>Cette démarche s’inscrit dans le cadre du dispositif de protection des données personnelles :</p>
+    <p>le Règlement Général sur la protection des données n°2016/679 du Parlement et du Conseil du 27 avril 2016,</p>
+    <p>la loi Informatique et Libertés n°78-17 du 6 janvier 1978 modifiée par la loi n°2018-493 du 20 juin 2018.</p>
+    <p>La présente politique de protection des données personnelles pourrait évoluer en fonction du contexte légal et réglementaire et de la doctrine de la Commission nationale de l’informatique et des libertés (CNIL).</p>
+  </div>
+  <div class="legal__perimeter">
+    <h2>Périmètre</h2>
+    <p>La présente politique de protection des données personnelles s’applique aux prospects, aux Annonceurs et / ou Influenceurs de la société BELLYBUTTON GROUP </p>
+  </div>
+  <div class="legal__responsable">
+    <h2>Responsable de traitement</h2>
+    <p>Le responsable de traitement de données à caractère personnel est la société ROCKET MARKETING.</p>
+    <p class="legal__address">BELLYBUTTON GROUP <br> 31 rue de Ségur <br>PARIS</p>
+    <h3>Délégué à la protection des données</h3>
+    <p>La société BELLYBUTTON GROUP a nommé un Délégué à la Protection des Données (DPO), joignable à l'adresse e-mail  <a href="mailto:tp@bellybutton-group.com" target="_blank">tp@bellybutton-group.com</a>.</p>
+    <p>Ce dernier a pour mission de veiller au respect des dispositions de la règlementation sur la protection des données à caractère personnel.</p>
+    <p>Il est obligatoirement consulté par la société BELLYBUTTON GROUP préalablement à la mise en œuvre d’un traitement de données. Il recense dans un registre la liste de l’ensemble des traitements de données à caractère personnel de la société BELLYBUTTON GROUP au fur et à mesure de leur mise en œuvre.</p>
+    <p>Le Délégué à la Protection des Données veille au respect des droits des personnes (droit d’accès, de rectification, d’opposition, d’effacement, de limitation du traitement et de portabilité).</p>
+
+    <p>En cas de difficultés rencontrées lors de l’exercice de ces droits, les personnes concernées peuvent saisir le Délégué à la Protection des Données par e-mail à l’adresse <a href="mailto:tp@bellybutton-group.com" target="_blank">tp@bellybutton-group.com</a></p>
+  </div>
+  <div class="legal__data">
+    <h2>Données collectées – finalités – base légale du traitement</h2>
+    <h4>Qu’est-ce qu’une donnée à caractère personnel ?</h4>
+    <p>Les « données à caractère personnel » désignent toute information susceptible d’identifier directement (par ex., un nom, prénom) ou indirectement (par ex., par le biais de données pseudonymisées tel qu’un identifiant unique) une personne physique.</p>
+    <p>Les données à caractère personnel incluent des informations tels que des adresses postales ou de messagerie, numéro de téléphone portable, noms d’utilisateur, des informations professionnelles et des données financières. Les données à caractère personnel sont également susceptibles d’inclure des identifiants numériques uniques comme l’adresse IP d’un ordinateur ou l’adresse MAC d’un appareil mobile, ainsi que des cookies.</p>
+    <h4>Quelles sont les modalités de collecte des données personnelles ?</h4>
+    <p>La société BELLYBUTTON GROUP veille à ne collecter que des données strictement nécessaires à la finalité des traitements mis en œuvre.</p>
+    <p>Les données collectées par la société ROCKET MARKETING le sont, selon les cas :</p>
+    <ul>
+      <h5>directement auprès du prospect ou du client :</h5>
+      <li>lors de rencontres professionnelles (évènements, salons, conférences),</li>
+      <li>lors de communication téléphonique ou électronique (mail),</li>
+      <li>via son site internet ou sa plateforme SaaS par l’intermédiaire des formulaires de collecte remplis par la personne concernée (création de compte, souscription de services, questionnaires de satisfaction, avis, enquête, etc.) ;</li>
+      <li>lors de la conclusion de conditions générales d’utilisation et / ou de vente ;</li>
+      <li>via les pages consacrées aux services de la société BELLYBUTTON GROUP sur les réseaux sociaux ;</li>
+      <li>via d’autres documents commerciaux (devis, bon de commande, etc.) ;</li>
+    </ul>
+    <ul>
+      <h5>indirectement :</h5>
+      <li>par l’intermédiaire du blog de la personne concernée ;</li>
+      <li>par l’utilisation de cookies afin de comprendre comment le site et la plateforme sont utilisés par la personne physique ;</li>
+      <li>sur les réseaux sociaux via les API des éditeurs (YouTube, Twitter, Facebook, etc.) ;</li>
+      <li>par des tiers (partenaires, Annonceurs ou clients de la société BELLYBUTTON GROUP).</li>
+    </ul>
+    <p>La société BELLYBUTTON GROUP indique à la personne concernée sur le formulaire de collecte que les données demandées sont obligatoires pour assurer son service. Le cas échéant, la mention « optionnel » est précisée. Le fait de ne pas renseigner les champs obligatoires pourra impacter la capacité de la société BELLYBUTTON GROUP à offrir à ses clients ou prospects ses produits et services.</p>
+    <h4>Sur quelle base juridique repose le traitement des données à caractère personnel ?</h4>
+    <ul>
+      <h5>Selon la finalité pour laquelle les données sont utilisées, la base juridique sur laquelle repose le traitement des données peut être :</h5>
+      <li>le consentement ;</li>
+    </ul>
+    <ul>
+      <h5>l’intérêt légitime de la société BELLYBUTTON GROUP qui peut consister en :</h5>
+      <li>l’amélioration de ses produits ou services, à savoir comprendre les besoins de ses clients et adapter les produits ou services à ces besoins,</li>
+      <li>la prévention de la fraude,</li>
+      <li>la sécurisation des outils (assurer la protection et la sécurité des données, veiller à ce qu’ils fonctionnent correctement et soient améliorés en permanence),</li>
+      <li>l’exécution du contrat conclu avec le client (par ex., afin de permettre la création d’un compte Influenceur ou assister un Annonceur lors d’une opération de communication spécifique) ;/li>
+      <li>le respect d’une obligation légale dès lors que la législation en vigueur impose le traitement des données.</li>
+    </ul>
+    <p>Dans les cas où le traitement mis en œuvre repose sur le consentement, la personne physique, et notamment le mineur, peut le retirer à tout moment sous réserve qu’il ne s’agisse pas d’informations qui conditionnent l’application d’un contrat.</p>
+  </div>
+</div>
+{% endblock %}

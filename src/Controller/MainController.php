@@ -42,4 +42,25 @@ class MainController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    /**
+     * @Route("/cookies", name="main_cookies", methods={"GET"})
+     */
+    public function cookiesPage()
+    {
+        return $this->render('main/cookies.html.twig');
+    }
+    /**
+     * @Route("/legal", name="main_legal", methods={"GET"})
+     */
+    public function legalNotices()
+    {
+        return $this->render('main/legal.html.twig');
+    }
+    /**
+     * @Route("/protection-data", name="main_data_protection", methods={"GET"})
+     */
+    public function dataProtection()
+    {
+        return $this->render('main/data_protection.html.twig');
+    }
 }
