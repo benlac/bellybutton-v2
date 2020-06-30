@@ -1,0 +1,21 @@
+.pagination-comments {
+  display: flex;
+  margin-top: 2rem;
+  .pagination-comment__prev, .pagination-comment__next {
+    border: 1px solid #aaaaaa;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #ababab;
+    margin: .5rem;
+    font-size: 15px;
+  }
+  .pagination-comment__current {
+    border: 1px solid #aaaaaa;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 15px;
+    background-color: #aaaaaa;
+    margin: .5rem;
+  }
+}

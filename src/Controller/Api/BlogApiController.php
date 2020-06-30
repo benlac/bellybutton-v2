@@ -7,6 +7,7 @@ use App\Entity\Commentary;
 use App\Service\DateFormatter;
 use App\Repository\CommentaryRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +19,7 @@ class BlogApiController extends AbstractController
     /**
      * @Route("/blog/api/comments/{id<\d+>}", name="blog_api_comments", methods={"GET"})
      */
-    public function list(CommentaryRepository $commentaryRepository, Article $article, Request $request)
+    public function list(CommentaryRepository $commentaryRepository, Article $article, Request $request, PaginatorInterface $paginator)
     { 
       $comments = $commentaryRepository->findBy(['article' => $article], ['createdAt' => 'DESC']);
 
@@ -26,7 +27,18 @@ class BlogApiController extends AbstractController
         DateFormatter::format($comment, ['createdAt']);
       };
 
-      return $this->json($comments, Response::HTTP_OK, [], ['groups' => 'comments_show']);
+      $pagination = $paginator->paginate(
+        $comments, 
+        $request->query->getInt('page', 1), 
+        5 
+    );
+    
+      $dataInfos = $pagination->getPaginationData();
+      $currentPage = $dataInfos['current'] ?? null;
+      $prev = $dataInfos['previous'] ?? null;
+      $next = $dataInfos['next'] ?? null;
+
+      return $this->json(['comments' => $pagination, 'currentPage' => $currentPage, 'prev' => $prev, 'next' => $next], Response::HTTP_OK, [], ['groups' => 'comments_show']);
     }
     /**
      * @Route("/blog/api/article/{id<\d+>}", name="blog_api_post", methods={"POST"})
