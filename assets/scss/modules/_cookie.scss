@@ -7,30 +7,126 @@
   background-color: black;
   opacity: .5;
   color: #FFF;
+  height: 10%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  #cookie-more-button{
+    background: #FFF;
+    border: none;
+    border-radius: 8px;
+    padding: .5rem;
+    margin-left: 1rem;
+    font-size: .8em;
+    color: $font;
+  }
   &.active {
-    display: block;
+    display: flex;
   }
 }
 
 .cookie-inform-and-ask {
-  background-color: #FFF;
-  opacity: .9;
+  background-color: black;
+  opacity: .5;
+  color: #FFF;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
   display: none;
-  height: 100%;
+  height: 20%;
   position: absolute;
   bottom: 0;
-  top: 0;
   width: 100%;
 
   &.active {
-    display: block;
+    display: flex;
   }
 
   .cookie-dialog {
     left: 50%;
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    bottom: 0;
     transform: translate(-50%, -50%);
     width: 70%;
+    display: flex;
+    align-items: center;
+    div {
+      display: flex;
+    }
+    p {
+      color: #FFF;
+      font-size: 1.4em;
+    }
+    #ga-cancel-button, #ga-confirm-button {
+      background: #e9e9e9;
+      border: none;
+      border-radius: 8px;
+      padding: .5rem;
+      margin-left: 1rem;
+      font-size: .8em;
+      color: $font;
+    }
+  }
+}
+@media #{$xlarge-down} {
+  .cookie-inform-and-ask {
+    .cookie-dialog {
+      width: 98%;
+      p {
+        font-size: .8em;
+      }
+    }
+  }
+  .cookie-banner {
+    font-size: 1.2em;
+  }
+}
+@media #{$large-down} {
+  .cookie-inform-and-ask {
+    .cookie-dialog {
+      bottom: -8px;
+    }
+  }
+  .cookie-banner {
+    height: 12%;
+  }
+}
+@media #{$medium-down} {
+  .cookie-inform-and-ask {
+    opacity: .8;
+    .cookie-dialog {
+      bottom: -46px;
+      flex-direction: column;
+    }
+  }
+  .cookie-banner {
+    font-size: 1.2em;
+  }
+}
+@media #{$small-down} {
+  .cookie-inform-and-ask {
+    .cookie-dialog {
+      font-size: .8em;
+      bottom: -40px;
+      #ga-cancel-button, #ga-confirm-button {
+        padding: .3rem;
+      }
+    }
+  }
+  .cookie-banner {
+    opacity: .8;
+    flex-direction: column;
+    font-size: .8em;
+    height: 14%;
+    #cookie-more-button {
+      margin-top: .2rem;
+    }
+  }
+}
+@media #{$xsmall-down} {
+  .cookie-inform-and-ask {
+    .cookie-dialog {
+      bottom: -55px;
+    }
   }
 }
