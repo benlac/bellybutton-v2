@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 import './affecting.scss';
 import img from '../../../../images/efluence.png';
@@ -9,9 +10,11 @@ const Affecting = () => (
       <img src={img} alt="Illustration représentant les médias sociaux"/>
     </div>
     <div className="business-einfluence__content">
-      <h1 className="business-einfluence__h1">
-      Avez-vous déjà entendu parler de l'e-influence ?
-      </h1>
+      <Fade bottom>
+        <h1 className="business-einfluence__h1">
+        Avez-vous déjà entendu parler de l'e-influence ?
+        </h1>
+      </Fade>
       <p className="business-einfluence__p">
       Si la réponse est oui, c’est sûrement dû à son efficacité redoutable. 
       Si la réponse est non, c’est sûrement dû au fait que cette technologie soit nouvelle et encore méconnue.

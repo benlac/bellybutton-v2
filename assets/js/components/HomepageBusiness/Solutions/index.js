@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 import './solutions.scss';
 import brain from '../../../../images/Brain.png';
@@ -9,7 +10,9 @@ import social from '../../../../images/Social.png';
 
 const Solutions = () => (
   <div className="home__solutions">
-    <h3 className="home__solutions__title">Une opération commerciale réussie :</h3>
+    <Fade bottom>
+      <h3 className="home__solutions__title">Une opération commerciale réussie :</h3>
+    </Fade>
     <p className="home__solutions__subtitle">Notre solution tout-en-un</p>
     <div className="home__cards">
       <div className="home__solutions__card">

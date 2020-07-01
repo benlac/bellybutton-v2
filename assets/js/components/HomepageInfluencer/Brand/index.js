@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 import './brand.scss';
 
@@ -8,9 +9,11 @@ import montgolfiere from '../../../../images/icons/montgolfiere.png'
 const Brand = () => (
 <div className="section1 section1--influencer">
   <div className="section1__content">
+    <Fade bottom>
       <h1 className="section1__h1">Collaborez avec vos marques préférées</h1>
-      <p className="section1__p">Une équipe d'experts et de passionés, des outils puissants et un vrai suivi à votre disposition. Recevez des offres de collaborations avec des marques fortes</p>
-      <a className="btn btn--influencer" href="">Créez votre compte gratuitement</a>
+    </Fade>
+    <p className="section1__p">Une équipe d'experts et de passionés, des outils puissants et un vrai suivi à votre disposition. Recevez des offres de collaborations avec des marques fortes</p>
+    <a className="btn btn--influencer" href="/influencer/register">Créez votre compte gratuitement</a>
   </div>
   <div className="section1__img">
   <img
