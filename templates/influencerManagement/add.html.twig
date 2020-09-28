@@ -1,0 +1,13 @@
+{% extends 'main/base.html.twig' %}
+
+{% block title %} Influenceur Management {% endblock %}
+
+{% block header %}
+<a href="{{ path('home') }}">Notre offre</a>
+    </div>
+    <a class="btn btn--audit" href=" {{path('business_audit')}} ">Votre audit gratuit</a>
+    {{ include('base/_auth.html.twig') }}
+{% endblock %}
+{% block body %}
+
+{% endblock %}
