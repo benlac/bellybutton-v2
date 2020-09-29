@@ -4,17 +4,21 @@
 
 
 {% block body %}
-<header class="home__header">
-    <nav class="home__header__nav">
-        <div><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton" width="5%">
-        </div>
-    </nav>
-</header>
+
 <div>
 <div class="influencerManagement">
     <h1 class="influencerManagement__h1">this is a <span class="influencerManagement__h1__span">test</span></h1>
     {#TODO: figure out how to link this like it is present on "home.html.twig" #}
-   {# <a href="{{ path('influencerManagement') }}" class="btn btn--influencerManagement">Ajouter un influenceur</a> #}
+    {# <a href="{{ path('influencerManagement') }}" class="btn btn--influencerManagement">Ajouter un influenceur</a> #}
+</div>
+{# TODO figure out how to build a form using symfony==> Check on InfluencerType.php for the PHP part and register.html.twig for the template implementation#}
+<div class="influencerManagement_addForm">
+    <form>
+        <label for="lname">Nom:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="fname">Prénom:</label><br>
+        <input type="text" id="fname" name="fname">
+      </form> 
 </div>
 </div>
 {% endblock %}
