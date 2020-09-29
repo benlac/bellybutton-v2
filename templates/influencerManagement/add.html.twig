@@ -1,13 +1,20 @@
 {% extends 'main/base.html.twig' %}
-
+{# TODO figure out the css implementation#}
 {% block title %} Influenceur Management {% endblock %}
 
-{% block header %}
-<a href="{{ path('home') }}">Notre offre</a>
-    </div>
-    <a class="btn btn--audit" href=" {{path('business_audit')}} ">Votre audit gratuit</a>
-    {{ include('base/_auth.html.twig') }}
-{% endblock %}
-{% block body %}
 
+{% block body %}
+<header class="home__header">
+    <nav class="home__header__nav">
+        <div><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton" width="5%">
+        </div>
+    </nav>
+</header>
+<div>
+<div class="influencerManagement">
+    <h1 class="influencerManagement__h1">this is a <span class="influencerManagement__h1__span">test</span></h1>
+    {#TODO: figure out how to link this like it is present on "home.html.twig" #}
+   {# <a href="{{ path('influencerManagement') }}" class="btn btn--influencerManagement">Ajouter un influenceur</a> #}
+</div>
+</div>
 {% endblock %}
