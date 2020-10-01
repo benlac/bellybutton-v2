@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\InfoContactRepository)
+ * @ORM\Entity(repositoryClass="App\Repository\InfoContactRepository")
  * @UniqueEntity("id")
  */
 class infoContact 
@@ -36,15 +36,15 @@ class infoContact
     private $phoneNumber;
 
     /**
-     * @ORM\Colunm(type="string", lenth=(500))
+     * @ORM\Column(type="string", length=500)
      */
     private $postalAdress;
     /**
-     * @ORM\Column(type="integer", length=(10))
+     * @ORM\Column(type="integer", length=10)
      */
     private $numWhatsApp;
     /**
-     * @ORM\Column(type="string", length=(100))
+     * @ORM\Column(type="string", length=100)
      */
     private $preferedContact;
 }

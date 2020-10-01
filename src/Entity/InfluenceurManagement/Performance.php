@@ -24,19 +24,19 @@ use Symfony\Component\Serializer\Annotation\Groups;
       */
     private $id;
     /**
-     * @ORM\Column(type="interger")
+     * @ORM\Column(type="integer")
      */
     private $idStatsYT;
     /**
-     * @ORM\Column(type="interger")
+     * @ORM\Column(type="integer")
      */
     private $idStatsIG;
     /**
-     * @ORM\Column(type="interger")
+     * @ORM\Column(type="integer")
      */
     private $idStatsTW;
     /**
-     * @ORM\Column(type="interger")
+     * @ORM\Column(type="integer")
      */
     private $idStatsTK;
     /**
@@ -52,9 +52,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
      */
     private $sector;
     /**
-     * @ORM\Column(type="integer, length=(2))
+     * @ORM\Column(type="integer", length=2)
      */
     private $margin;
+
+    // TODO figure out a path to add here and how to use it on output
     /**
      * @ORM\Column(type="string")
      */
