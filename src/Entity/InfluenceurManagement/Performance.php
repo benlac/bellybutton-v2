@@ -40,15 +40,15 @@ use Symfony\Component\Serializer\Annotation\Groups;
      */
     private $idStatsTK;
     /**
-     * @ORM\Column(type="char")
+     * @ORM\Column(type="integer")
      */
     private $audienceCategorie;
     /**
-     * @ORM\Column(type="char")
+     * @ORM\Column(type="integer")
      */
     private $status;
     /**
-     * @ORM\Column(type="char")
+     * @ORM\Column(type="integer")
      */
     private $sector;
     /**
