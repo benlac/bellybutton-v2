@@ -7,29 +7,33 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\StatsIGRepository")
- * @UniqueEntity("idStatsIG")
+ * @ORM\Entity(repositoryClass="App\Repository\StatsTKRepository")
+ * @UniqueEntity("idStatsTK")
  */
-class StatsIG
+class StatsTK
 {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $idStatsIG;
+    private $idStatsTK;
     /**
      * @ORM\Column(type="integer")
      */
-    private $likeIG;
+    private $nbrLikeTK;
     /**
      * @ORM\Column(type="integer")
      */
-    private $nbrComsIG;
+    private $nbrAboTK;
     /**
      * @ORM\Column(type="integer")
      */
-    private $nbrAboIG;
+    private $nbrComsTK;
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nbrVuesTK;
     /**
      * @ORM\Column(type="integer")
      */
@@ -38,5 +42,4 @@ class StatsIG
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
-
 }
