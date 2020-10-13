@@ -3,7 +3,7 @@
   position: fixed;
   background-color:rgb(199,210,229);
   background: linear-gradient(90deg, rgba(199,210,229,1) 0%, rgba(222,222,238,1) 100%);
-  top: 59px;
+  top: 62px;
   right: 0;
   width: 20%;
   bottom: 0;
@@ -40,3 +40,34 @@
       transform-origin: 100% 0%;
   }
 }
+
+@media #{$large-down} {
+  .menu__auth {
+    top: 61px;
+  } 
+}
+
+@media #{$medium-down} {
+  .menu__auth {
+    width: 32%;
+    top: 59px;
+    .menu__auth__nav {
+      .menu__auth__nav__link {
+        font-size: 3em;
+      }
+    }
+  } 
+}
+ @media #{$small-down} {
+  .menu__auth {
+    width: 40%;
+    .menu__auth__nav {
+      .menu__auth__nav__link {
+        font-size: 2em;
+      }
+    }
+  } 
+}
+// @media #{$xsmall-down} {
+
+// }
