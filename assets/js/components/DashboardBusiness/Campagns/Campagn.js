@@ -11,7 +11,7 @@ const Campagn = ({ view, viewGoal, name, users, createdAt }) => {
     pourcentage = 0;
   }
   const pourcentageDisplay = `${Math.round(pourcentage)}%`;
-
+  console.log(users);
   return (
     <NavLink to={`${window.location.pathname}/${slugify(name, {
       lower: true,

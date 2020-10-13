@@ -3,6 +3,9 @@
   margin: 4rem 0;
 }
 .legal__intro, .cookies__intro {
+  * {
+    letter-spacing: .1rem;
+  }
   width: 90%;
   margin: 0 auto;
   p {
@@ -21,6 +24,9 @@
 }
 
 .legal__perimeter {
+  * {
+    letter-spacing: .1rem;
+  }
   width: 90%;
   margin: 2rem auto;
   h2 {
@@ -31,6 +37,9 @@
   }
 }
 .legal__responsable, .cookies__content, .legal__content {
+  * {
+    letter-spacing: .1rem;
+  }
   width: 90%;
   margin: 2rem auto;
   h2 {
@@ -52,6 +61,9 @@
   }
 }
 .legal__data {
+  * {
+    letter-spacing: .1rem;
+  }
   width: 90%;
   margin: 2rem auto;
   h2 {

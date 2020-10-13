@@ -22,8 +22,8 @@
 .contact__form__post input, .contact__form__post textarea{
   width: 100%;
   border: none;
-  border-bottom-style: dotted;
-  border-bottom-color: #cdcdcd;
+  border-bottom-style: groove;
+  border-bottom-color: #f7f7f7;
   transition: all .5s ease;
   margin-bottom: 2rem;
 }
