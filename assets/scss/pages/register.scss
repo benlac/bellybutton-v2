@@ -59,9 +59,10 @@
   border-radius: 10px;
   text-align: left;
   background-color: #eff3f6;
-  padding: 1rem;
+  padding: .6rem;
   border: none;
   outline: none;
+  margin-bottom: 1rem;
 }
 .register__form select{
   font-size: 1.2em;
@@ -70,7 +71,7 @@
   text-align: left;   
   text-transform: uppercase;
   color: #afb4b8;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 .register__form div {
   display: flex;
@@ -90,7 +91,6 @@
 }
 .audit__content{
   text-align: left;
-  font-size: 1.8em;
   margin-bottom: 5rem;
 }
 .register__form__accept {

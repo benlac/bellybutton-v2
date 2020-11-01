@@ -11,11 +11,7 @@ import Audience from '../Audience';
 const App = () => (
   <>
     <Brand />
-    <Banner />
     <Audience />
-    <div className="container">
-    <Contact />
-    </div>
   </>
 );
 

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block header %}
-<a href="{{ path('home') }}">Notre offre</a>
+<a href="{{ path('business') }}">Notre offre</a>
     </div>
 {{ include('base/_auth.html.twig') }}
 {% endblock %}
@@ -16,26 +16,25 @@
 
             <h1 class="form__login__title">Me connecter</h1>
 
-            <label class="login__label" for="inputEmail">Email</label>
+            <label class="login__label" for="inputEmail">Adresse email</label>
             <input class="login__input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-            <label class="login__label" for="inputPassword">Password</label>
+            <label class="login__label" for="inputPassword">Mot de passe</label>
             <input class="login__input" type="password" name="password" id="inputPassword" class="form-control" required>
 
             <input type="hidden" name="_csrf_token"
                 value="{{ csrf_token('authenticate') }}"
-            >
-            <div class="login__register" >
-               <p class="form__login__register">Vous n'avez pas de compte ?</p>
-               <a class="login__register__link" href=" {{path('influencer_register')}} ">Influenceur</a>
-               <a href=" {{path('business_register')}} ">Entreprise</a> 
-            </div>
-               
+            >   
             <div class="form__login__btn">
                 <button class="btn btn--form" type="submit">
                     Connexion
                 </button>
                 <a class="fogot-password" href={{ path('forgot_password') }}>Mot de passe oublié ?</a>
             </div>
+            <div class="login__register" >
+                <p class="form__login__register">Vous n'avez pas de compte ?</p>
+                <a class="login__register__link" href=" {{path('influencer_register')}} ">Influenceur</a>
+                <a href=" {{path('business_register')}} ">Entreprise</a> 
+             </div>
         </form>
     </div>
     <div class="form__aside">

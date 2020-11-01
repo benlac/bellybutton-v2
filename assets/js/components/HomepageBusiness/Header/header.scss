@@ -13,22 +13,28 @@
     .header-business__h1 {
       text-align: left;
       color: #312e5c;
-      font-size: 4em;
+      font-size: 2.2em;
     }
     .header-business__p {
       text-align: left;
       color: #312e5c;
-      font-size: 1.6em;
+      font-size: 1.1em;
       line-height: 1.4em;
-      margin-top: 3rem;
+      margin-top: 2rem;
       width: 90%;
     }
     .header-business__P2 {
       text-align: left;
-      font-size: 1em;
+      font-size: .8em;
     }
     .btn--business {
-      width: 70%;
+      width: 100%;
+    }
+    .header__button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: flex-start;
     }
   }
   .header-business__img {
@@ -90,14 +96,6 @@
         bottom: 10px;
       }
     }
-    .header-business__content {
-      .header-business__h1 {
-        font-size: 3.4em;
-      }
-      .header-business__p {
-        font-size: 1.5em;
-      }
-    }
     .btn--business {
       padding: 15px 40px;
     }
@@ -107,9 +105,9 @@
   .header-business {
     .header-business__content {
       .header-business__h1 {
-        font-size: 2.5em;
+        font-size: 1.8em;
       }
-      .header-business__p {
+      .header-business_p {
         font-size: 1.4em;
       }
     }
@@ -126,10 +124,10 @@
       width: 100%;
       align-items: center;
       .header-business__h1 {
-        font-size: 2.5em;
+        font-size: 1.8em;
       }
       .header-business__p {
-        font-size: 1.4em;
+        font-size: 1.1em;
       }
     }
     .header-business__img {
@@ -142,8 +140,30 @@
   }
 }
 @media #{$small-down} {
-
+  .header-business {
+    flex-direction: column;
+    .header-business__content {
+      width: 100%;
+      align-items: center;
+      .header-business__h1 {
+        font-size: 1.6em;
+      }
+      .header-business__p {
+        font-size: 1.1em;
+      }
+    }
+  }
 }
 @media #{$xsmall-down} {
-
+  .header-business {
+    flex-direction: column;
+    .header-business__content {
+      .header-business__h1 {
+        font-size: 1.2em;
+      }
+      .header-business__p {
+        font-size: 1em;
+      }
+    }
+  }
 }

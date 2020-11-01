@@ -17,8 +17,10 @@ const Header = () => (
         </h1>
       </Fade>
       <p className="header-business__p">Une équipe d'experts et de passionés, des outils puissants et un vrai suivi à votre disposition. Recevez votre devis de campagne d'influence personnalisé sous 24 heures.</p>
-      <a className="btn btn--business" href="/business/audit">Obtenez votre solution <strong>sur mesure</strong></a>
-      <p className="header-business__P2">Audit complet gratuit, sans engagement, sans carte bancaire</p>
+      <div className="header__button">
+        <a className="btn btn--business" href="/business/audit">Obtenez votre solution <strong>sur mesure</strong></a>
+        <p className="header-business__P2">Audit complet gratuit, sans engagement, sans carte bancaire</p>
+      </div>
     </div>
     <div className="header-business__img">
       <img

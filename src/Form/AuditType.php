@@ -30,7 +30,8 @@ class AuditType extends AbstractType
                     '1000€ - 10 000€' => '1000€ - 10 000€',
                     '10 000€ - 50 000€' => '10 000€ - 50 000€',
                     '+50 000€' => '+50 000€',
-                    'autres' => 'autres'
+                    'À définir' => 'À définir',
+                    'Autre' => 'Autre',
                 ]
             ])
             ->add('goal', ChoiceType::class, [
@@ -38,20 +39,20 @@ class AuditType extends AbstractType
                 'choices' => [
                     'ROI' => 'ROI',
                     'Visibilité/Impact' => 'Visibilité/Impact',
-                    'À définir' => 'À définir',
                     'Presence sur les nouveaux médias sociaux' => 'Presence sur les nouveaux médias sociaux',
-                    'acquisition de nouveaux clients' => 'acquisition de nouveaux clients',
+                    'Acquisition de nouveaux clients' => 'Acquisition de nouveaux clients',
                     'Objectif multiples' => 'Objectif multiples',
+                    'À définir' => 'À définir',
                 ]
             ])
             ->add('deadline', ChoiceType::class, [
                 'label' => 'Date envisagée de la campagne',
                 'choices' => [
                     'ASAP!' => 'ASAP!',
-                    'dans les mois à venir' => 'dans les mois à venir',
-                    'dans les 3 prochains mois' => 'dans les 3 prochains mois',
-                    'au cours de l\'année' => 'au cours de l\'année',
-                    'indeterminé pour le moment' => 'indeterminé pour le moment',
+                    'Dans les mois à venir' => 'Dans les mois à venir',
+                    'Dans les 3 prochains mois' => 'Dans les 3 prochains mois',
+                    'Au cours de l\'année' => 'Au cours de l\'année',
+                    'Indeterminé pour le moment' => 'Indeterminé pour le moment',
                 ]
             ])
             ->add('dateRdv', DateType::class, [

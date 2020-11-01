@@ -12,9 +12,6 @@ import Affecting from '../Affecting';
 const App = () => (
   <>
       <Header />
-    <div className="container">
-      <Banner />
-    </div>
       <Affecting />
       <Solutions />
       <Teams />

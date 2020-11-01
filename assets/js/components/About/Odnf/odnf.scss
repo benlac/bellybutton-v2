@@ -3,29 +3,25 @@
 .about__fourth {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  margin-top: 6rem;
+  margin: 5rem auto;
 
   .about__fourth__img {
-    width: 50%;
+    width: 30%;
   }
   .about__fourth__content {
     align-self: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 50%;
 
     .about__fourth__h1 {
       text-align: left;
       color: #312e5c;
-      font-size: 3.8em;
       width: 75%;
     }
     .about__fourth__p {
       text-align: left;
       color: #312e5c;
-      font-size: 1.6em;
       line-height: 1.4em;
       margin-top: 3rem;
       width: 75%;
@@ -35,28 +31,22 @@
 
 @media #{$large-down} {
   .about__fourth {
-    .about__fourth__content {
-      .about__fourth__h1 {
-        font-size: 3em;
-      }
-      .about__fourth__p {
-        font-size: 1.4em;
-      }
-    }
+    .about__fourth__img {
+      width: 45%;
+  }
   }
 }
 @media #{$medium-down} {
   .about__fourth {
     flex-direction: column;
     .about__fourth__img {
-      width: 100%;
+      display: none;
     }
     .about__fourth__content {
       width: 100%;
-      margin-top: 2rem;
+      align-items: center;
       .about__fourth__h1 {
-      }
-      .about__fourth__p {
+        text-align: center;
       }
     }
   }

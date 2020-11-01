@@ -72,7 +72,6 @@ class BusinessController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
-            dump($data);
             $notification->audit($data);
             return $this->render('main/success_mail.html.twig');
         }

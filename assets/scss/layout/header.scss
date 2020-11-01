@@ -20,16 +20,19 @@
 .header__logo{
   width: 40px;
   margin-left: 1.2rem;
+  display: flex;
+  align-items: center;
 }
 .header__base__link a{
-  font-family: $fontBold, sans-serif;
+  font-family: $fontLight, sans-serif;
   text-transform: lowercase;
   color: #312e5c;
-  font-size: 2.4em;
+  font-size: 1.8em;
   font-weight: 600;
   transition: .5s;
   display: inline-block;
   position: relative;
+  letter-spacing: 1.2px;
 }
 
 .header__base__link a::after{
@@ -73,6 +76,7 @@
   width: 40%;
   padding: 2rem;
   text-align: center;
+  overflow: scroll;
 
   .menu__burger__link {
     padding: 2rem 0;
@@ -113,8 +117,9 @@
   }
 }
 @media #{$small-down} {
-
-}
-@media #{$xsmall-down} {
-
+  .burger__menu--visible {
+    .menu__burger__link {
+      font-size: 1.4em;
+    }
+  }
 }

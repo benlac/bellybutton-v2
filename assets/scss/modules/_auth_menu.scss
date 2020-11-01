@@ -12,6 +12,7 @@
   animation: 0.4s cubic-bezier(1, 0, 0, 1) 0s 1 normal both running show-profil;
   padding: 2rem;
   text-align: center;
+  overflow: scroll;
 
   &--visible {
     display: block;

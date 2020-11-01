@@ -9,7 +9,7 @@
   margin-bottom: 10rem;
   align-items: center;
   .section2__business__img {
-  width: 50%;
+    width: 30%;
   }
   .section2__content {
     align-self: center;
@@ -21,22 +21,21 @@
     .section2__h1 {
       text-align: left;
       color: $fontMain;
-      font-size: 3.8em;
+      font-size: 2.2em;
     }
     .section2__subtitle {
       font-size: 1.6em;
       word-spacing: .1rem;
-      margin: 1.6rem;
+      margin-top: 1.6rem;
 
       .section2__viraux { 
         font-family: $fontBold;
-
       }
     }
     .section2__p {
       text-align: left;
       color: $font;
-      font-size: 1.6em;
+      font-size: 1.1em;
       line-height: 1.6em;
       margin-top: 3rem;
     }
@@ -52,20 +51,20 @@
 }
 @media #{$large-down} {
   .section2 {
+    .section2__business__img {
+      display: none;
+    }
     .section2__content {
       padding: 2rem;
-      .section2__h1 {
-        font-size: 2em;
-      }
         .section2__p {
           width: 100%;
-          font-size: 1.4em;
         }
     }
   }
 }
 @media #{$medium-down} {
   .section2 {
+    margin-top: none;
     flex-direction: column;
     margin: 5rem 0;
     .section2__business__img {
@@ -94,7 +93,7 @@
         font-size: 1.3em;
       }
       .section2__p {
-        font-size: 1.2em;
+        font-size: 1em;
       }
     }
   }

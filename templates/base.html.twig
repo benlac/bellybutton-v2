@@ -10,6 +10,7 @@
         {% endblock %}
     </head>
     <body>
+        {% block promoHeader %}{% endblock %}
         <header class="header__base">
             <nav class="header__base__nav">
                 <a id="burger__menu__link" href=""><i class="fa fa-bars" style="font-size:36px"></i></a>
@@ -28,7 +29,7 @@
                 <a class="menu__burger__link" href="{{ path('home') }}"><img src="{{ asset('assets/images/logo/bblogo.png') }}" alt="Logo de bellybutton">
                 </a>
             </div>
-            <a class="menu__burger__link" href="{{ path('home') }}">Notre offre</a>
+            <a class="menu__burger__link" href="{{ path('business') }}">Notre offre</a>
             <a class="menu__burger__link" href="{{ path('about') }}">À propos de nous</a>
             <a class="menu__burger__link" href="{{ path('blog') }}">Blog</a>
         </div>

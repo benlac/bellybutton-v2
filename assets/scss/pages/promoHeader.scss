@@ -1,0 +1,28 @@
+.header__promo  {
+  background: #1ef4a0;
+  padding: 1rem;
+  letter-spacing: .1rem;
+  
+  .header__promo__p {
+    color: #FFF;
+    margin: 0 auto;
+  }
+
+  .header__promo__link {
+    color: #2c34cb;
+    text-decoration: underline;
+  }
+}
+
+@media #{$large-down} {
+  .header__promo__p {
+    font-size: 1em;
+
+  }
+}
+
+@media #{$medium-down} {
+  .header__promo {
+    display: none;
+  }
+}

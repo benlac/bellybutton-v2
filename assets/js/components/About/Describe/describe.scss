@@ -4,8 +4,7 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin: 0 auto;
-  height: 100vh;
+  margin: 4rem auto;
 
   .about__content {
     align-self: center;
@@ -15,19 +14,16 @@
     .about__h1 {
       text-align: center;
       color: #312e5c;
-      font-size: 3.8em;
     }
     .about__p {
       text-align: justify;
       color: #312e5c;
-      font-size: 1.6em;
       line-height: 1.4em;
       margin-top: 3rem;
     }
     .about__p__second {
       text-align: justify;
       color: #312e5c;
-      font-size: 1.6em;
       line-height: 1.4em;
       margin-top: 1rem;
     }
@@ -35,18 +31,8 @@
 }
 
 @media #{$medium-down} {
-  .about {
-    .about__content {
-      .about__h1 {
-        font-size: 3em;
-      }
-      .about__p {
-        font-size: 1.4em;
-      }
-      .about__p__second {
-        font-size: 1.4em;
-      }
-    }
+  .spacer {
+    height: 90px;
   }
 }
 @media #{$small-down} {

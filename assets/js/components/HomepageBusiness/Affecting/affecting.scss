@@ -7,7 +7,7 @@
   margin: 4rem auto 10rem;
   justify-content: space-between;
   .business-einfluence__img {
-    width: 50%;
+    width: 30%;
   }
   .business-einfluence__content {
     align-self: center;
@@ -19,14 +19,17 @@
     .business-einfluence__h1 {
       text-align: left;
       color: $fontMain;
-      font-size: 3.8em;
+      font-size: 2.2em;
     }
     .business-einfluence__p {
       text-align: left;
       color: $font;
-      font-size: 1.6em;
+      font-size: 1.1em;
       line-height: 1.6em;
       margin-top: 3rem;
+    }
+    .business-einfluence__strong {
+      font-family: $fontBold;
     }
   }
 }
@@ -40,15 +43,11 @@
 }
 @media #{$large-down} {
   .business-einfluence {
+    .business-einfluence__img {
+      display: none;
+    }
     .business-einfluence__content {
       padding: 2rem;
-      .business-einfluence__h1 {
-        font-size: 2em;
-      }
-        .business-einfluence__p {
-          width: 100%;
-          font-size: 1.4em;
-        }
     }
   }
 }
@@ -71,12 +70,13 @@
 }
 @media #{$small-down} {
   .business-einfluence {
+    margin: 0rem 0;
     .business-einfluence__content {
       .business-einfluence__h1 {
         font-size: 1.4em;
       }
       .business-einfluence__p {
-        font-size: 1.2em;
+        font-size: 1em;
       }
     }
   }

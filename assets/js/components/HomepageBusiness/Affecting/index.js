@@ -18,10 +18,11 @@ const Affecting = () => (
       <p className="business-einfluence__p">
       Si la réponse est oui, c’est sûrement dû à son efficacité redoutable. 
       Si la réponse est non, c’est sûrement dû au fait que cette technologie soit nouvelle et encore méconnue.
-      Devenez un pure player et faite partie des piliers du marketing 3.0 ! <br/>
-      Aujourd’hui, certains influenceurs sont devenus des KOLs (leaders d’opinion).
+      Devenez un pure player et faite partie des piliers du marketing 3.0 ! <br/><br/>
+      Aujourd’hui, certains influenceurs sont devenus des KOLs (leaders d’opinion).<br/>
       Leur communauté ultra engagée garanti des taux d’engagement remarquables, des publicités virales et des ventes qui explosent.
-      Résultat : Un véritable retour sur investissement quantitatif et qualitatif.
+      <br/>
+      <strong className="business-einfluence__strong">Résultat :</strong> un véritable retour sur investissement quantitatif et qualitatif.
       </p>
     </div>
   </div>
