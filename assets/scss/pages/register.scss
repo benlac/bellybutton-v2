@@ -53,6 +53,9 @@
   text-align: left;
   margin-bottom: 2rem;
 }
+.register__form__link {
+  text-decoration: underline;
+}
 .register__form input, select{
   width: 100%;
   margin-top: .3rem;
@@ -71,7 +74,7 @@
   text-align: left;   
   text-transform: uppercase;
   color: #afb4b8;
-  font-size: 1.1em;
+  font-size: .8em;
 }
 .register__form div {
   display: flex;
@@ -95,7 +98,7 @@
 }
 .register__form__accept {
   color: $font;
-  font-size: 1.4em;
+  font-size: .6em;
   a {
     text-decoration: underline;
   }
@@ -111,9 +114,6 @@
   }
   .brand__register {
     width: 25%;
-  }
-  .register__form__accept {
-    font-size: 1.2em;
   }
   .wave--register {
     height: 40%;
@@ -153,9 +153,6 @@
     label {
       font-size: 1em;
     }
-  }
-  .register__form__accept {
-    font-size: 1em;
   }
   .audit__content {
     font-size: 1.3em;

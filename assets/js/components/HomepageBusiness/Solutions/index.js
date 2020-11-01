@@ -31,7 +31,7 @@ const Solutions = () => (
       </div>
       <div className="home__solutions__card">
         <img className="home__card__img" src={chip} alt=""/>
-        <h4 className="home__card__title" >Une technologie prioritaire</h4>
+        <h4 className="home__card__title" >Technologie prioritaire</h4>
         <p className="home__card__content">
         Nous avons dédié une équipe d’ingénieur à la conception d’outils de mesure pour nous permettre de prédire et de sélectionner les audiences et les communautés les plus adaptées afin de maximiser la portée des campagnes.
         </p>
@@ -45,7 +45,7 @@ const Solutions = () => (
       </div>
       <div className="home__solutions__card">
         <img className="home__card__img" src={charts} alt=""/>
-        <h4 className="home__card__title" >Data visualisation et optimisation</h4>
+        <h4 className="home__card__title" >Data viz et optimisation</h4>
         <p className="home__card__content">
         Pour vous permettre de suivre l’évolution des KPIs importants, d’intégrer les statistiques à vos reportings internes et de les optimiser, nous proposons un dashboard en temps réel pour suivre vos campagne de plus près. 
         </p>

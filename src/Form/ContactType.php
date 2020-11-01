@@ -17,19 +17,19 @@ class ContactType extends AbstractType
             ->add('fullname', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Nom & prénom']
+                    'placeholder' => 'Elon Musk']
             ])
             ->add('email', TextType::class, [
                 'label' => false,
-                'attr' => ['placeholder' => 'Email']
+                'attr' => ['placeholder' => 'elon@musk.com']
             ])
             ->add('company', TextType::class, [
                 'label' => false,
-                'attr' => ['placeholder' => 'Société']
+                'attr' => ['placeholder' => 'Tesla']
             ])
             ->add('message', TextareaType::class, [
                 'label' => false,
-                'attr' => ['placeholder' => 'Comment puis je vosu aider ?']
+                'attr' => ['placeholder' => 'Comment puis je vous aider ?']
             ])
             
         ;

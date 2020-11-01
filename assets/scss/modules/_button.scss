@@ -32,7 +32,6 @@
   background-color: #312e5c;
   font-size: 1.9em;
   text-align: center;
-  padding: 11px 56px;
 }
 .btn--business{
   background: rgb(67,45,156);
@@ -74,6 +73,8 @@
   background: rgb(67,45,156);
   background: linear-gradient(90deg, rgba(67,45,156,1) 0%, rgba(44,52,172,1) 49%, rgba(39,54,175,1) 100%);
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
 }
 .btn--google{
   border-radius: 5px;

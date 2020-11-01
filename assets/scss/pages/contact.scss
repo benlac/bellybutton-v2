@@ -21,22 +21,23 @@
 }
 .contact__form__post input, .contact__form__post textarea{
   width: 100%;
+  margin-top: .3rem;
+  border-radius: 10px;
+  text-align: left;
+  background-color: #eff3f6;
+  padding: .6rem;
   border: none;
-  border-bottom-style: groove;
-  border-bottom-color: #f7f7f7;
-  transition: all .5s ease;
-  margin-bottom: 2rem;
-}
-.contact__form__post input:focus, .contact__form__post textarea:focus{
   outline: none;
-  transition: all .2s ease;
-  border-bottom: solid 1px #cbd1fe;
-  transition: all .2s ease;
+  margin-bottom: 1rem;
+}
+
+.contact__form__post input::placeholder, .contact__form__post textarea::placeholder{
+  color: #cbd1fe;
+  transition: all .5s ease;
 }
 
 .contact__form__post input:focus::-webkit-input-placeholder {
-  color: #cbd1fe;
-  transition: all .5s ease;
+  opacity: 0;
 }
 .reminder{
   width: 50%;
