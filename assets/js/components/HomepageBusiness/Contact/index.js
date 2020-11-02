@@ -9,7 +9,7 @@ const Contact = () => (
     <a href="/business/audit" className="btn btn--project">
       Obtenez votre 
       <br /> 
-      audit    
+      démo    
       <span className="project__span"> gratuitement</span>
     </a>
     <p className="project__text">
